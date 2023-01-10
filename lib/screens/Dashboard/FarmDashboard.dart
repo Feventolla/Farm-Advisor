@@ -14,26 +14,28 @@ class _FarmDashboardState extends State<FarmDashboard> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+          backgroundColor: Color(0xFF20382F),
           title: Container(
               width: double.infinity,
-              height: 80,
+              height: 100,
               color: Color(0xFF20382F),
               child: Row(children: [
                 Container(
-                  padding: EdgeInsets.only(left: 20, top: 20),
+                  padding: EdgeInsets.only(bottom: 20, left: 20, top: 20),
                   child: Image.asset(
                     "Agino_logo_green_RGB_300dpi.png",
                   ),
                 ),
                 Container(
-                  padding: EdgeInsets.only(left: 260, right: 30, top: 20),
+                  padding: EdgeInsets.only(
+                      bottom: 20, left: 260, right: 30, top: 20),
                   child: Icon(
                     Icons.add,
                     color: Colors.white,
                   ),
                 ),
                 Container(
-                  padding: EdgeInsets.only(top: 20),
+                  padding: EdgeInsets.only(bottom: 20, top: 20),
                   child: Icon(
                     Icons.person,
                     color: Colors.white,
@@ -47,35 +49,6 @@ class _FarmDashboardState extends State<FarmDashboard> {
 
           child: Column(
         children: [
-          Container(
-            width: double.infinity,
-            height: 80,
-            color: Color(0xFF20382F),
-            child: Row(
-              children: [
-                Container(
-                  padding: EdgeInsets.only(left: 20, top: 20),
-                  child: Image.asset(
-                    "Agino_logo_green_RGB_300dpi.png",
-                  ),
-                ),
-                Container(
-                  padding: EdgeInsets.only(left: 260, right: 30, top: 20),
-                  child: Icon(
-                    Icons.add,
-                    color: Colors.white,
-                  ),
-                ),
-                Container(
-                  padding: EdgeInsets.only(top: 20),
-                  child: Icon(
-                    Icons.person,
-                    color: Colors.white,
-                  ),
-                ),
-              ],
-            ),
-          ),
           Container(
             padding: EdgeInsets.all(40),
             child: Row(
@@ -92,7 +65,10 @@ class _FarmDashboardState extends State<FarmDashboard> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Text("Farm Name"),
+                      Text(
+                        "Farm Name",
+                        style: TextStyle(fontFamily: 'Roboto', fontSize: 24),
+                      ),
                       Icon(
                         Icons.keyboard_arrow_down,
                         color: Color.fromARGB(255, 75, 74, 74),
@@ -178,20 +154,28 @@ class _FarmDashboardState extends State<FarmDashboard> {
             ],
           )),
           Container(
-            height: 100,
-            width: 100,
-            color: Colors.black,
-          ),
-          Container(
-            height: 100,
-            width: 100,
-            color: Colors.white,
-          ),
-          Container(
-            width: 100,
-            height: 100,
-            color: Colors.black,
-          )
+              height: 120,
+              width: 420,
+              child: Card(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5.0),
+                  ),
+                  color: Colors.white,
+                  child: ListTile(
+                    leading: CircleAvatar(
+                      backgroundImage: AssetImage("pingu.jpg"),
+                      radius: 40,
+                    ),
+                    title: Text("courses.elementAt(index).title",
+                        style: TextStyle(
+                            fontSize: 13.0,
+                            color: Color.fromARGB(255, 0, 0, 0))),
+                    subtitle: Text("courses.elementAt(index).description",
+                        style: TextStyle(
+                            fontSize: 8.0,
+                            color: Color.fromARGB(255, 119, 117, 117))),
+                    trailing: Icon(Icons.keyboard_arrow_right),
+                  )))
         ],
       )),
     );
