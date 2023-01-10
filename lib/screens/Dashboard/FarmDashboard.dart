@@ -105,7 +105,8 @@ class _FarmDashboardState extends State<FarmDashboard> {
                     SizedBox(
                       width: 50,
                     ),
-                    Text("Alert"),
+                    Text("Alert",
+                        style: TextStyle(fontFamily: 'Roboto', fontSize: 17)),
                   ],
                 )),
                 Container(
@@ -150,7 +151,8 @@ class _FarmDashboardState extends State<FarmDashboard> {
                     SizedBox(
                       width: 50,
                     ),
-                    Text("Fields"),
+                    Text("Fields",
+                        style: TextStyle(fontFamily: 'Roboto', fontSize: 17)),
                     Container(
                       padding: EdgeInsets.only(left: 300),
                       child: Icon(Icons.add),
@@ -163,25 +165,39 @@ class _FarmDashboardState extends State<FarmDashboard> {
                     for (var item in list)
                       Container(
                         child: Container(
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                border: Border.all(
+                                    color: Color.fromARGB(255, 220, 218, 218),
+                                    width: 0.5,
+                                    style: BorderStyle.solid),
+                                borderRadius: BorderRadius.circular(15)),
+                            width: 420,
                             padding: EdgeInsets.all(20),
                             margin: EdgeInsets.all(5),
-                            color: Colors.white,
-                            child: ListTile(
-                              leading: CircleAvatar(
-                                backgroundImage: AssetImage("pingu.jpg"),
-                                radius: 40,
-                              ),
-                              title: Text(item,
-                                  style: TextStyle(
-                                      fontSize: 13.0,
-                                      color: Color.fromARGB(255, 0, 0, 0))),
-                              subtitle: Text(
-                                  "courses.elementAt(index).description",
-                                  style: TextStyle(
-                                      fontSize: 8.0,
-                                      color:
-                                          Color.fromARGB(255, 119, 117, 117))),
-                              trailing: Icon(Icons.keyboard_arrow_right),
+                            // color: Colors.white,
+                            child: Column(
+                              // mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                ListTile(
+                                  leading: CircleAvatar(
+                                    backgroundImage: AssetImage("pingu.jpg"),
+                                    radius: 40,
+                                  ),
+                                  title: Text(item,
+                                      style: TextStyle(
+                                          fontSize: 13.0,
+                                          color: Color.fromARGB(255, 0, 0, 0))),
+                                  subtitle: Text("some description here",
+                                      style: TextStyle(
+                                          fontSize: 8.0,
+                                          color: Color.fromARGB(
+                                              255, 119, 117, 117))),
+                                  trailing: Icon(Icons.keyboard_arrow_right),
+                                ),
+                                Text("Relax its all good")
+                              ],
                             )),
                       )
                   ],
