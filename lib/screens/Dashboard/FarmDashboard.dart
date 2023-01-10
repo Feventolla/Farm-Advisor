@@ -10,6 +10,7 @@ class FarmDashboard extends StatefulWidget {
 }
 
 class _FarmDashboardState extends State<FarmDashboard> {
+  List<String> list = ["farmone", "farmtwo", "farmthree", "farmfour"];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -154,27 +155,36 @@ class _FarmDashboardState extends State<FarmDashboard> {
             ],
           )),
           Container(
-              height: 120,
+              height: 500,
               width: 420,
               child: Card(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(5.0),
                   ),
                   color: Colors.white,
-                  child: ListTile(
-                    leading: CircleAvatar(
-                      backgroundImage: AssetImage("pingu.jpg"),
-                      radius: 40,
+                  child: Container(
+                    height: 120,
+                    child: Column(
+                      children: [
+                        for (var item in list)
+                          ListTile(
+                            leading: CircleAvatar(
+                              backgroundImage: AssetImage("pingu.jpg"),
+                              radius: 40,
+                            ),
+                            title: Text(item,
+                                style: TextStyle(
+                                    fontSize: 13.0,
+                                    color: Color.fromARGB(255, 0, 0, 0))),
+                            subtitle: Text(
+                                "courses.elementAt(index).description",
+                                style: TextStyle(
+                                    fontSize: 8.0,
+                                    color: Color.fromARGB(255, 119, 117, 117))),
+                            trailing: Icon(Icons.keyboard_arrow_right),
+                          )
+                      ],
                     ),
-                    title: Text("courses.elementAt(index).title",
-                        style: TextStyle(
-                            fontSize: 13.0,
-                            color: Color.fromARGB(255, 0, 0, 0))),
-                    subtitle: Text("courses.elementAt(index).description",
-                        style: TextStyle(
-                            fontSize: 8.0,
-                            color: Color.fromARGB(255, 119, 117, 117))),
-                    trailing: Icon(Icons.keyboard_arrow_right),
                   )))
         ],
       )),
