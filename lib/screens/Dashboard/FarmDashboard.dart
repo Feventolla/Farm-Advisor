@@ -201,6 +201,9 @@ class _FarmDashboardState extends State<FarmDashboard> {
                             )),
                       )
                   ],
+                ),
+                SizedBox(
+                  height: 200,
                 )
                 // Container(
                 //     height: 500,
