@@ -14,6 +14,35 @@ class _FieldState extends State<Field> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+          backgroundColor: Color(0xFF20382F),
+          title: Container(
+              width: double.infinity,
+              height: 100,
+              color: Color(0xFF20382F),
+              child: Row(children: [
+                Container(
+                  padding: EdgeInsets.only(bottom: 20, left: 20, top: 20),
+                  child: Image.asset(
+                    "Agino_logo_green_RGB_300dpi.png",
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.only(
+                      bottom: 20, left: 260, right: 30, top: 20),
+                  child: Icon(
+                    Icons.add,
+                    color: Colors.white,
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.only(bottom: 20, top: 20),
+                  child: Icon(
+                    Icons.person,
+                    color: Colors.white,
+                  ),
+                ),
+              ]))),
       body: Column(
         children: [
           Container(
@@ -30,22 +59,22 @@ class _FieldState extends State<Field> {
               ],
             ),
             child: Row(
-                // mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
                   Align(
-                      alignment: Alignment.centerRight,
+                      // alignment: Alignment.,
                       child: Row(
-                        children: const <Widget>[
-                          Icon(
-                            Icons.arrow_back,
-                            color: Color.fromARGB(255, 41, 41, 41),
-                          ),
-                          Text(
-                            "Title",
-                            style: TextStyle(fontSize: 14, fontFamily: 'Robot'),
-                          ),
-                        ],
-                      )),
+                    children: const <Widget>[
+                      Icon(
+                        Icons.arrow_back,
+                        color: Color.fromARGB(255, 41, 41, 41),
+                      ),
+                      Text(
+                        "Farm name two",
+                        style: TextStyle(fontSize: 14, fontFamily: 'Robot'),
+                      ),
+                    ],
+                  )),
                   Padding(
                     padding: EdgeInsets.only(left: 40),
                     child: Icon(Icons.more_vert),

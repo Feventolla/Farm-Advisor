@@ -1,4 +1,7 @@
 import 'package:farmadvisor/screens/Dashboard/FarmDashboard.dart';
+import 'package:farmadvisor/screens/Dashboard/field.dart';
+import 'package:farmadvisor/screens/Home/home.dart';
+import 'package:farmadvisor/screens/Dashboard/field.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,10 +15,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: FarmDashboard());
+        home: Field(
+          title: null,
+        ));
   }
 }
