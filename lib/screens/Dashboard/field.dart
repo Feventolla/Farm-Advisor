@@ -96,7 +96,7 @@ class _FieldState extends State<Field> {
             child: Row(
               children: const <Widget>[
                 Icon(
-                  Icons.landscape,
+                  Icons.landscape_outlined,
                   color: Color(0xFF20382F),
                 ),
                 Text(
@@ -117,9 +117,9 @@ class _FieldState extends State<Field> {
                   //     width: 1.0,
                   //     style: BorderStyle.solid),
                   borderRadius: BorderRadius.all(Radius.circular(10))),
-              padding: const EdgeInsets.all(80),
+              padding: const EdgeInsets.only(top: 20, left: 30),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
                   Column(
                     children: const <Widget>[
