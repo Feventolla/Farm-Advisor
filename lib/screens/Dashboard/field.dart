@@ -48,7 +48,7 @@ class _FieldState extends State<Field> {
           Container(
             height: 40,
             decoration: const BoxDecoration(
-              color: Color.fromARGB(247, 250, 250, 246),
+              color: Color(0xFFF7F7F7),
               boxShadow: [
                 BoxShadow(
                     color: Colors.grey,
@@ -61,20 +61,23 @@ class _FieldState extends State<Field> {
             child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
-                  Align(
-                      // alignment: Alignment.,
+                  Container(
+                      padding: EdgeInsets.only(right: 70),
                       child: Row(
-                    children: const <Widget>[
-                      Icon(
-                        Icons.arrow_back,
-                        color: Color.fromARGB(255, 41, 41, 41),
-                      ),
-                      Text(
-                        "Farm name two",
-                        style: TextStyle(fontSize: 14, fontFamily: 'Robot'),
-                      ),
-                    ],
-                  )),
+                        children: <Widget>[
+                          IconButton(
+                            icon: Icon(
+                              Icons.arrow_back_ios,
+                              color: Color(0xFF5F676C),
+                            ),
+                            onPressed: () {},
+                          ),
+                          Text(
+                            "Farm name two",
+                            style: TextStyle(fontSize: 14, fontFamily: 'Robot'),
+                          ),
+                        ],
+                      )),
                   Padding(
                     padding: EdgeInsets.only(left: 40),
                     child: Icon(Icons.more_vert),
@@ -84,46 +87,97 @@ class _FieldState extends State<Field> {
           Padding(
             padding: const EdgeInsets.only(left: 20.0, top: 8.0),
             child: Row(
-              children: <Widget>[
+              children: const <Widget>[
                 Icon(
                   Icons.landscape,
-                  color: Colors.white,
+                  color: Color(0xFF20382F),
                 ),
-                Text("127m above sea level"),
+                Text(
+                  "127m above sea level",
+                  style: TextStyle(
+                      fontFamily: 'Roboto',
+                      fontWeight: FontWeight.w400,
+                      fontSize: 16),
+                ),
               ],
             ),
           ),
           Container(
-              color: Colors.blue,
-              padding: EdgeInsets.all(25.0),
+              decoration: BoxDecoration(
+                  color: Color(0xFFFFFFFF),
+                  // border: Border.all(
+                  //     color: const Color(0xFFEFEFEF),
+                  //     width: 1.0,
+                  //     style: BorderStyle.solid),
+                  borderRadius: BorderRadius.all(Radius.circular(10))),
+              padding: const EdgeInsets.all(80),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
                   Column(
-                    children: <Widget>[
+                    children: const <Widget>[
                       Text(
                         '367',
-                        style: TextStyle(fontSize: 40),
+                        style: TextStyle(
+                            fontSize: 34,
+                            color: Color(0xFF5F676C),
+                            fontFamily: 'Roboto',
+                            fontWeight: FontWeight.w400,
+                            fontStyle: FontStyle.normal),
                       ),
-                      Text('Current GDD')
+                      Text(
+                        'Current GDD',
+                        style: TextStyle(
+                            fontSize: 12,
+                            color: Color(0xFF979797),
+                            fontFamily: 'Roboto',
+                            fontWeight: FontWeight.w400,
+                            fontStyle: FontStyle.normal),
+                      )
                     ],
                   ),
                   Column(
-                    children: <Widget>[
+                    children: const <Widget>[
                       Text(
                         '367',
-                        style: TextStyle(fontSize: 40),
+                        style: TextStyle(
+                            fontSize: 34,
+                            color: Color(0xFF5F676C),
+                            fontFamily: 'Roboto',
+                            fontWeight: FontWeight.w400,
+                            fontStyle: FontStyle.normal),
                       ),
-                      Text('Current GDD')
+                      Text(
+                        'Current GDD',
+                        style: TextStyle(
+                            fontSize: 12,
+                            color: Color(0xFF979797),
+                            fontFamily: 'Roboto',
+                            fontWeight: FontWeight.w400,
+                            fontStyle: FontStyle.normal),
+                      )
                     ],
                   ),
                   Column(
-                    children: <Widget>[
+                    children: const <Widget>[
                       Text(
                         '367',
-                        style: TextStyle(fontSize: 40),
+                        style: TextStyle(
+                            fontSize: 34,
+                            color: Color(0xFF5F676C),
+                            fontFamily: 'Roboto',
+                            fontWeight: FontWeight.w400,
+                            fontStyle: FontStyle.normal),
                       ),
-                      Text('Current GDD')
+                      Text(
+                        'Current GDD',
+                        style: TextStyle(
+                            fontSize: 12,
+                            color: Color(0xFF979797),
+                            fontFamily: 'Roboto',
+                            fontWeight: FontWeight.w400,
+                            fontStyle: FontStyle.normal),
+                      )
                     ],
                   ),
                 ],
