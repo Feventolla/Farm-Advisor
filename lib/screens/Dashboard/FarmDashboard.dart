@@ -20,29 +20,36 @@ class _FarmDashboardState extends State<FarmDashboard> {
               width: double.infinity,
               height: 100,
               color: Color(0xFF20382F),
-              child: Row(children: [
-                Container(
-                  padding: EdgeInsets.only(bottom: 20, left: 20, top: 20),
-                  child: Image.asset(
-                    "Agino_logo_green_RGB_300dpi.png",
-                  ),
-                ),
-                Container(
-                  padding: EdgeInsets.only(
-                      bottom: 20, left: 260, right: 30, top: 20),
-                  child: Icon(
-                    Icons.add,
-                    color: Colors.white,
-                  ),
-                ),
-                Container(
-                  padding: EdgeInsets.only(bottom: 20, top: 20),
-                  child: Icon(
-                    Icons.person,
-                    color: Colors.white,
-                  ),
-                ),
-              ]))),
+              child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      padding: EdgeInsets.only(bottom: 20, left: 20, top: 20),
+                      child: Image.asset(
+                        "Agino_logo_green_RGB_300dpi.png",
+                      ),
+                    ),
+                    Container(
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.add,
+                            color: Colors.white,
+                          ),
+                          Container(
+                            padding: EdgeInsets.only(left: 20),
+                            child: Icon(
+                              Icons.person,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    // Container(
+                    // padding: EdgeInsets.only(bottom: 20, top: 20),
+                    // ),
+                  ]))),
       body: ListView(
           // width: double.infinity,
           // height: double.infinity,
