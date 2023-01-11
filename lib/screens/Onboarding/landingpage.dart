@@ -9,31 +9,34 @@ class LandingPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 60,
-        backgroundColor: Color.fromARGB(255, 39, 62, 47),
-        leading: Container(
-          padding: EdgeInsets.all(10),
-          child: Image.asset(
-            'assets/images/clogo.png',
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height,
-          ),
-        ),
-      ),
+          backgroundColor: Color(0xFF20382F),
+          title: Container(
+              width: double.infinity,
+              height: 100,
+              color: Color(0xFF20382F),
+              child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      padding: EdgeInsets.only(bottom: 20, left: 20, top: 20),
+                      child: Image.asset(
+                        "Agino_logo_green_RGB_300dpi.png",
+                      ),
+                    ),
+                  ]))),
       body: Column(
         children: [
           Center(
               child: Image.asset(
-            'assets/images/mlogo.png',
+            'mlogo.png',
             width: 203,
             height: 203,
-          )
-          ),
-          Text("Smart Farming", 
-          style: TextStyle(
+          )),
+          Text(
+            "Smart Farming",
+            style: TextStyle(
               fontSize: 32,
-              
-          ),
+            ),
           )
         ],
       ),
