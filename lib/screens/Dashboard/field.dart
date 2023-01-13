@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:fl_chart/fl_chart.dart';
 
 class Field extends StatefulWidget {
   const Field({super.key, required this.title});
@@ -108,17 +109,17 @@ class _FieldState extends State<Field> {
                                           title:
                                               Text('Reset GDD on all sensors'),
                                           tileColor: Color.fromARGB(
-                                              255, 246, 242, 242),
+                                              255, 251, 248, 248),
                                         ),
                                         ListTile(
                                           title: Text('Edit sensor'),
                                           tileColor: Color.fromARGB(
-                                              255, 244, 238, 238),
+                                              255, 240, 239, 239),
                                         ),
                                         ListTile(
                                           title: Text('Delete sensor'),
                                           tileColor: Color.fromARGB(
-                                              255, 246, 242, 242),
+                                              255, 252, 250, 250),
                                         ),
                                       ],
                                     ),
@@ -369,13 +370,13 @@ class _FieldState extends State<Field> {
                                                               Widget>[
                                                             ListTile(
                                                               title: Text(
-                                                                  'Reset GDD'),
+                                                                  'Reset GDD on all sensors'),
                                                               tileColor: Color
                                                                   .fromARGB(
                                                                       255,
-                                                                      246,
-                                                                      242,
-                                                                      242),
+                                                                      251,
+                                                                      248,
+                                                                      248),
                                                             ),
                                                             ListTile(
                                                               title: Text(
@@ -383,9 +384,9 @@ class _FieldState extends State<Field> {
                                                               tileColor: Color
                                                                   .fromARGB(
                                                                       255,
-                                                                      244,
-                                                                      238,
-                                                                      238),
+                                                                      240,
+                                                                      239,
+                                                                      239),
                                                             ),
                                                             ListTile(
                                                               title: Text(
@@ -393,9 +394,9 @@ class _FieldState extends State<Field> {
                                                               tileColor: Color
                                                                   .fromARGB(
                                                                       255,
-                                                                      246,
-                                                                      242,
-                                                                      242),
+                                                                      252,
+                                                                      250,
+                                                                      250),
                                                             ),
                                                           ],
                                                         ),
@@ -433,6 +434,32 @@ class _FieldState extends State<Field> {
                         )),
                   ),
                 ],
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.all(10),
+              width: double.infinity,
+              height: 300,
+              child: LineChart(
+                LineChartData(
+                    lineTouchData: LineTouchData(enabled: false),
+                    borderData: FlBorderData(show: false),
+                    lineBarsData: [
+                      LineChartBarData(
+                          dotData: FlDotData(show: false),
+                          isCurved: true,
+                          spots: [
+                            const FlSpot(0, 350),
+                            const FlSpot(5, 400),
+                            const FlSpot(10, 450),
+                            const FlSpot(15, 500),
+                            const FlSpot(20, 550),
+                            const FlSpot(25, 600),
+                            // const FlSpot(6, 17),
+                            // const FlSpot(7, 15),
+                            // const FlSpot(8, 20)
+                          ])
+                    ]),
               ),
             ),
             Container(
