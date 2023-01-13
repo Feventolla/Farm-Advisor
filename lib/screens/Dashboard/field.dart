@@ -117,7 +117,7 @@ class _FieldState extends State<Field> {
             ),
             Container(
                 height: 100,
-                width: 300,
+                width: 330,
                 alignment: Alignment.bottomCenter,
                 decoration: BoxDecoration(
                   color: Color(0xFFFFFFFF),
@@ -130,77 +130,80 @@ class _FieldState extends State<Field> {
                   ),
                 ),
                 // padding: EdgeInsets.only(left: 50, right: 50),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  mainAxisSize: MainAxisSize.max,
-                  children: <Widget>[
-                    Column(
-                      children: const <Widget>[
-                        Text(
-                          '367',
-                          style: TextStyle(
-                              fontSize: 34,
-                              color: Color(0xFF5F676C),
-                              fontFamily: 'Roboto',
-                              fontWeight: FontWeight.w400,
-                              fontStyle: FontStyle.normal),
-                        ),
-                        Text(
-                          'Current GDD',
-                          style: TextStyle(
-                              fontSize: 12,
-                              color: Color(0xFF979797),
-                              fontFamily: 'Roboto',
-                              fontWeight: FontWeight.w400,
-                              fontStyle: FontStyle.normal),
-                        )
-                      ],
-                    ),
-                    Column(
-                      children: const <Widget>[
-                        Text(
-                          '367',
-                          style: TextStyle(
-                              fontSize: 34,
-                              color: Color(0xFF5F676C),
-                              fontFamily: 'Roboto',
-                              fontWeight: FontWeight.w400,
-                              fontStyle: FontStyle.normal),
-                        ),
-                        Text(
-                          'Current GDD',
-                          style: TextStyle(
-                              fontSize: 12,
-                              color: Color(0xFF979797),
-                              fontFamily: 'Roboto',
-                              fontWeight: FontWeight.w400,
-                              fontStyle: FontStyle.normal),
-                        )
-                      ],
-                    ),
-                    Column(
-                      children: const <Widget>[
-                        Text(
-                          '367',
-                          style: TextStyle(
-                              fontSize: 34,
-                              color: Color(0xFF5F676C),
-                              fontFamily: 'Roboto',
-                              fontWeight: FontWeight.w400,
-                              fontStyle: FontStyle.normal),
-                        ),
-                        Text(
-                          'Current GDD',
-                          style: TextStyle(
-                              fontSize: 12,
-                              color: Color(0xFF979797),
-                              fontFamily: 'Roboto',
-                              fontWeight: FontWeight.w400,
-                              fontStyle: FontStyle.normal),
-                        )
-                      ],
-                    ),
-                  ],
+                child: Container(
+                  padding: EdgeInsets.only(top: 15),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    mainAxisSize: MainAxisSize.max,
+                    children: <Widget>[
+                      Column(
+                        children: const <Widget>[
+                          Text(
+                            '367',
+                            style: TextStyle(
+                                fontSize: 34,
+                                color: Color(0xFF5F676C),
+                                fontFamily: 'Roboto',
+                                fontWeight: FontWeight.w400,
+                                fontStyle: FontStyle.normal),
+                          ),
+                          Text(
+                            'Current GDD',
+                            style: TextStyle(
+                                fontSize: 12,
+                                color: Color(0xFF979797),
+                                fontFamily: 'Roboto',
+                                fontWeight: FontWeight.w400,
+                                fontStyle: FontStyle.normal),
+                          )
+                        ],
+                      ),
+                      Column(
+                        children: const <Widget>[
+                          Text(
+                            '367',
+                            style: TextStyle(
+                                fontSize: 34,
+                                color: Color(0xFF5F676C),
+                                fontFamily: 'Roboto',
+                                fontWeight: FontWeight.w400,
+                                fontStyle: FontStyle.normal),
+                          ),
+                          Text(
+                            'Current GDD',
+                            style: TextStyle(
+                                fontSize: 12,
+                                color: Color(0xFF979797),
+                                fontFamily: 'Roboto',
+                                fontWeight: FontWeight.w400,
+                                fontStyle: FontStyle.normal),
+                          )
+                        ],
+                      ),
+                      Column(
+                        children: const <Widget>[
+                          Text(
+                            '367',
+                            style: TextStyle(
+                                fontSize: 34,
+                                color: Color(0xFF5F676C),
+                                fontFamily: 'Roboto',
+                                fontWeight: FontWeight.w400,
+                                fontStyle: FontStyle.normal),
+                          ),
+                          Text(
+                            'Current GDD',
+                            style: TextStyle(
+                                fontSize: 12,
+                                color: Color(0xFF979797),
+                                fontFamily: 'Roboto',
+                                fontWeight: FontWeight.w400,
+                                fontStyle: FontStyle.normal),
+                          )
+                        ],
+                      ),
+                    ],
+                  ),
                 )),
             Container(
               padding: EdgeInsets.only(right: 70, top: 7, bottom: 7),
@@ -271,9 +274,10 @@ class _FieldState extends State<Field> {
                     visible: show_sensor,
                     child: Container(
                         width: 430,
-                        height: 300,
+                        height: 370,
                         // padding: EdgeInsets.all(12.0),
                         child: GridView.builder(
+                          physics: NeverScrollableScrollPhysics(),
                           itemCount: GDD.length,
                           gridDelegate:
                               SliverGridDelegateWithFixedCrossAxisCount(
@@ -289,50 +293,53 @@ class _FieldState extends State<Field> {
                                       width: 0.5,
                                       style: BorderStyle.solid),
                                   borderRadius: BorderRadius.circular(15)),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  SizedBox(
-                                    height: 15,
-                                  ),
-                                  // for (var item in GDD)
-                                  Container(
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: <Widget>[
-                                        Image.asset(
-                                          "images/mlogo.png",
-                                          width: 30,
-                                          height: 30,
-                                        ),
-                                        IconButton(
-                                          icon: Icon(
-                                            Icons.more_vert,
-                                            color: Color(0xFF5F676C),
-                                          ),
-                                          onPressed: () {},
-                                        ),
-                                      ],
+                              child: Container(
+                                padding: EdgeInsets.only(left: 10),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    SizedBox(
+                                      height: 15,
                                     ),
-                                  ),
-                                  SizedBox(
-                                    height: 20,
-                                  ),
-                                  Text("4567982900",
-                                      style: TextStyle(
-                                          fontFamily: 'Roboto',
-                                          fontWeight: FontWeight.w400,
-                                          fontSize: 17,
-                                          fontStyle: FontStyle.normal)),
-                                  Text("GDD 375",
-                                      style: TextStyle(
-                                          fontFamily: 'Roboto',
-                                          fontSize: 10,
-                                          fontStyle: FontStyle.normal,
-                                          color: Color.fromARGB(
-                                              255, 147, 145, 145))),
-                                ],
+                                    // for (var item in GDD)
+                                    Container(
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: <Widget>[
+                                          Image.asset(
+                                            "images/mlogo.png",
+                                            width: 30,
+                                            height: 30,
+                                          ),
+                                          IconButton(
+                                            icon: Icon(
+                                              Icons.more_vert,
+                                              color: Color(0xFF5F676C),
+                                            ),
+                                            onPressed: () {},
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 20,
+                                    ),
+                                    Text("4567982900",
+                                        style: TextStyle(
+                                            fontFamily: 'Roboto',
+                                            fontWeight: FontWeight.w400,
+                                            fontSize: 17,
+                                            fontStyle: FontStyle.normal)),
+                                    Text("GDD 375",
+                                        style: TextStyle(
+                                            fontFamily: 'Roboto',
+                                            fontSize: 10,
+                                            fontStyle: FontStyle.normal,
+                                            color: Color.fromARGB(
+                                                255, 147, 145, 145))),
+                                  ],
+                                ),
                               ),
                             );
                           },
