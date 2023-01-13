@@ -69,7 +69,7 @@ class _FieldState extends State<Field> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
                   Container(
-                      padding: EdgeInsets.only(right: 70),
+                      padding: EdgeInsets.only(right: 100),
                       child: Row(
                         children: <Widget>[
                           IconButton(
@@ -86,13 +86,13 @@ class _FieldState extends State<Field> {
                         ],
                       )),
                   Padding(
-                    padding: EdgeInsets.only(left: 40),
+                    padding: EdgeInsets.only(left: 50),
                     child: Icon(Icons.more_vert),
                   )
                 ]),
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 20.0, top: 8.0),
+            padding: const EdgeInsets.only(left: 30, top: 15.0, bottom: 15),
             child: Row(
               children: const <Widget>[
                 Icon(
@@ -102,24 +102,33 @@ class _FieldState extends State<Field> {
                 Text(
                   "127m above sea level",
                   style: TextStyle(
-                      fontFamily: 'Roboto',
-                      fontWeight: FontWeight.w400,
-                      fontSize: 16),
+                    fontFamily: 'Roboto',
+                    fontWeight: FontWeight.w400,
+                    fontSize: 16,
+                    color: Color(0xFF20382F),
+                  ),
                 ),
               ],
             ),
           ),
           Container(
+              height: 100,
+              width: 300,
+              alignment: Alignment.bottomCenter,
               decoration: BoxDecoration(
-                  color: Color(0xFFFFFFFF),
-                  // border: Border.all(
-                  //     color: const Color(0xFFEFEFEF),
-                  //     width: 1.0,
-                  //     style: BorderStyle.solid),
-                  borderRadius: BorderRadius.all(Radius.circular(10))),
-              padding: const EdgeInsets.all(80),
+                color: Color(0xFFFFFFFF),
+                border: Border.all(
+                    color: const Color(0xFFEFEFEF),
+                    width: 1.0,
+                    style: BorderStyle.solid),
+                borderRadius: BorderRadius.all(
+                  Radius.circular(10),
+                ),
+              ),
+              // padding: EdgeInsets.only(left: 50, right: 50),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisSize: MainAxisSize.max,
                 children: <Widget>[
                   Column(
                     children: const <Widget>[
@@ -189,6 +198,32 @@ class _FieldState extends State<Field> {
                   ),
                 ],
               )),
+          Container(
+            padding: EdgeInsets.only(right: 70, top: 7, bottom: 7),
+            child: Text(
+              'Last sensor reset: 04/03/22 (auto reset)',
+              style: TextStyle(
+                fontFamily: 'Roboto',
+                fontWeight: FontWeight.w400,
+                fontSize: 12,
+                color: Color(0xFF979797),
+              ),
+            ),
+          ),
+          Container(
+            decoration: BoxDecoration(
+                border: Border(
+              top: BorderSide(width: 1, color: Color(0xFF5F676C)),
+              bottom: BorderSide(width: 1, color: Color(0xFF5F676C)),
+            )),
+            child: Column(
+              children: <Widget>[
+                Row(
+                  children: <Widget>[Text('Sensors')],
+                )
+              ],
+            ),
+          ),
         ],
       ),
     );
