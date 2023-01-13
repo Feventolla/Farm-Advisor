@@ -437,6 +437,49 @@ class _FieldState extends State<Field> {
               ),
             ),
             Container(
+                child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Container(
+                  child: Column(
+                    children: [Text("Mon"), Text("data")],
+                  ),
+                ),
+                Container(
+                  child: Column(
+                    children: [Text("Tue"), Text("data")],
+                  ),
+                ),
+                Container(
+                  child: Column(
+                    children: [Text("Wens"), Text("data")],
+                  ),
+                ),
+                Container(
+                  child: Column(
+                    children: [Text("Thur"), Text("data")],
+                  ),
+                ),
+                Container(
+                  child: Column(
+                    children: [Text("Fri"), Text("data")],
+                  ),
+                ),
+                Container(
+                  child: Column(
+                    children: [Text("Sat"), Text("data")],
+                  ),
+                ),
+              ],
+            )),
+            Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                border: Border.all(
+                    color: Color.fromARGB(255, 220, 218, 218),
+                    width: 0.5,
+                    style: BorderStyle.solid),
+              ),
               padding: const EdgeInsets.all(10),
               width: double.infinity,
               height: 300,
@@ -444,17 +487,109 @@ class _FieldState extends State<Field> {
                 LineChartData(
                     lineTouchData: LineTouchData(enabled: false),
                     borderData: FlBorderData(show: false),
+                    titlesData: FlTitlesData(
+                      show: true,
+                      topTitles: SideTitles(
+                          // showTitles: true,
+                          // reservedSize: 35,
+                          // getTextStyles: (context, value) {
+                          //   return const TextStyle(
+                          //       color: Color.fromARGB(255, 44, 45, 46),
+                          //       fontSize: 16,
+                          //       fontWeight: FontWeight.bold);
+                          // },
+                          // getTitles: (value) {
+                          //   switch (value.toInt()) {
+                          //     case 0:
+                          //       return 'Mon';
+                          //     case 0:
+                          //       return 'Tue';
+                          //     case 5:
+                          //       return 'Wes';
+                          //     case 7:
+                          //       return 'Thur';
+                          //     case 9:
+                          //       return 'Fri';
+                          //     case 11:
+                          //       return 'Sat';
+                          //     case 13:
+                          //       return 'Sun';
+                          //     case 15:
+                          //       return 'Mon';
+                          //   }
+                          //   return '';
+                          // },
+                          // margin: 8
+                          ),
+                      rightTitles: SideTitles(
+                        showTitles: true,
+                        reservedSize: 35,
+                        getTextStyles: (context, value) {
+                          return const TextStyle(
+                              color: Color.fromARGB(255, 105, 107, 109),
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold);
+                        },
+                        getTitles: (value) {
+                          switch (value.toInt()) {
+                            case 1:
+                              return '350';
+
+                            case 2:
+                              return '400';
+                            case 3:
+                              return '450';
+                            case 4:
+                              return '500';
+                            case 5:
+                              return '550';
+                            case 6:
+                              return '600';
+                          }
+                          return '';
+                        },
+                        // margin: 12,
+                      ),
+                      bottomTitles: SideTitles(),
+                      leftTitles: SideTitles(
+                        showTitles: true,
+                        reservedSize: 35,
+                        getTextStyles: (context, value) {
+                          return const TextStyle(
+                              color: Color.fromARGB(255, 126, 129, 133),
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold);
+                        },
+                        getTitles: (value) {
+                          switch (value.toInt()) {
+                            case 1:
+                              return '0';
+
+                            case 2:
+                              return '5';
+                            case 3:
+                              return '10';
+                            case 4:
+                              return '15';
+                            case 5:
+                              return '20';
+                            case 6:
+                              return '25';
+                          }
+                          return '';
+                        },
+                        // margin: 12,
+                      ),
+                    ),
                     lineBarsData: [
                       LineChartBarData(
                           dotData: FlDotData(show: false),
                           isCurved: true,
                           spots: [
-                            const FlSpot(0, 350),
-                            const FlSpot(5, 400),
-                            const FlSpot(10, 450),
-                            const FlSpot(15, 500),
-                            const FlSpot(20, 550),
-                            const FlSpot(25, 600),
+                            const FlSpot(0, 0),
+                            const FlSpot(5, 5),
+                            const FlSpot(7, 6),
+                            const FlSpot(8, 4),
                             // const FlSpot(6, 17),
                             // const FlSpot(7, 15),
                             // const FlSpot(8, 20)
