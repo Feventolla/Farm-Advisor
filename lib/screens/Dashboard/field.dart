@@ -96,7 +96,7 @@ class _FieldState extends State<Field> {
             child: Row(
               children: const <Widget>[
                 Icon(
-                  Icons.landscape,
+                  Icons.landscape_outlined,
                   color: Color(0xFF20382F),
                 ),
                 Text(
@@ -116,6 +116,7 @@ class _FieldState extends State<Field> {
               width: 300,
               alignment: Alignment.bottomCenter,
               decoration: BoxDecoration(
+<<<<<<< HEAD
                 color: Color(0xFFFFFFFF),
                 border: Border.all(
                     color: const Color(0xFFEFEFEF),
@@ -129,6 +130,17 @@ class _FieldState extends State<Field> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 mainAxisSize: MainAxisSize.max,
+=======
+                  color: Color(0xFFFFFFFF),
+                  // border: Border.all(
+                  //     color: const Color(0xFFEFEFEF),
+                  //     width: 1.0,
+                  //     style: BorderStyle.solid),
+                  borderRadius: BorderRadius.all(Radius.circular(10))),
+              padding: const EdgeInsets.only(top: 20, left: 30),
+              child: Row(
+                // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+>>>>>>> 5b800e15c69e2e54336ae748744b20c9e9888079
                 children: <Widget>[
                   Column(
                     children: const <Widget>[
