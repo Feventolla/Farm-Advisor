@@ -67,18 +67,19 @@ class LandingPage extends StatelessWidget {
             ),
           ),
           SizedBox(height: 80),
-          RaisedButton(
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10)),
-              color: Color(0xFF275342),
-              child: Text(
-                "SIGN UP WITH AGINO",
-                style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
-              ),
-              textColor: Colors.white,
-              highlightColor: Color.fromARGB(255, 119, 72, 72),
-              padding: EdgeInsets.symmetric(vertical: 15, horizontal: 100),
-              onPressed: () {}),
+          // RaisedButton(
+          //     shape: RoundedRectangleBorder(
+          //       borderRadius: BorderRadius.circular(10),
+          //     ),
+          //     color: Color(0xFF275342),
+          //     child: Text(
+          //       "SIGN UP WITH AGINO",
+          //       style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
+          //     ),
+          //     textColor: Colors.white,
+          //     highlightColor: Color.fromARGB(255, 119, 72, 72),
+          //     padding: EdgeInsets.symmetric(vertical: 15, horizontal: 100),
+          //     onPressed: () {}),
           SizedBox(height: 2),
           Container(
             margin: EdgeInsets.only(top: 10),
