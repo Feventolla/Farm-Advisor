@@ -317,7 +317,57 @@ class _FieldState extends State<Field> {
                                               Icons.more_vert,
                                               color: Color(0xFF5F676C),
                                             ),
-                                            onPressed: () {},
+                                            onPressed: () {
+                                              showDialog(
+                                                context: context,
+                                                builder: (context) {
+                                                  return AlertDialog(
+                                                    content:
+                                                        SingleChildScrollView(
+                                                      child: Container(
+                                                        width: 300,
+                                                        height: 200,
+                                                        child: ListView(
+                                                          children: const <
+                                                              Widget>[
+                                                            ListTile(
+                                                              title: Text(
+                                                                  'Reset GDD'),
+                                                              tileColor: Color
+                                                                  .fromARGB(
+                                                                      255,
+                                                                      246,
+                                                                      242,
+                                                                      242),
+                                                            ),
+                                                            ListTile(
+                                                              title: Text(
+                                                                  'Edit sensor'),
+                                                              tileColor: Color
+                                                                  .fromARGB(
+                                                                      255,
+                                                                      244,
+                                                                      238,
+                                                                      238),
+                                                            ),
+                                                            ListTile(
+                                                              title: Text(
+                                                                  'Delete sensor'),
+                                                              tileColor: Color
+                                                                  .fromARGB(
+                                                                      255,
+                                                                      246,
+                                                                      242,
+                                                                      242),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  );
+                                                },
+                                              );
+                                            },
                                           ),
                                         ],
                                       ),
