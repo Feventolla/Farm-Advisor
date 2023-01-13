@@ -11,6 +11,7 @@ class Field extends StatefulWidget {
 }
 
 class _FieldState extends State<Field> {
+  bool show_sensor = true;
   List<String> GDD = ["375", "455", "not until now", "375"];
   @override
   Widget build(BuildContext context) {
@@ -245,11 +246,20 @@ class _FieldState extends State<Field> {
                               onPressed: () {},
                             ),
                             IconButton(
-                              icon: Icon(
-                                Icons.keyboard_arrow_down_sharp,
-                                color: Color(0xFF5F676C),
-                              ),
-                              onPressed: () {},
+                              icon: (show_sensor
+                                  ? Icon(
+                                      Icons.keyboard_arrow_up,
+                                      color: Color(0xFF5F676C),
+                                    )
+                                  : Icon(
+                                      Icons.keyboard_arrow_down_sharp,
+                                      color: Color(0xFF5F676C),
+                                    )),
+                              onPressed: () {
+                                setState(() {
+                                  show_sensor = !show_sensor;
+                                });
+                              },
                             ),
                           ],
                         ),
@@ -257,73 +267,77 @@ class _FieldState extends State<Field> {
                     ],
                   ),
                   // for (var item in GDD)
-                  Container(
-                      width: 430,
-                      height: 300,
-                      // padding: EdgeInsets.all(12.0),
-                      child: GridView.builder(
-                        itemCount: GDD.length,
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 2,
-                            crossAxisSpacing: 4.0,
-                            mainAxisSpacing: 4.0),
-                        itemBuilder: (BuildContext context, int index) {
-                          return Container(
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                border: Border.all(
-                                    color: Color.fromARGB(255, 220, 218, 218),
-                                    width: 0.5,
-                                    style: BorderStyle.solid),
-                                borderRadius: BorderRadius.circular(15)),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                SizedBox(
-                                  height: 15,
-                                ),
-                                // for (var item in GDD)
-                                Container(
-                                  child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: <Widget>[
-                                      Image.asset(
-                                        "images/mlogo.png",
-                                        width: 30,
-                                        height: 30,
-                                      ),
-                                      IconButton(
-                                        icon: Icon(
-                                          Icons.more_vert,
-                                          color: Color(0xFF5F676C),
-                                        ),
-                                        onPressed: () {},
-                                      ),
-                                    ],
+                  Visibility(
+                    visible: show_sensor,
+                    child: Container(
+                        width: 430,
+                        height: 300,
+                        // padding: EdgeInsets.all(12.0),
+                        child: GridView.builder(
+                          itemCount: GDD.length,
+                          gridDelegate:
+                              SliverGridDelegateWithFixedCrossAxisCount(
+                                  crossAxisCount: 2,
+                                  crossAxisSpacing: 20.0,
+                                  mainAxisSpacing: 20.0),
+                          itemBuilder: (BuildContext context, int index) {
+                            return Container(
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  border: Border.all(
+                                      color: Color.fromARGB(255, 220, 218, 218),
+                                      width: 0.5,
+                                      style: BorderStyle.solid),
+                                  borderRadius: BorderRadius.circular(15)),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  SizedBox(
+                                    height: 15,
                                   ),
-                                ),
-                                SizedBox(
-                                  height: 20,
-                                ),
-                                Text("4567982900",
-                                    style: TextStyle(
-                                        fontFamily: 'Roboto',
-                                        fontWeight: FontWeight.w400,
-                                        fontSize: 17,
-                                        fontStyle: FontStyle.normal)),
-                                Text("GDD 375",
-                                    style: TextStyle(
-                                        fontFamily: 'Roboto',
-                                        fontSize: 10,
-                                        fontStyle: FontStyle.normal,
-                                        color: Color.fromARGB(
-                                            255, 147, 145, 145))),
-                              ],
-                            ),
-                          );
-                        },
-                      )),
+                                  // for (var item in GDD)
+                                  Container(
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: <Widget>[
+                                        Image.asset(
+                                          "images/mlogo.png",
+                                          width: 30,
+                                          height: 30,
+                                        ),
+                                        IconButton(
+                                          icon: Icon(
+                                            Icons.more_vert,
+                                            color: Color(0xFF5F676C),
+                                          ),
+                                          onPressed: () {},
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 20,
+                                  ),
+                                  Text("4567982900",
+                                      style: TextStyle(
+                                          fontFamily: 'Roboto',
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 17,
+                                          fontStyle: FontStyle.normal)),
+                                  Text("GDD 375",
+                                      style: TextStyle(
+                                          fontFamily: 'Roboto',
+                                          fontSize: 10,
+                                          fontStyle: FontStyle.normal,
+                                          color: Color.fromARGB(
+                                              255, 147, 145, 145))),
+                                ],
+                              ),
+                            );
+                          },
+                        )),
+                  ),
                 ],
               ),
             ),
