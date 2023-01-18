@@ -1,4 +1,5 @@
 import 'package:farmadvisor/screens/Dashboard/Bar_chart/barchart_page.dart';
+import 'package:farmadvisor/screens/Dashboard/Bar_chart/snow_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -611,20 +612,86 @@ class _FieldState extends State<Field> {
             Container(
                 width: 500,
                 height: 300,
-                padding: const EdgeInsets.all(8),
+                padding: const EdgeInsets.only(top: 8, left: 8, right: 8),
                 child: BarChartPage()
                 // color: Colors.black,
                 ),
             Container(
-              width: 300,
-              height: 300,
+              alignment: Alignment.center,
+              padding: EdgeInsets.only(left: 100),
+              child: Row(children: <Widget>[
+                Icon(
+                  Icons.circle,
+                  size: 10,
+                  color: Color(0xFF69A6CE),
+                ),
+                Text(
+                  'Measured Percipitation',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 10,
+                    fontWeight: FontWeight.w400,
+                    color: Color(0xff979797),
+                  ),
+                )
+              ]),
               color: Colors.white,
             ),
             Container(
-              width: 300,
-              height: 300,
-              color: Colors.black,
-            )
+                padding: EdgeInsets.only(right: 250, top: 20),
+                child: const Text(
+                  'Snow Depth',
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontFamily: 'Roboto',
+                    fontWeight: FontWeight.w400,
+                  ),
+                  textAlign: TextAlign.left,
+                )),
+            Container(
+                width: 500,
+                height: 300,
+                padding: const EdgeInsets.only(top: 8, left: 8, right: 8),
+                child: SnowPage()
+                // color: Colors.black,
+                ),
+            Container(
+              alignment: Alignment.center,
+              padding: EdgeInsets.only(left: 100),
+              child: Row(children: <Widget>[
+                Icon(
+                  Icons.circle,
+                  size: 10,
+                  color: Color(0xFF085282),
+                ),
+                Text(
+                  'Snow Depth',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 10,
+                    fontWeight: FontWeight.w400,
+                    color: Color(0xff979797),
+                  ),
+                ),
+                Icon(
+                  Icons.circle,
+                  size: 10,
+                  color: Color(0xFFEFEDED),
+                ),
+                Text('Missing Data',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        fontSize: 10,
+                        fontWeight: FontWeight.w400,
+                        color: Color(0xff979797)))
+              ]),
+              color: Colors.white,
+            ),
+            Container(
+                padding: EdgeInsets.only(top: 50),
+                width: 300,
+                height: 300,
+                color: Colors.black)
           ],
         ),
       ]),

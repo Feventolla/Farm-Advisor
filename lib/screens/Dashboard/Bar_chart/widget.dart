@@ -85,6 +85,7 @@ class BarChartWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) => BarChart(
         BarChartData(
+          borderData: FlBorderData(show: false),
           alignment: BarChartAlignment.center,
           maxY: 10,
           minY: 0,
@@ -102,12 +103,12 @@ class BarChartWidget extends StatelessWidget {
               getDrawingHorizontalLine: (value) {
                 if (value == 0) {
                   return FlLine(
-                    color: Color.fromARGB(0, 54, 55, 83),
+                    color: Color.fromARGB(187, 193, 194, 218),
                     strokeWidth: 0,
                   );
                 } else {
                   return FlLine(
-                    color: Color.fromARGB(206, 42, 39, 71),
+                    color: Color.fromARGB(187, 202, 202, 212),
                     strokeWidth: 0.8,
                   );
                 }
@@ -139,5 +140,6 @@ class BarChartWidget extends StatelessWidget {
               )
               .toList(),
         ),
+        
       );
 }
