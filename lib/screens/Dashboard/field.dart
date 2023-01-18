@@ -1,3 +1,4 @@
+import 'package:farmadvisor/screens/Dashboard/Bar_chart/barchart_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -65,7 +66,6 @@ class _FieldState extends State<Field> {
                       color: Colors.grey,
                       blurRadius: 10,
                       // offset: Offset(5, 10),
-
                       blurStyle: BlurStyle.normal)
                 ],
               ),
@@ -307,31 +307,169 @@ class _FieldState extends State<Field> {
                       )
                     ],
                   ),
+                  // for (var item in GDD)
+                  Visibility(
+                    visible: show_sensor,
+                    child: Container(
+                        width: 430,
+                        height: 370,
+                        // padding: EdgeInsets.all(12.0),
+                        child: GridView.builder(
+                          physics: NeverScrollableScrollPhysics(),
+                          itemCount: GDD.length,
+                          gridDelegate:
+                              SliverGridDelegateWithFixedCrossAxisCount(
+                                  crossAxisCount: 2,
+                                  crossAxisSpacing: 20.0,
+                                  mainAxisSpacing: 20.0),
+                          itemBuilder: (BuildContext context, int index) {
+                            return Container(
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  border: Border.all(
+                                      color: Color.fromARGB(255, 220, 218, 218),
+                                      width: 0.5,
+                                      style: BorderStyle.solid),
+                                  borderRadius: BorderRadius.circular(15)),
+                              child: Container(
+                                padding: EdgeInsets.only(left: 10),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    SizedBox(
+                                      height: 15,
+                                    ),
+                                    // for (var item in GDD)
+                                    Container(
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: <Widget>[
+                                          Image.asset(
+                                            "images/mlogo.png",
+                                            width: 30,
+                                            height: 30,
+                                          ),
+                                          IconButton(
+                                            icon: Icon(
+                                              Icons.more_vert,
+                                              color: Color(0xFF5F676C),
+                                            ),
+                                            onPressed: () {
+                                              showDialog(
+                                                context: context,
+                                                builder: (context) {
+                                                  return AlertDialog(
+                                                    content:
+                                                        SingleChildScrollView(
+                                                      child: Container(
+                                                        width: 300,
+                                                        height: 200,
+                                                        child: ListView(
+                                                          children: const <
+                                                              Widget>[
+                                                            ListTile(
+                                                              title: Text(
+                                                                  'Reset GDD'),
+                                                              tileColor: Color
+                                                                  .fromARGB(
+                                                                      255,
+                                                                      251,
+                                                                      248,
+                                                                      248),
+                                                            ),
+                                                            ListTile(
+                                                              title: Text(
+                                                                  'Edit sensor'),
+                                                              tileColor: Color
+                                                                  .fromARGB(
+                                                                      255,
+                                                                      240,
+                                                                      239,
+                                                                      239),
+                                                            ),
+                                                            ListTile(
+                                                              title: Text(
+                                                                  'Delete sensor'),
+                                                              tileColor: Color
+                                                                  .fromARGB(
+                                                                      255,
+                                                                      252,
+                                                                      250,
+                                                                      250),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  );
+                                                },
+                                              );
+                                            },
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 20,
+                                    ),
+                                    Text("4567982900",
+                                        style: TextStyle(
+                                            fontFamily: 'Roboto',
+                                            fontWeight: FontWeight.w400,
+                                            fontSize: 17,
+                                            fontStyle: FontStyle.normal)),
+                                    Text("GDD 375",
+                                        style: TextStyle(
+                                            fontFamily: 'Roboto',
+                                            fontSize: 10,
+                                            fontStyle: FontStyle.normal,
+                                            color: Color.fromARGB(
+                                                255, 147, 145, 145))),
+                                  ],
+                                ),
+                              ),
+                            );
+                          },
+                        )),
+                  ),
                 ],
-              )),
-          Container(
-            padding: EdgeInsets.only(right: 70, top: 7, bottom: 7),
-            child: Text(
-              'Last sensor reset: 04/03/22 (auto reset)',
-              style: TextStyle(
-                fontFamily: 'Roboto',
-                fontWeight: FontWeight.w400,
-                fontSize: 12,
-                color: Color(0xFF979797),
               ),
             ),
-          ),
-          Container(
-            decoration: BoxDecoration(
-                border: Border(
-              top: BorderSide(width: 1, color: Color(0xFF5F676C)),
-              bottom: BorderSide(width: 1, color: Color(0xFF5F676C)),
-            )),
-            child: Column(
-              children: <Widget>[
-                Row(
-                  children: <Widget>[Text('Sensors')],
-                )
+            Container(
+                child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Container(
+                  child: Column(
+                    children: [Text("Mon"), Text("data")],
+                  ),
+                ),
+                Container(
+                  child: Column(
+                    children: [Text("Tue"), Text("data")],
+                  ),
+                ),
+                Container(
+                  child: Column(
+                    children: [Text("Wens"), Text("data")],
+                  ),
+                ),
+                Container(
+                  child: Column(
+                    children: [Text("Thur"), Text("data")],
+                  ),
+                ),
+                Container(
+                  child: Column(
+                    children: [Text("Fri"), Text("data")],
+                  ),
+                ),
+                Container(
+                  child: Column(
+                    children: [Text("Sat"), Text("data")],
+                  ),
+                ),
               ],
             )),
             Container(
@@ -367,7 +505,8 @@ class _FieldState extends State<Field> {
                           //     case 0:
                           //       return 'Tue';
                           //     case 5:
-                          //       return 'Wes';
+
+//       return 'Wes';
                           //     case 7:
                           //       return 'Thur';
                           //     case 9:
@@ -426,7 +565,6 @@ class _FieldState extends State<Field> {
                           switch (value.toInt()) {
                             case 1:
                               return '0';
-
                             case 2:
                               return '5';
                             case 3:
@@ -460,13 +598,36 @@ class _FieldState extends State<Field> {
               ),
             ),
             Container(
+                padding: EdgeInsets.only(right: 250, top: 20),
+                child: const Text(
+                  'Percipitation',
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontFamily: 'Roboto',
+                    fontWeight: FontWeight.w400,
+                  ),
+                  textAlign: TextAlign.left,
+                )),
+            Container(
+                width: 500,
+                height: 300,
+                padding: const EdgeInsets.all(8),
+                child: BarChartPage()
+                // color: Colors.black,
+                ),
+            Container(
+              width: 300,
+              height: 300,
+              color: Colors.white,
+            ),
+            Container(
               width: 300,
               height: 300,
               color: Colors.black,
-            ),
-          ),
-        ],
-      ),
+            )
+          ],
+        ),
+      ]),
     );
   }
 }
