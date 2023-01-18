@@ -11,6 +11,12 @@ class Field extends StatefulWidget {
 }
 
 class _FieldState extends State<Field> {
+  List<String> Sensors = [
+    "45678987654",
+    "45678987654",
+    "45678987654",
+    "45678987654"
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -131,15 +137,18 @@ class _FieldState extends State<Field> {
                 mainAxisSize: MainAxisSize.max,
                 children: <Widget>[
                   Column(
-                    children: const <Widget>[
-                      Text(
-                        '367',
-                        style: TextStyle(
-                            fontSize: 34,
-                            color: Color(0xFF5F676C),
-                            fontFamily: 'Roboto',
-                            fontWeight: FontWeight.w400,
-                            fontStyle: FontStyle.normal),
+                    children: <Widget>[
+                      Container(
+                        padding: EdgeInsets.only(top: 20),
+                        child: Text(
+                          '367',
+                          style: TextStyle(
+                              fontSize: 34,
+                              color: Color(0xFF5F676C),
+                              fontFamily: 'Roboto',
+                              fontWeight: FontWeight.w400,
+                              fontStyle: FontStyle.normal),
+                        ),
                       ),
                       Text(
                         'Current GDD',
@@ -153,15 +162,18 @@ class _FieldState extends State<Field> {
                     ],
                   ),
                   Column(
-                    children: const <Widget>[
-                      Text(
-                        '367',
-                        style: TextStyle(
-                            fontSize: 34,
-                            color: Color(0xFF5F676C),
-                            fontFamily: 'Roboto',
-                            fontWeight: FontWeight.w400,
-                            fontStyle: FontStyle.normal),
+                    children: <Widget>[
+                      Container(
+                        padding: EdgeInsets.only(top: 20),
+                        child: Text(
+                          '367',
+                          style: TextStyle(
+                              fontSize: 34,
+                              color: Color(0xFF5F676C),
+                              fontFamily: 'Roboto',
+                              fontWeight: FontWeight.w400,
+                              fontStyle: FontStyle.normal),
+                        ),
                       ),
                       Text(
                         'Current GDD',
@@ -175,15 +187,18 @@ class _FieldState extends State<Field> {
                     ],
                   ),
                   Column(
-                    children: const <Widget>[
-                      Text(
-                        '367',
-                        style: TextStyle(
-                            fontSize: 34,
-                            color: Color(0xFF5F676C),
-                            fontFamily: 'Roboto',
-                            fontWeight: FontWeight.w400,
-                            fontStyle: FontStyle.normal),
+                    children: <Widget>[
+                      Container(
+                        padding: EdgeInsets.only(top: 20),
+                        child: Text(
+                          '367',
+                          style: TextStyle(
+                              fontSize: 34,
+                              color: Color(0xFF5F676C),
+                              fontFamily: 'Roboto',
+                              fontWeight: FontWeight.w400,
+                              fontStyle: FontStyle.normal),
+                        ),
                       ),
                       Text(
                         'Current GDD',
@@ -199,7 +214,7 @@ class _FieldState extends State<Field> {
                 ],
               )),
           Container(
-            padding: EdgeInsets.only(right: 70, top: 7, bottom: 7),
+            padding: EdgeInsets.only(right: 70, top: 7, bottom: 30),
             child: Text(
               'Last sensor reset: 04/03/22 (auto reset)',
               style: TextStyle(
@@ -211,19 +226,125 @@ class _FieldState extends State<Field> {
             ),
           ),
           Container(
+            padding: EdgeInsets.only(top: 10, bottom: 10),
+            width: 317,
             decoration: BoxDecoration(
                 border: Border(
-              top: BorderSide(width: 1, color: Color(0xFF5F676C)),
-              bottom: BorderSide(width: 1, color: Color(0xFF5F676C)),
+              top: BorderSide(width: 0.1, color: Color(0xFF5F676C)),
+
+              // bottom: BorderSide(width: 1, color: Color(0xFF5F676C)),
             )),
-            child: Column(
+          ),
+          Container(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
-                Row(
-                  children: <Widget>[Text('Sensors')],
-                )
+                Container(
+                  padding: EdgeInsets.only(right: 50),
+                  child: Text(
+                    'Sensors',
+                    style: TextStyle(
+                      fontFamily: 'Roboto',
+                      fontWeight: FontWeight.w700,
+                      fontSize: 16,
+                      color: Color(0xFF20382F),
+                    ),
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.only(left: 50),
+                  child: Row(
+                    children: <Widget>[
+                      IconButton(
+                        icon: Icon(Icons.add),
+                        onPressed: () {},
+                      ),
+                      IconButton(
+                        icon: Icon(Icons.keyboard_arrow_up),
+                        onPressed: () {},
+                      ),
+                    ],
+                  ),
+                ),
               ],
             ),
           ),
+          Container(
+            child: Expanded(
+              child: GridView.builder(
+                gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                    maxCrossAxisExtent: 200,
+                    childAspectRatio: 3 / 2,
+                    crossAxisSpacing: 15.0,
+                    mainAxisSpacing: 15.0),
+                itemCount: Sensors.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return Container(
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Color(0xFFFFFFFF),
+                          // boxShadow: const BoxShadow(),
+                          boxShadow: [
+                            BoxShadow(
+                                color: Color.fromARGB(255, 219, 218, 218),
+                                blurRadius: 5,
+                                offset: Offset.zero,
+                                blurStyle: BlurStyle.normal)
+                          ]),
+                      child: Column(
+                        children: <Widget>[
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: <Widget>[
+                              Container(
+                                // padding: EdgeInsets.only(
+                                // bottom: 20, left: 20, top: 20),
+                                child: Image.asset(
+                                  "Ellipse.png",
+                                  width: 20,
+                                  height: 20,
+                                ),
+                              ),
+                              IconButton(
+                                padding: EdgeInsets.only(left: 70),
+                                onPressed: () => {},
+                                icon: Icon(Icons.more_vert),
+                                color: Color(0xFF5F676C),
+                              )
+                            ],
+                          ),
+                          Container(
+                            alignment: Alignment.centerLeft,
+                            padding: EdgeInsets.only(left: 25, top: 10),
+                            child: Text(
+                              Sensors[index],
+                              style: TextStyle(
+                                fontFamily: 'Roboto',
+                                fontWeight: FontWeight.w500,
+                                fontSize: 16,
+                                color: Color(0xFF5F676C),
+                              ),
+                            ),
+                          ),
+                          Container(
+                            alignment: Alignment.centerLeft,
+                            padding: EdgeInsets.only(left: 25),
+                            child: Text(
+                              "GGD 375",
+                              style: TextStyle(
+                                fontFamily: 'Roboto',
+                                fontWeight: FontWeight.w400,
+                                fontSize: 12,
+                                color: Color(0xFF979797),
+                              ),
+                            ),
+                          )
+                        ],
+                      ));
+                },
+              ),
+            ),
+          )
         ],
       ),
     );
