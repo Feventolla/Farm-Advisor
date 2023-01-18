@@ -711,9 +711,9 @@ class _FieldState extends State<Field> {
                   textAlign: TextAlign.left,
                 )),
             Container(
-                width: 500,
+                width: double.infinity,
                 height: 300,
-                padding: const EdgeInsets.all(8),
+                // padding: const EdgeInsets.all(8),
                 child: BarChartPage()
                 // color: Colors.black,
                 ),
