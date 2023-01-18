@@ -16,8 +16,13 @@ class Field extends StatefulWidget {
 class _FieldState extends State<Field> {
   bool show_sensor = true;
   List<String> GDD = ["375", "455", "not until now", "375"];
+
+  DateTimeRange dateRange =
+      DateTimeRange(start: DateTime(2022, 11, 04), end: DateTime(2022, 11, 10));
   @override
   Widget build(BuildContext context) {
+    final start = dateRange.start;
+    final end = dateRange.end;
     return Scaffold(
       appBar: AppBar(
           backgroundColor: Color(0xFF20382F),
@@ -438,6 +443,71 @@ class _FieldState extends State<Field> {
               ),
             ),
             Container(
+                width: 320,
+                decoration: BoxDecoration(
+                    border: Border(
+                  top: BorderSide(
+                      width: 1, color: Color.fromARGB(255, 224, 227, 229)),
+                  // bottom: BorderSide(width: 1, color: Color(0xFF5F676C)),
+                ))),
+            Container(
+                // padding: EdgeInsets.all(20),
+                child: Column(
+              children: [
+                Container(
+                  padding: EdgeInsets.only(left: 20, top: 20),
+                  child: Row(
+                    children: [
+                      Text(
+                        "Weather forcast   ",
+                        style: TextStyle(
+                            color: Color.fromARGB(255, 100, 99, 99),
+                            fontSize: 18),
+                      ),
+                      Text(
+                        "  Stastics",
+                        style: TextStyle(
+                            color: Color.fromARGB(255, 26, 25, 25),
+                            fontSize: 18),
+                      )
+                    ],
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.only(left: 20, top: 20),
+                  child: Row(
+                    children: [
+                      Text("Period",
+                          style: TextStyle(
+                              fontFamily: 'Roboto',
+                              fontSize: 15,
+                              color: Color.fromARGB(255, 147, 145, 145)))
+                    ],
+                  ),
+                ),
+                Container(
+                  // padding: EdgeInsets.only(top: 10, bottom: 20),
+                  color: Colors.white,
+                  width: 320,
+                  height: 50,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Text(
+                          '${start.year}/${start.month}/${start.day} - ${end.year}/${end.month}/${end.day}'),
+                      IconButton(
+                        icon: Icon(
+                          Icons.calendar_today,
+                          color: Color(0xFF5F676C),
+                        ),
+                        onPressed: datePicker,
+                      ),
+                    ],
+                  ),
+                )
+              ],
+            )),
+            Container(
                 color: Colors.white,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -448,12 +518,12 @@ class _FieldState extends State<Field> {
                           Text(
                             "Mon",
                             style: TextStyle(
-                              color: Color.fromARGB(255, 105, 107, 109),
+                              color: Colors.black,
                               fontSize: 10,
                             ),
                           ),
                           Text(
-                            "data",
+                            "Today",
                             style: TextStyle(
                               color: Color.fromARGB(255, 105, 107, 109),
                               fontSize: 10,
@@ -468,12 +538,12 @@ class _FieldState extends State<Field> {
                           Text(
                             "Tue",
                             style: TextStyle(
-                              color: Color.fromARGB(255, 105, 107, 109),
+                              color: Color.fromARGB(255, 50, 51, 52),
                               fontSize: 10,
                             ),
                           ),
                           Text(
-                            "data",
+                            "May 11",
                             style: TextStyle(
                               color: Color.fromARGB(255, 105, 107, 109),
                               fontSize: 10,
@@ -488,12 +558,12 @@ class _FieldState extends State<Field> {
                           Text(
                             "Wens",
                             style: TextStyle(
-                              color: Color.fromARGB(255, 105, 107, 109),
+                              color: Color.fromARGB(255, 50, 51, 52),
                               fontSize: 10,
                             ),
                           ),
                           Text(
-                            "data",
+                            "May 13",
                             style: TextStyle(
                               color: Color.fromARGB(255, 105, 107, 109),
                               fontSize: 10,
@@ -508,12 +578,12 @@ class _FieldState extends State<Field> {
                           Text(
                             "Thur",
                             style: TextStyle(
-                              color: Color.fromARGB(255, 105, 107, 109),
+                              color: Color.fromARGB(255, 50, 51, 52),
                               fontSize: 10,
                             ),
                           ),
                           Text(
-                            "data",
+                            "May 15",
                             style: TextStyle(
                               color: Color.fromARGB(255, 105, 107, 109),
                               fontSize: 10,
@@ -528,12 +598,12 @@ class _FieldState extends State<Field> {
                           Text(
                             "Fri",
                             style: TextStyle(
-                              color: Color.fromARGB(255, 105, 107, 109),
+                              color: Color.fromARGB(255, 50, 51, 52),
                               fontSize: 10,
                             ),
                           ),
                           Text(
-                            "data",
+                            "May 17",
                             style: TextStyle(
                               color: Color.fromARGB(255, 105, 107, 109),
                               fontSize: 10,
@@ -548,12 +618,12 @@ class _FieldState extends State<Field> {
                           Text(
                             "Sat",
                             style: TextStyle(
-                              color: Color.fromARGB(255, 105, 107, 109),
+                              color: Color.fromARGB(255, 50, 51, 52),
                               fontSize: 10,
                             ),
                           ),
                           Text(
-                            "data",
+                            "May 19 ",
                             style: TextStyle(
                               color: Color.fromARGB(255, 105, 107, 109),
                               fontSize: 10,
@@ -577,9 +647,21 @@ class _FieldState extends State<Field> {
               height: 300,
               child: LineChart(
                 LineChartData(
-                    gridData: FlGridData(
-                      show: false,
-                    ),
+                    gridData: FlGridData(getDrawingHorizontalLine: (value) {
+                      if (value == 0) {
+                        return FlLine(
+                          color: Color.fromARGB(255, 216, 216, 221),
+                          strokeWidth: 0,
+                        );
+                      } else {
+                        return FlLine(
+                          color: Color.fromARGB(255, 208, 208, 212),
+                          strokeWidth: 0.8,
+                        );
+                      }
+                    }, getDrawingVerticalLine: (value) {
+                      return FlLine(color: Color.fromARGB(0, 255, 255, 255));
+                    }),
                     lineTouchData: LineTouchData(enabled: false),
                     borderData: FlBorderData(show: false),
                     titlesData: FlTitlesData(
@@ -622,9 +704,9 @@ class _FieldState extends State<Field> {
                         reservedSize: 35,
                         getTextStyles: (context, value) {
                           return const TextStyle(
-                              color: Color.fromARGB(255, 105, 107, 109),
-                              fontSize: 12,
-                              fontWeight: FontWeight.bold);
+                            color: Color.fromARGB(255, 105, 107, 109),
+                            fontSize: 12,
+                          );
                         },
                         getTitles: (value) {
                           switch (value.toInt()) {
@@ -652,9 +734,9 @@ class _FieldState extends State<Field> {
                         reservedSize: 35,
                         getTextStyles: (context, value) {
                           return const TextStyle(
-                              color: Color.fromARGB(255, 126, 129, 133),
-                              fontSize: 12,
-                              fontWeight: FontWeight.bold);
+                            color: Color.fromARGB(255, 126, 129, 133),
+                            fontSize: 12,
+                          );
                         },
                         getTitles: (value) {
                           switch (value.toInt()) {
@@ -799,8 +881,15 @@ class _FieldState extends State<Field> {
       ]),
     );
   }
-}
 
-Future datePicker() async {
-  // showDateRangePicker(context: context, firstDate: firstDate, lastDate: lastDate)
+  Future datePicker() async {
+    DateTimeRange? newDateRange = await showDateRangePicker(
+        context: context,
+        initialDateRange: dateRange,
+        firstDate: DateTime(1900),
+        lastDate: DateTime(2100));
+
+    if (newDateRange == null) return;
+    setState(() => dateRange = newDateRange);
+  }
 }
