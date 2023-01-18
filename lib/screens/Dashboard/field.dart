@@ -370,7 +370,7 @@ class _FieldState extends State<Field> {
                                                               Widget>[
                                                             ListTile(
                                                               title: Text(
-                                                                  'Reset GDD on all sensors'),
+                                                                  'Reset GDD'),
                                                               tileColor: Color
                                                                   .fromARGB(
                                                                       255,
@@ -437,41 +437,132 @@ class _FieldState extends State<Field> {
               ),
             ),
             Container(
+                color: Colors.white,
                 child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Container(
-                  child: Column(
-                    children: [Text("Mon"), Text("data")],
-                  ),
-                ),
-                Container(
-                  child: Column(
-                    children: [Text("Tue"), Text("data")],
-                  ),
-                ),
-                Container(
-                  child: Column(
-                    children: [Text("Wens"), Text("data")],
-                  ),
-                ),
-                Container(
-                  child: Column(
-                    children: [Text("Thur"), Text("data")],
-                  ),
-                ),
-                Container(
-                  child: Column(
-                    children: [Text("Fri"), Text("data")],
-                  ),
-                ),
-                Container(
-                  child: Column(
-                    children: [Text("Sat"), Text("data")],
-                  ),
-                ),
-              ],
-            )),
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Container(
+                      child: Column(
+                        children: [
+                          Text(
+                            "Mon",
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 105, 107, 109),
+                              fontSize: 10,
+                            ),
+                          ),
+                          Text(
+                            "data",
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 105, 107, 109),
+                              fontSize: 10,
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    Container(
+                      child: Column(
+                        children: [
+                          Text(
+                            "Tue",
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 105, 107, 109),
+                              fontSize: 10,
+                            ),
+                          ),
+                          Text(
+                            "data",
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 105, 107, 109),
+                              fontSize: 10,
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    Container(
+                      child: Column(
+                        children: [
+                          Text(
+                            "Wens",
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 105, 107, 109),
+                              fontSize: 10,
+                            ),
+                          ),
+                          Text(
+                            "data",
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 105, 107, 109),
+                              fontSize: 10,
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    Container(
+                      child: Column(
+                        children: [
+                          Text(
+                            "Thur",
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 105, 107, 109),
+                              fontSize: 10,
+                            ),
+                          ),
+                          Text(
+                            "data",
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 105, 107, 109),
+                              fontSize: 10,
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    Container(
+                      child: Column(
+                        children: [
+                          Text(
+                            "Fri",
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 105, 107, 109),
+                              fontSize: 10,
+                            ),
+                          ),
+                          Text(
+                            "data",
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 105, 107, 109),
+                              fontSize: 10,
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    Container(
+                      child: Column(
+                        children: [
+                          Text(
+                            "Sat",
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 105, 107, 109),
+                              fontSize: 10,
+                            ),
+                          ),
+                          Text(
+                            "data",
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 105, 107, 109),
+                              fontSize: 10,
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ],
+                )),
             Container(
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -485,6 +576,9 @@ class _FieldState extends State<Field> {
               height: 300,
               child: LineChart(
                 LineChartData(
+                    gridData: FlGridData(
+                      show: false,
+                    ),
                     lineTouchData: LineTouchData(enabled: false),
                     borderData: FlBorderData(show: false),
                     titlesData: FlTitlesData(
@@ -527,7 +621,7 @@ class _FieldState extends State<Field> {
                         getTextStyles: (context, value) {
                           return const TextStyle(
                               color: Color.fromARGB(255, 105, 107, 109),
-                              fontSize: 16,
+                              fontSize: 12,
                               fontWeight: FontWeight.bold);
                         },
                         getTitles: (value) {
@@ -557,7 +651,7 @@ class _FieldState extends State<Field> {
                         getTextStyles: (context, value) {
                           return const TextStyle(
                               color: Color.fromARGB(255, 126, 129, 133),
-                              fontSize: 16,
+                              fontSize: 12,
                               fontWeight: FontWeight.bold);
                         },
                         getTitles: (value) {
@@ -581,18 +675,26 @@ class _FieldState extends State<Field> {
                         // margin: 12,
                       ),
                     ),
+                    maxX: 6,
+                    maxY: 6,
+                    minY: 0,
+                    minX: 0,
                     lineBarsData: [
                       LineChartBarData(
                           dotData: FlDotData(show: false),
                           isCurved: true,
                           spots: [
-                            const FlSpot(0, 0),
-                            const FlSpot(5, 5),
-                            const FlSpot(7, 6),
-                            const FlSpot(8, 4),
-                            // const FlSpot(6, 17),
-                            // const FlSpot(7, 15),
-                            // const FlSpot(8, 20)
+                            const FlSpot(0.2, 2),
+                            const FlSpot(0.5, 2.5),
+                            const FlSpot(4, 3),
+                            const FlSpot(4.5, 3.5),
+                            const FlSpot(6, 4),
+                            const FlSpot(6.2, 4.5),
+                            // const FlSpot(8.4, 5),
+                            // const FlSpot(8.6, 5.5),
+                            // const FlSpot(8.8, 6),
+                            // const FlSpot(10, 6.5),
+                            // const FlSpot(10.2, 2)
                           ])
                     ]),
               ),
@@ -617,4 +719,8 @@ class _FieldState extends State<Field> {
       ]),
     );
   }
+}
+
+Future datePicker() async {
+  // showDateRangePicker(context: context, firstDate: firstDate, lastDate: lastDate)
 }
