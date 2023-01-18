@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 
-class Field extends StatefulWidget {
-  const Field({super.key, required this.title});
+class Reset extends StatefulWidget {
+  const Reset({super.key, required this.title});
   final title;
 
   @override
-  State<Field> createState() => _FieldState();
+  State<Reset> createState() => _ResetState();
 }
 
-class _FieldState extends State<Field> {
+class _ResetState extends State<Reset> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -70,7 +70,7 @@ class _FieldState extends State<Field> {
                         color: Color.fromARGB(255, 41, 41, 41),
                       ),
                       Text(
-                        "Farm name two",
+                        "RESET GDD",
                         style: TextStyle(fontSize: 14, fontFamily: 'Robot'),
                       ),
                     ],
@@ -89,45 +89,10 @@ class _FieldState extends State<Field> {
                   Icons.landscape,
                   color: Colors.white,
                 ),
-                Text("127m above sea level"),
+                Text("Reset form"),
               ],
             ),
           ),
-          Container(
-              color: Colors.blue,
-              padding: EdgeInsets.all(25.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  Column(
-                    children: <Widget>[
-                      Text(
-                        '367',
-                        style: TextStyle(fontSize: 40),
-                      ),
-                      Text('Current GDD')
-                    ],
-                  ),
-                  Column(
-                    children: <Widget>[
-                      Text(
-                        '367',
-                        style: TextStyle(fontSize: 40),
-                      ),
-                      Text('Current GDD')
-                    ],
-                  ),
-                  Column(
-                    children: <Widget>[
-                      Text(
-                        '367',
-                        style: TextStyle(fontSize: 40),
-                      ),
-                      Text('Current GDD')
-                    ],
-                  ),
-                ],
-              )),
         ],
       ),
     );
