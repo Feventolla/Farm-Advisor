@@ -1,3 +1,4 @@
+import 'package:farmadvisor/screens/Dashboard/Bar_chart/barchart_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -65,7 +66,6 @@ class _FieldState extends State<Field> {
                       color: Colors.grey,
                       blurRadius: 10,
                       // offset: Offset(5, 10),
-
                       blurStyle: BlurStyle.normal)
                 ],
               ),
@@ -599,7 +599,8 @@ class _FieldState extends State<Field> {
                           //     case 0:
                           //       return 'Tue';
                           //     case 5:
-                          //       return 'Wes';
+
+//       return 'Wes';
                           //     case 7:
                           //       return 'Thur';
                           //     case 9:
@@ -658,7 +659,6 @@ class _FieldState extends State<Field> {
                           switch (value.toInt()) {
                             case 1:
                               return '0';
-
                             case 2:
                               return '5';
                             case 3:
@@ -700,10 +700,23 @@ class _FieldState extends State<Field> {
               ),
             ),
             Container(
-              width: 300,
-              height: 300,
-              color: Colors.black,
-            ),
+                padding: EdgeInsets.only(right: 250, top: 20),
+                child: const Text(
+                  'Percipitation',
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontFamily: 'Roboto',
+                    fontWeight: FontWeight.w400,
+                  ),
+                  textAlign: TextAlign.left,
+                )),
+            Container(
+                width: 500,
+                height: 300,
+                padding: const EdgeInsets.all(8),
+                child: BarChartPage()
+                // color: Colors.black,
+                ),
             Container(
               width: 300,
               height: 300,

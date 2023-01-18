@@ -1,5 +1,6 @@
 import 'package:farmadvisor/screens/Dashboard/FarmDashboard.dart';
 import 'package:farmadvisor/screens/Dashboard/field.dart';
+import 'package:farmadvisor/screens/Dashboard/Bar_chart/widget.dart';
 import 'package:farmadvisor/screens/Home/home.dart';
 import 'package:farmadvisor/screens/Dashboard/field.dart';
 import 'package:farmadvisor/screens/Onboarding/landingpage.dart';
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home:
-          // LandingPage()
+          // HomePage(),
           Field(
         title: null,
       ),
