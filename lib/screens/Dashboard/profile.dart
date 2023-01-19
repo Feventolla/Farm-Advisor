@@ -2,15 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 
-class Field extends StatefulWidget {
-  const Field({super.key, required this.title});
-  final title;
+class Profile extends StatefulWidget {
+  const Profile({super.key});
 
   @override
-  State<Field> createState() => _FieldState();
+  State<Profile> createState() => _ProfileState();
 }
 
-class _FieldState extends State<Field> {
+class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

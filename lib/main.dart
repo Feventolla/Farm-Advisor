@@ -11,6 +11,7 @@ import 'package:farmadvisor/screens/Dashboard/FarmDashboard.dart';
 import 'package:farmadvisor/screens/Dashboard/field.dart';
 import 'package:farmadvisor/screens/Home/home.dart';
 import 'package:farmadvisor/screens/Dashboard/field.dart';
+import 'package:farmadvisor/screens/Dashboard/profile.dart';
 import 'package:farmadvisor/screens/Onboarding/landingpage.dart';
 import 'package:flutter/material.dart';
 
@@ -25,16 +26,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home:
-          // HomePage(),
-          Field(
-        title: null,
-      ),
-    );
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: FarmDashboard()
+        // HomePage(),
+        //     Field(
+        //   title: null,
+        // ),
+        );
   }
 }

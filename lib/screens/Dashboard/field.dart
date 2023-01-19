@@ -506,6 +506,21 @@ class _FieldState extends State<Field> {
                 )
               ],
             )),
+            Row(
+              children: [
+                Container(
+                    padding: EdgeInsets.only(left: 20, top: 20, bottom: 20),
+                    child: const Text(
+                      'Temperature',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontFamily: 'Roboto',
+                        fontWeight: FontWeight.w400,
+                      ),
+                      textAlign: TextAlign.left,
+                    )),
+              ],
+            ),
             Container(
                 color: Colors.white,
                 child: Row(

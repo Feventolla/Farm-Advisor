@@ -69,7 +69,7 @@ class _FarmDashboardState extends State<FarmDashboard> {
                       ),
                       Container(
                         color: Color(0xffEFEFEF),
-                        width: 200,
+                        // width: 200,
                         height: 50,
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -77,7 +77,7 @@ class _FarmDashboardState extends State<FarmDashboard> {
                             Text(
                               "Farm Name",
                               style:
-                                  TextStyle(fontFamily: 'Roboto', fontSize: 24),
+                                  TextStyle(fontFamily: 'Roboto', fontSize: 20),
                             ),
                             Icon(
                               Icons.keyboard_arrow_down,
@@ -93,7 +93,7 @@ class _FarmDashboardState extends State<FarmDashboard> {
                               // child: Container(
                               //   color: Colors.black,
                               // ),
-                              width: 80,
+                              width: 30,
                               // height: 50,
                             ),
                             Icon(
@@ -154,14 +154,12 @@ class _FarmDashboardState extends State<FarmDashboard> {
                 ),
                 Container(
                     child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    SizedBox(
-                      width: 50,
-                    ),
                     Text("Fields",
                         style: TextStyle(fontFamily: 'Roboto', fontSize: 17)),
                     Container(
-                      padding: EdgeInsets.only(left: 300),
+                      // padding: EdgeInsets.only(left: 300),
                       child: Icon(Icons.add),
                     ),
                   ],
