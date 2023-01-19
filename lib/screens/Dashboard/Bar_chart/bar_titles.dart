@@ -7,16 +7,19 @@ class BarTitles {
   static SideTitles getTopBottomTitles() => SideTitles(
         showTitles: true,
         getTextStyles: (context, value) => const TextStyle(
-            color: Color(0xFF20382F),
-            fontSize: 12,
-            fontWeight: FontWeight.w700),
-        margin: 10,
+          color: Color(0xFF20382F),
+          fontSize: 12,
+          fontWeight: FontWeight.w700,
+          // wordSpacing: 1,
+        ),
+
+        // margin: 5,
+
         // getTitles: (double id) => BarData.barData
         //     .firstWhere((element) => element.id == id.toInt())
         //     .name,
-        getTitles: (double id) => BarData.barData
-            .firstWhere((element) => element.id == id.toInt())
-            .name,
+        getTitles: (double id) =>
+            "${BarData.barData.firstWhere((element) => element.id == id.toInt()).name} \n ${BarData.barData.firstWhere((element) => element.id == id.toInt()).day}\n ",
       );
 
   static SideTitles getSideTitles() => SideTitles(
@@ -33,5 +36,18 @@ class BarTitles {
       );
   static SideTitles getLeft() => SideTitles(
         showTitles: false,
+      );
+
+  static SideTitles getBottomTitles() => SideTitles(
+        showTitles: true,
+        getTextStyles: (context, value) => const TextStyle(
+            color: Color(0xFF979797),
+            fontSize: 12,
+            fontWeight: FontWeight.w700),
+        // margin: 15,
+
+        // getTitles: (double id) => BarData.barData
+        //     .firstWhere((element) => element.id == id.toInt())
+        //     .name,
       );
 }

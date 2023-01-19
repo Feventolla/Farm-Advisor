@@ -103,12 +103,12 @@ class BarChartWidget extends StatelessWidget {
               getDrawingHorizontalLine: (value) {
                 if (value == 0) {
                   return FlLine(
-                    color: Color.fromARGB(255, 216, 216, 221),
+                    color: Color.fromARGB(187, 193, 194, 218),
                     strokeWidth: 0,
                   );
                 } else {
                   return FlLine(
-                    color: Color.fromARGB(255, 208, 208, 212),
+                    color: Color.fromARGB(187, 202, 202, 212),
                     strokeWidth: 0.8,
                   );
                 }
@@ -140,5 +140,6 @@ class BarChartWidget extends StatelessWidget {
               )
               .toList(),
         ),
+        
       );
 }
