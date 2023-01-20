@@ -5,6 +5,7 @@ import 'package:farmadvisor/screens/Home/home.dart';
 import 'package:farmadvisor/screens/Dashboard/field.dart';
 import 'package:farmadvisor/screens/Onboarding/landingpage.dart';
 import 'package:farmadvisor/screens/Dashboard/reset.dart';
+import 'package:farmadvisor/screens/Onboarding/termspage.dart';
 import 'package:flutter/material.dart';
 
 import 'package:farmadvisor/screens/Dashboard/FarmDashboard.dart';
@@ -26,17 +27,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home:
-          // FarmDashboard()
-          // HomePage(),
-          Field(
-        title: null,
-      ),
-    );
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home:
+            // FarmDashboard()
+            // HomePage(),
+            TermsPage()
+        //   Field(
+        // title: null,
+        );
   }
 }
