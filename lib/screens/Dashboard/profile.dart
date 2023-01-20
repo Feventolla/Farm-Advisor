@@ -6,6 +6,7 @@ class Profile extends StatefulWidget {
   const Profile({super.key, required this.title});
   final title;
 
+
   @override
   State<Profile> createState() => _ProfileState();
 }
@@ -14,22 +15,6 @@ class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //     backgroundColor: Color(0xFF20382F),
-      //     title: Container(
-      //         width: double.infinity,
-      //         height: 100,
-      //         color: Color(0xFF20382F),
-      //         child: Row(children: [
-
-      //           Container(
-      //             padding: EdgeInsets.only(bottom: 20, top: 20),
-      //             child: Icon(
-      //               Icons.person,
-      //               color: Colors.white,
-      //             ),
-      //           ),
-      //         ]))),
       body: Column(
         children: [
           Container(
