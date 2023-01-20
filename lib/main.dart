@@ -1,16 +1,18 @@
 import 'package:farmadvisor/screens/Dashboard/FarmDashboard.dart';
 import 'package:farmadvisor/screens/Dashboard/field.dart';
+import 'package:farmadvisor/screens/Dashboard/profile.dart';
 import 'package:farmadvisor/screens/Home/home.dart';
 import 'package:farmadvisor/screens/Dashboard/field.dart';
-import 'package:farmadvisor/screens/Onboarding/landingpage.dart';
 import 'package:farmadvisor/screens/Dashboard/reset.dart';
+import 'package:farmadvisor/screens/Dashboard/profile.dart';
 import 'package:flutter/material.dart';
+import 'package:farmadvisor/screens/Dashboard/help.dart';
 
 import 'package:farmadvisor/screens/Dashboard/FarmDashboard.dart';
 import 'package:farmadvisor/screens/Dashboard/field.dart';
 import 'package:farmadvisor/screens/Home/home.dart';
 import 'package:farmadvisor/screens/Dashboard/field.dart';
-import 'package:farmadvisor/screens/Onboarding/landingpage.dart';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -31,7 +33,7 @@ class MyApp extends StatelessWidget {
       ),
       home:
           // LandingPage()
-          Field(
+          Help(
         title: null,
       ),
     );

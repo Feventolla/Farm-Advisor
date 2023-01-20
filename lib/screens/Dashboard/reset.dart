@@ -58,40 +58,85 @@ class _ResetState extends State<Reset> {
                     blurStyle: BlurStyle.normal)
               ],
             ),
+            padding: const EdgeInsets.only(right: 15, left: 15),
             child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   Align(
                       // alignment: Alignment.,
                       child: Row(
                     children: const <Widget>[
                       Icon(
-                        Icons.arrow_back,
-                        color: Color.fromARGB(255, 41, 41, 41),
+                        Icons.keyboard_arrow_left_outlined,
                       ),
                       Text(
                         "RESET GDD",
-                        style: TextStyle(fontSize: 14, fontFamily: 'Robot'),
+                        style: TextStyle(fontSize: 10.5, fontFamily: 'Robot'),
                       ),
                     ],
                   )),
                   Padding(
                     padding: EdgeInsets.only(left: 40),
-                    child: Icon(Icons.more_vert),
+                    child: Icon(
+                      Icons.more_vert,
+                    ),
                   )
                 ]),
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 20.0, top: 8.0),
+            padding: const EdgeInsets.only(left: 20.0, top: 15.0),
             child: Row(
               children: <Widget>[
-                Icon(
-                  Icons.landscape,
-                  color: Colors.white,
+                Text(
+                  "Reset form",
+                  style: TextStyle(fontSize: 10),
                 ),
-                Text("Reset form"),
               ],
             ),
+          ),
+          Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+              child: Card(
+                child: Container(
+                    height: 40,
+                    width: double.infinity,
+                    color: Color(0xFFF5F6F9),
+                    child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Padding(
+                        padding: EdgeInsets.only(
+                            left: 10), //apply padding to all four sides
+                        child: Text(
+                          "11 May 2022",
+                        ),
+                      ),
+                    )),
+              )),
+          Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 10,
+            ),
+            child: Container(
+                height: 40,
+                width: double.infinity,
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Padding(
+                    padding: EdgeInsets.only(
+                        left: 10), //apply padding to all four sides
+                    child: Text(
+                      style: TextStyle(fontSize: 10),
+                      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel fermentum mauris. Proin id erat feugiat, fermentum mi at, aliquet",
+                    ),
+                  ),
+                )),
+          ),
+          const Divider(
+            color: Color.fromRGBO(211, 211, 211, 1),
+            height: 25,
+            thickness: 0.7,
+            indent: 15,
+            endIndent: 15,
           ),
         ],
       ),
