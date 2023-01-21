@@ -13,9 +13,7 @@ class TermsText extends StatelessWidget {
       children: [
         SizedBox(height: 25),
         Row(
-        
         children: [
-        
         SizedBox(width: 23,),
         Text("Terms and Conditions",textAlign: TextAlign.left ,style: TextStyle(
         fontSize: 23,
@@ -23,12 +21,10 @@ class TermsText extends StatelessWidget {
         color: Color.fromARGB(255, 55, 81, 68))),
         ],
         ),
-        
-
       Center(   
         child: Container(
-        margin: const EdgeInsets.only(top:15.0,left: 15,right: 15),
-        padding: const EdgeInsets.only(top:10.0,left: 10,right: 10),
+        margin: const EdgeInsets.only(top:10.0,left: 15,right: 15),
+        padding: const EdgeInsets.only(top:5.0,left: 10,right: 10),
         child:
         Text("Lorem ipsum dolor sit amet, consectetur erat mollis. nec tincidunt. per conubia nostra, per inceptos himenaeos. Ut commodo, nisl quis efficitur tristique, lorem metus commodo erat, a porta massa magna ut risus. Ut congue quam odio, ut tempus nibh maximus at. Integer laoreet sem neque, vel lobortis sapien aliquam eget. Phasellus non magna et elit porttitor vehicula sit amet at nisl. Quisque facilisis placerat commodo. Maecenas interdum, libero pharetra blandit pharetra, urna mauris fermentum lorem, eget mollis velit felis id dolor. Donec eu laoreet diam. Aliquam sed purus id urna convallis mollis non vestibulum libero. Fusce aliquet, turpis eu ultricies bibendum, enim mi mattis enim, eu laoreet nunc tellus quis enim. Ut faucibus convallis tortor sed viverra. Aenean facilisis, sem a convallis blandit, massa ante volutpat velit, sit amet consequat ante leo et leo. Vivamus consectetur bibendum metus nec iaculis. Vivamus eget nibh nunc",
               style: 
@@ -39,6 +35,7 @@ class TermsText extends StatelessWidget {
                 fontWeight: FontWeight.w500,
                 wordSpacing: 0,
                 letterSpacing: 0.5,
+                overflow: TextOverflow.fade,
                 
            ),
           ) 
@@ -48,8 +45,8 @@ class TermsText extends StatelessWidget {
 
        Center(   
         child: Container(
-        margin: const EdgeInsets.only(top:15.0,left: 15,right: 15),
-        padding: const EdgeInsets.only(top:10.0,left: 10,right: 10),
+        margin: const EdgeInsets.only(top:10.0,left: 15,right: 15),
+        padding: const EdgeInsets.only(top:5.0,left: 10,right: 10),
         child:
         Text("Lorem ipsum dolor sit amet, consectetur erat mollis. nec tincidunt. Fusce urna sapien, semper vel nulla sed, viverra imperdiet sapien.Phasellus rhoncus dolor vel blandit eleifend. Integer et rutrum ipsum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Lorem ipsum dolor sit amet, consectetur erat mollis. nec tincidunt. Fusce urna sapien, semper vel nulla sed, viverra imperdiet sapien.Phasellus rhoncus dolor vel blandit eleifend. Integer et rutrum ipsum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
               style: 
@@ -60,6 +57,7 @@ class TermsText extends StatelessWidget {
                 fontWeight: FontWeight.w500,
                 wordSpacing: 0,
                 letterSpacing: 0.5,
+                overflow: TextOverflow.fade,
                 
            ),
           ) 
@@ -81,6 +79,8 @@ class TermsText extends StatelessWidget {
                 fontWeight: FontWeight.w500,
                 wordSpacing: 0,
                 letterSpacing: 0.5,
+                overflow: TextOverflow.fade,
+
                 
            ),
           ) 

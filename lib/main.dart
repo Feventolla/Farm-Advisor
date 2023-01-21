@@ -6,7 +6,9 @@ import 'package:farmadvisor/screens/Home/home.dart';
 import 'package:farmadvisor/screens/Dashboard/field.dart';
 import 'package:farmadvisor/screens/Dashboard/reset.dart';
 import 'package:farmadvisor/screens/Dashboard/profile.dart';
+import 'package:farmadvisor/screens/Onboarding/signin.dart';
 import 'package:farmadvisor/screens/Onboarding/termspage.dart';
+import 'package:farmadvisor/screens/Onboarding/widgets/countryselector.dart';
 import 'package:flutter/material.dart';
 import 'package:farmadvisor/screens/Dashboard/help.dart';
 
@@ -38,7 +40,7 @@ class MyApp extends StatelessWidget {
         home:
             // FarmDashboard()
             // HomePage(),
-            TermsPage()
+            SignIn()
         //   Field(
         // title: null,
         );

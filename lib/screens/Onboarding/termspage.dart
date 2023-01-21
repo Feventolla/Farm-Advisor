@@ -1,4 +1,4 @@
-import 'package:farmadvisor/screens/Onboarding/Bigtext/termtext.dart';
+import 'package:farmadvisor/screens/Onboarding/widgets/termtext.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/src/foundation/key.dart';
@@ -38,7 +38,7 @@ class TermsPage extends StatelessWidget {
                 child: TermsText(),
               ),
               ),
-
+              SizedBox(height: 20),
              RaisedButton(
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10),
