@@ -20,12 +20,14 @@ class TermsPage extends StatelessWidget {
           ),
         ),
         backgroundColor: Colors.white,
-        leading: GestureDetector(
-            onTap: () {},
-            child: Icon(
-              Icons.close,
-            color: Colors.black,
-          )),
+        leading: IconButton(
+      icon: Icon(
+        Icons.arrow_back,
+        color: Color.fromARGB(255, 165, 176, 172),
+      ),
+      onPressed: () {
+        // do something
+      },),
     ),
     body: 
           
