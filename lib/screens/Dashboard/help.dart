@@ -93,7 +93,8 @@ class _HelpState extends State<Help> {
               setState(() {
                 click = !click;
                 isVisible = !isVisible;
-              });
+              }
+              );
             },
             child: Padding(
                 padding:
@@ -122,7 +123,8 @@ class _HelpState extends State<Help> {
                               ),
                             ]),
                       )),
-                ))),
+                )
+                )),
           ),
           Visibility(
             visible: isVisible,
