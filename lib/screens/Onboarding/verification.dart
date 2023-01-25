@@ -38,9 +38,10 @@ class _VerifyState extends State<Verify> {
         child: Form(
           key: formKey,
           child: Column(
+           crossAxisAlignment: CrossAxisAlignment.start,
             children: [
                   Padding(
-                  padding: const EdgeInsets.all(16.0),
+                  padding:  EdgeInsets.symmetric(vertical:16.0, horizontal: 15),
                   child: Text("Verification Code",textAlign: TextAlign.left,
                       style: TextStyle(
                           fontSize: 23,

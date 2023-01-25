@@ -41,10 +41,11 @@ class _SignInState extends State<SignIn> {
         child: Form(
           key: formKey,
           child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
                 child: Padding(
-                  padding: const EdgeInsets.all(16.0),
+                  padding:  EdgeInsets.symmetric(vertical:16.0, horizontal: 15),
                   child: Text("Sign up with your phone number",
                       style: TextStyle(
                           fontSize: 23,
