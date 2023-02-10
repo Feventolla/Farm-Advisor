@@ -65,6 +65,30 @@ class _LoginState extends State<Login> {
                   ),
                 ),
               ),
+               Expanded(
+                child: Align(
+                  alignment: Alignment.bottomCenter,
+                  child: RaisedButton(
+                    color: Color(0xFF275342),
+                    textColor: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    highlightColor: Color.fromARGB(255, 119, 72, 72),
+                    padding:
+                        EdgeInsets.symmetric(vertical: 15, horizontal: 140),
+                    onPressed: () {
+                      final isValidForm = formKey.currentState!.validate();
+                      if (isValidForm){}
+                    },
+                    child: const Text(
+                      'Continue',
+                      style:
+                          TextStyle(fontSize: 17, fontWeight: FontWeight.w400),
+                    ),
+                  ),
+                ),
+              ),
              
               SizedBox(
                 height: 10,
