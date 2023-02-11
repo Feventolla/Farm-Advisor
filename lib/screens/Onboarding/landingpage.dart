@@ -89,18 +89,31 @@ class LandingPage extends StatelessWidget {
             ),
           ),
           SizedBox(height: 80),
-          RaisedButton(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10),
-              ),
-              color: Color(0xFF275342),
+          ElevatedButton(
+              style: ButtonStyle(
+                  textStyle:
+                      MaterialStateProperty.all(TextStyle(color: Colors.white)),
+                  overlayColor: MaterialStateColor.resolveWith(
+                    (states) => Color.fromARGB(255, 119, 72, 72),
+                  ),
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(10)),
+                  )),
+                  padding: MaterialStateProperty.all(
+                      EdgeInsets.symmetric(vertical: 15, horizontal: 100))),
+
+              // shape: RoundedRectangleBorder(
+              //   borderRadius: BorderRadius.circular(10),
+              // ),
+              // color: Color(0xFF275342),
               child: Text(
                 "SIGN UP WITH AGINO",
                 style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
               ),
-              textColor: Colors.white,
-              highlightColor: Color.fromARGB(255, 119, 72, 72),
-              padding: EdgeInsets.symmetric(vertical: 15, horizontal: 100),
+              // textColor: Colors.white,
+              // highlightColor: Color.fromARGB(255, 119, 72, 72),
+              // padding: EdgeInsets.symmetric(vertical: 15, horizontal: 100),
               onPressed: () {
                 context.go('/terms');
                 // save();

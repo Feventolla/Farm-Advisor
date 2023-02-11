@@ -5,6 +5,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
+class PhoneNumberValidator {
+  static validate(value) {
+    return value.isEmpty ? 'phone number can not be empty' : null;
+  }
+}
+
 class SignIn extends StatefulWidget {
   const SignIn({Key? key}) : super(key: key);
 
@@ -78,13 +84,16 @@ class _SignInState extends State<SignIn> {
                   decoration: InputDecoration(
                     labelText: "Enter your phone number",
                   ),
+                  validator: (value) => PhoneNumberValidator.validate(value),
                 ),
               ),
               Expanded(
                 child: Align(
                   alignment: Alignment.bottomCenter,
                   child: RaisedButton(
-                    color: formValid ? Color(0xFF275342): Color.fromARGB(255, 213, 223, 219),
+                    color: formValid
+                        ? Color(0xFF275342)
+                        : Color.fromARGB(255, 213, 223, 219),
                     textColor: Colors.white,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
@@ -92,10 +101,13 @@ class _SignInState extends State<SignIn> {
                     highlightColor: Color.fromARGB(255, 119, 72, 72),
                     padding:
                         EdgeInsets.symmetric(vertical: 15, horizontal: 140),
-                    onPressed:formValid ? () {
-                      final isValidForm = formKey.currentState!.validate();
-                      if (isValidForm) {}
-                    }: null,
+                    onPressed: formValid
+                        ? () {
+                            final isValidForm =
+                                formKey.currentState!.validate();
+                            if (isValidForm) {}
+                          }
+                        : null,
                     child: const Text(
                       'Continue',
                       style:
@@ -104,7 +116,7 @@ class _SignInState extends State<SignIn> {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               )
             ],
