@@ -11,7 +11,7 @@ class Login extends StatefulWidget {
 
 class _LoginState extends State<Login> {
   final formKey = GlobalKey<FormState>();
-
+  bool formValid = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,9 +56,17 @@ class _LoginState extends State<Login> {
                 padding: EdgeInsets.only(left: 8, right: 8),
                 child: TextFormField(
                   autovalidateMode: AutovalidateMode.onUserInteraction,
-                  validator: (value) => value != null && value.length < 8
-                      ? "Enter a valid number"
-                      : null,
+                  onChanged: (value) {
+                    if (value != null && value.length < 6) {
+                      setState(() {
+                        formValid = false;
+                      });
+                    } else {
+                      setState(() {
+                        formValid = true;
+                      });
+                    }
+                  },
                   textInputAction: TextInputAction.next,
                   decoration: InputDecoration(
                     labelText: "Enter your phone number",
@@ -69,7 +77,7 @@ class _LoginState extends State<Login> {
                 child: Align(
                   alignment: Alignment.bottomCenter,
                   child: RaisedButton(
-                    color: Color(0xFF275342),
+                    color: formValid ? Color(0xFF275342): Color.fromARGB(255, 213, 223, 219),
                     textColor: Colors.white,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
@@ -77,10 +85,10 @@ class _LoginState extends State<Login> {
                     highlightColor: Color.fromARGB(255, 119, 72, 72),
                     padding:
                         EdgeInsets.symmetric(vertical: 15, horizontal: 140),
-                    onPressed: () {
+                    onPressed:formValid? () {
                       final isValidForm = formKey.currentState!.validate();
                       if (isValidForm){}
-                    },
+                    }: null,
                     child: const Text(
                       'Continue',
                       style:
