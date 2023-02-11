@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 
 class FarmDashboard extends StatefulWidget {
   FarmDashboard({Key? key}) : super(key: key);
@@ -168,42 +169,48 @@ class _FarmDashboardState extends State<FarmDashboard> {
                 Column(
                   children: [
                     for (var item in list)
-                      Container(
+                      GestureDetector(
+                        onTap: () {
+                          // GoRouter(routes: )
+                        },
                         child: Container(
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                border: Border.all(
-                                    color: Color.fromARGB(255, 220, 218, 218),
-                                    width: 0.5,
-                                    style: BorderStyle.solid),
-                                borderRadius: BorderRadius.circular(15)),
-                            width: 420,
-                            padding: EdgeInsets.all(20),
-                            margin: EdgeInsets.all(5),
-                            // color: Colors.white,
-                            child: Column(
-                              // mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                ListTile(
-                                  leading: CircleAvatar(
-                                    backgroundImage: AssetImage("pingu.jpg"),
-                                    radius: 40,
+                          child: Container(
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  border: Border.all(
+                                      color: Color.fromARGB(255, 220, 218, 218),
+                                      width: 0.5,
+                                      style: BorderStyle.solid),
+                                  borderRadius: BorderRadius.circular(15)),
+                              width: 420,
+                              padding: EdgeInsets.all(20),
+                              margin: EdgeInsets.all(5),
+                              // color: Colors.white,
+                              child: Column(
+                                // mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  ListTile(
+                                    leading: CircleAvatar(
+                                      backgroundImage: AssetImage("pingu.jpg"),
+                                      radius: 40,
+                                    ),
+                                    title: Text(item,
+                                        style: TextStyle(
+                                            fontSize: 13.0,
+                                            color:
+                                                Color.fromARGB(255, 0, 0, 0))),
+                                    subtitle: Text("some description here",
+                                        style: TextStyle(
+                                            fontSize: 8.0,
+                                            color: Color.fromARGB(
+                                                255, 119, 117, 117))),
+                                    trailing: Icon(Icons.keyboard_arrow_right),
                                   ),
-                                  title: Text(item,
-                                      style: TextStyle(
-                                          fontSize: 13.0,
-                                          color: Color.fromARGB(255, 0, 0, 0))),
-                                  subtitle: Text("some description here",
-                                      style: TextStyle(
-                                          fontSize: 8.0,
-                                          color: Color.fromARGB(
-                                              255, 119, 117, 117))),
-                                  trailing: Icon(Icons.keyboard_arrow_right),
-                                ),
-                                Text("Relax its all good")
-                              ],
-                            )),
+                                  Text("Relax its all good")
+                                ],
+                              )),
+                        ),
                       )
                   ],
                 ),
