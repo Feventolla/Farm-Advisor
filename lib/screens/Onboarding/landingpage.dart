@@ -102,7 +102,7 @@ class LandingPage extends StatelessWidget {
               highlightColor: Color.fromARGB(255, 119, 72, 72),
               padding: EdgeInsets.symmetric(vertical: 15, horizontal: 100),
               onPressed: () {
-                context.go('/signin');
+                context.go('/terms');
                 // save();
               }),
           SizedBox(height: 2),
