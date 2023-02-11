@@ -73,11 +73,9 @@ final list = List.generate((40), (val) => "val $val");
     ),
     body: 
           Column(
-<<<<<<< HEAD
+
             children: [
-=======
-             children: [
->>>>>>> 623ff8bf285053daabba5d60afc41961ea4f50f5
+
               Expanded(
                 child: SingleChildScrollView(
                   controller: _controller,
