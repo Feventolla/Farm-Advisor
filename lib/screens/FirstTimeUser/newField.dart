@@ -9,7 +9,7 @@ class newFarm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("New Farm"),
+        title: Text("New Feild"),
       ),
       body: SafeArea(
           child: Column(
