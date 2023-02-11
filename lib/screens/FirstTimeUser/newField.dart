@@ -58,7 +58,7 @@ class newFarm extends StatelessWidget {
                   primary: Color.fromARGB(255, 44, 93, 75),
                   elevation: 3),
               onPressed: () => {},
-              child: Text("CREATE MY FIRST FARM"))
+              child: Text("CREATE NEW FIELD"))
         ],
       )),
     );
