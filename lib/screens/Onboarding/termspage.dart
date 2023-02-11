@@ -64,7 +64,7 @@ final list = List.generate((40), (val) => "val $val");
         backgroundColor: Colors.white,
         leading: IconButton(
       icon: Icon(
-        Icons.arrow_back,
+        Icons.close,
         color: Color.fromARGB(255, 165, 176, 172),
       ),
       onPressed: () {
