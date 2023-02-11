@@ -1,12 +1,34 @@
+import 'dart:js';
+import 'dart:convert';
+
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:go_router/go_router.dart';
 
 class LandingPage extends StatelessWidget {
   const LandingPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    Future save() async {
+      // var res = await http.post(Uri.parse(url),
+      //     headers: {'Content-Type': 'application/json'},
+      //     body: json.encode({
+      //       'firstname': user.firstname,
+      //       'lastname': user.lastname,
+      //       'email': user.email,
+      //       'password': user.password
+      //     }));
+      // print(res.body);
+      // if (res.body != null) {
+      context.go('/signin');
+      // }
+    }
+
     return Scaffold(
       // appBar: AppBar(
       //     backgroundColor: Color(0xFF20382F),
@@ -25,7 +47,7 @@ class LandingPage extends StatelessWidget {
       //               ),
       //             ]))),
 
-      appBar:AppBar(
+      appBar: AppBar(
         toolbarHeight: 60,
         backgroundColor: Color(0xFF20382F),
         leading: Container(
@@ -41,7 +63,8 @@ class LandingPage extends StatelessWidget {
         children: [
           SizedBox(height: 65),
           Center(
-              child: Image.asset('images/mlogo.png',
+              child: Image.asset(
+            'images/mlogo.png',
             width: 203,
             height: 203,
           )),
@@ -78,7 +101,10 @@ class LandingPage extends StatelessWidget {
               textColor: Colors.white,
               highlightColor: Color.fromARGB(255, 119, 72, 72),
               padding: EdgeInsets.symmetric(vertical: 15, horizontal: 100),
-              onPressed: () {}),
+              onPressed: () {
+                context.go('/signin');
+                // save();
+              }),
           SizedBox(height: 2),
           Container(
             margin: EdgeInsets.only(top: 10),

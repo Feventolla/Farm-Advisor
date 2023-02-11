@@ -22,7 +22,7 @@ import 'package:farmadvisor/screens/Home/home.dart';
 import 'package:farmadvisor/screens/Dashboard/field.dart';
 
 import 'package:farmadvisor/screens/Dashboard/profile.dart';
-
+import 'package:go_router/go_router.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -35,16 +35,83 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
-        home: TermsPage()
-        // FarmDashboard()
-        // HomePage(),
-        // title: null,
-        );
+    final _router = GoRouter(
+      routes: [
+        GoRoute(
+            path: '/',
+            pageBuilder: (context, state) => MaterialPage(
+                key: state.pageKey,
+                child: LandingPage(
+                    // title: 'home',
+                    ))),
+        GoRoute(
+            path: '/login',
+            pageBuilder: (context, state) =>
+                MaterialPage(key: state.pageKey, child: Login())),
+        GoRoute(
+            path: '/signin',
+            pageBuilder: (context, state) =>
+                MaterialPage(key: state.pageKey, child: SignIn())),
+        GoRoute(
+            path: '/terms',
+            pageBuilder: (context, state) =>
+                MaterialPage(key: state.pageKey, child: TermsPage())),
+        // GoRoute(
+        //     path: '/updatecourse',
+        //     pageBuilder: (context, state) => MaterialPage(
+        //         key: state.pageKey,
+        //         child: Updatecourse(
+        //           args: CourseArgument(edit: false),
+        //         ))),
+        GoRoute(
+            path: '/farmdashboard',
+            pageBuilder: (context, state) =>
+                MaterialPage(key: state.pageKey, child: FarmDashboard()),
+            routes: [
+              GoRoute(
+                  path: ':id',
+                  pageBuilder: (context, state) {
+                    return MaterialPage(
+                        key: state.pageKey, child: Field(title: ""));
+                  })
+            ]),
+        // GoRoute(
+        //     path: '/dashboard',
+        //     pageBuilder: (context, state) =>
+        //         MaterialPage(key: state.pageKey, child: Dashboard())),
+        // GoRoute(
+        //     path: '/watch_video',
+        //     pageBuilder: (context, state) =>
+        //         MaterialPage(key: state.pageKey, child: VideoDemo())),
+        // GoRoute(
+        //     path: '/error',
+        //     pageBuilder: (context, state) =>
+        //         MaterialPage(key: state.pageKey, child: Error())),
+        // GoRoute(
+        //     path: '/addcourse',
+        //     pageBuilder: (context, state) =>
+        //         MaterialPage(key: state.pageKey, child: FormApp())),
+        // GoRoute(
+        //     path: '/addquiz',
+        //     pageBuilder: (context, state) =>
+        //         MaterialPage(key: state.pageKey, child: QuizFormApp())),
+      ],
+    );
+
+    return MaterialApp.router(
+      routeInformationProvider: _router.routeInformationProvider,
+      routeInformationParser: _router.routeInformationParser,
+      routerDelegate: _router.routerDelegate,
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      // home: LandingPage()
+      // TermsPage()
+      // FarmDashboard()
+      // HomePage(),
+      // title: null,
+    );
   }
 }
