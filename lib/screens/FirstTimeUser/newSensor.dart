@@ -15,6 +15,48 @@ class newSensor extends StatelessWidget {
           child: ListView(
         children: [
           SizedBox(height: 20),
+
+          Padding(
+            padding: const EdgeInsets.fromLTRB(15, 10, 10, 0),
+            child: Container(
+              child: Text("Farm"),
+              alignment: Alignment.topLeft,
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.all(20),
+            child: TextField(
+              decoration: InputDecoration(
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(10))),
+                filled: true,
+                fillColor: Colors.white,
+                hintText: "Farm Name 1",
+                hintStyle: TextStyle(color: Colors.grey),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(15, 10, 10, 0),
+            child: Container(
+              child: Text("Field"),
+              alignment: Alignment.topLeft,
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.all(20),
+            child: TextField(
+              decoration: InputDecoration(
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(10))),
+                filled: true,
+                fillColor: Colors.white,
+                hintText: "Field name 1",
+                hintStyle: TextStyle(color: Colors.grey),
+              ),
+            ),
+          ),
+
           Padding(
             padding: const EdgeInsets.fromLTRB(15, 10, 10, 0),
             child: Container(
@@ -71,7 +113,6 @@ class newSensor extends StatelessWidget {
             padding: EdgeInsets.all(20),
             child: TextField(
               decoration: InputDecoration(
-                
                 border: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(10))),
                 filled: true,
