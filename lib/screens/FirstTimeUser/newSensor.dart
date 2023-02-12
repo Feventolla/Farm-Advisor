@@ -9,6 +9,7 @@ import 'package:http/http.dart' as http;
 import 'package:localstorage/localstorage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+
 class GDDValidator {
   static validate(value) {
     return value.isEmpty ? 'phone can not be empty' : null;
@@ -46,6 +47,7 @@ class NewSensor extends StatefulWidget {
   @override
   State<NewSensor> createState() => _NewSensorState();
 }
+
 
 class _NewSensorState extends State<NewSensor> {
   final formKey = GlobalKey<FormState>();
@@ -107,11 +109,32 @@ class _NewSensorState extends State<NewSensor> {
               fontSize: 17,
             ),
           ),
+
+         // Padding(
+           // padding: EdgeInsets.all(20),
+            //child: TextFormField(
+              //decoration: InputDecoration(
+                //border: OutlineInputBorder(
+                  //  borderRadius: BorderRadius.all(Radius.circular(10))),
+                //filled: true,
+                //fillColor: Colors.white,
+                //hintText: "Farm Name 1",
+                //hintStyle: TextStyle(color: Colors.grey),
+              //),
+            //),
+          //),
+          //Padding(
+            //padding: const EdgeInsets.fromLTRB(15, 10, 10, 0),
+            //child: Container(
+              //child: Text("Field"),
+            //  alignment: Alignment.topLeft,
+
           backgroundColor: Colors.white,
           leading: IconButton(
             icon: Icon(
               Icons.arrow_back,
               color: Color.fromARGB(255, 165, 176, 172),
+
             ),
             onPressed: () {
               context.go('/sensorHome');
@@ -154,6 +177,7 @@ class _NewSensorState extends State<NewSensor> {
                   //     setState(() {
                   //       user.phone = value;
 
+
                   //       formValid = true;
                   //     });
                   //     // return null;
@@ -166,6 +190,7 @@ class _NewSensorState extends State<NewSensor> {
                     labelText: "sensor name",
                   ),
                 ),
+
               ),
               Container(
                 margin: EdgeInsets.only(left: 8, right: 8),
@@ -225,11 +250,13 @@ class _NewSensorState extends State<NewSensor> {
                   // },
                   validator: (value) => LocationValidator.validate(value),
 
+
                   textInputAction: TextInputAction.next,
                   decoration: InputDecoration(
                     labelText: "sensor location",
                   ),
                 ),
+
               ),
               Container(
                 margin: EdgeInsets.only(left: 8, right: 8),
@@ -250,6 +277,7 @@ class _NewSensorState extends State<NewSensor> {
                     //     print(value);
                     //     user.country = value;
 
+
                     //     formValid = true;
                     //   });
                     //   // return null;
@@ -261,6 +289,7 @@ class _NewSensorState extends State<NewSensor> {
                     labelText: "Default GDD",
                   ),
                 ),
+
               ),
               Container(
                 margin: EdgeInsets.only(left: 8, right: 8),
@@ -313,6 +342,7 @@ class _NewSensorState extends State<NewSensor> {
                     //     print(value);
                     //     user.country = value;
 
+
                     //     formValid = true;
                     //   });
                     //   // return null;
@@ -324,6 +354,7 @@ class _NewSensorState extends State<NewSensor> {
                     labelText: "Last cutting date in the field",
                   ),
                 ),
+
               ),
               Expanded(
                 child: Align(

@@ -90,14 +90,18 @@ class _SignInState extends State<SignIn> {
                 ),
               ),
               SizedBox(height: 10),
-              CountrySelector(),
+              // CountrySelector(),
               Container(
                 margin: EdgeInsets.only(left: 8, right: 8),
                 padding: EdgeInsets.only(left: 8, right: 8),
                 child: TextFormField(
+
+                 
+
                   key: ValueKey('country'),
                   controller: TextEditingController(text: user.country),
                   // autovalidateMode: AutovalidateMode.onUserInteraction,
+
                   onChanged: (value) {
                     user.country = value;
                     // if (value != null && value.length < 8) {
@@ -156,6 +160,32 @@ class _SignInState extends State<SignIn> {
                   // validator: (value) => PhoneValidator.validate(value),
                 ),
               ),
+
+              // Expanded(
+              //   child: Align(
+              //     alignment: Alignment.bottomCenter,
+              //     child: RaisedButton(
+              //       color: formValid ? Color(0xFF275342): Color.fromARGB(255, 213, 223, 219),
+              //       textColor: Colors.white,
+              //       shape: RoundedRectangleBorder(
+              //         borderRadius: BorderRadius.circular(10),
+              //       ),
+              //       highlightColor: Color.fromARGB(255, 119, 72, 72),
+              //       padding:
+              //           EdgeInsets.symmetric(vertical: 15, horizontal: 140),
+              //       onPressed:formValid ? () {
+              //         final isValidForm = formKey.currentState!.validate();
+              //         if (isValidForm) {}
+              //       }: null,
+              //       child: const Text(
+              //         'Continue',
+              //         style:
+              //             TextStyle(fontSize: 17, fontWeight: FontWeight.w400),
+              //       ),
+              //     ),
+              //   ),
+              // ),
+
               Expanded(
                 child: Align(
                   alignment: Alignment.bottomCenter,
@@ -181,6 +211,7 @@ class _SignInState extends State<SignIn> {
                   ),
                 ),
               ),
+
               const SizedBox(
                 height: 10,
               )

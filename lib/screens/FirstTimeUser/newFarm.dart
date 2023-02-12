@@ -32,9 +32,11 @@ class NewFarm extends StatefulWidget {
   State<NewFarm> createState() => _NewFarmState();
 }
 
+
 class _NewFarmState extends State<NewFarm> {
   final formKey = GlobalKey<FormState>();
   bool formValid = false;
+
 
   @override
   Widget build(BuildContext context) {
@@ -78,6 +80,7 @@ class _NewFarmState extends State<NewFarm> {
               fontSize: 14,
             ),
           ),
+
           backgroundColor: Colors.white,
           leading: IconButton(
             icon: Icon(
@@ -103,6 +106,7 @@ class _NewFarmState extends State<NewFarm> {
                           fontWeight: FontWeight.w500,
                           color: Color.fromARGB(255, 22, 60, 41))),
                 ),
+
               ),
               SizedBox(height: 10),
               Container(

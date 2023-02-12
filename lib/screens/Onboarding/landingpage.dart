@@ -1,4 +1,4 @@
-import 'dart:js';
+// import 'dart:js';
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
@@ -90,6 +90,7 @@ class LandingPage extends StatelessWidget {
           ),
           SizedBox(height: 80),
           ElevatedButton(
+              key: Key('sign up'),
               style: ButtonStyle(
                   backgroundColor: MaterialStateColor.resolveWith(
                     (states) => Color.fromARGB(255, 2, 74, 16),
