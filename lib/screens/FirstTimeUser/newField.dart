@@ -2,6 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
+class FieldNameValidator {
+  static validate(value) {
+    return value.isEmpty ? "field name can not be empty" : null;
+  }
+}
+
+class AltitudeValidator {
+  static validate(value) {
+    return value.isEmpty ? "altitude can not be empty" : null;
+  }
+}
+
 class newField extends StatelessWidget {
   const newField({Key? key}) : super(key: key);
 
@@ -24,7 +36,9 @@ class newField extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.all(20),
-            child: TextField(
+            child: TextFormField(
+              key: ValueKey('field name'),
+              validator: (value) => FieldNameValidator.validate(value),
               decoration: InputDecoration(
                 border: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(10))),
@@ -41,7 +55,9 @@ class newField extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.all(20),
-            child: TextField(
+            child: TextFormField(
+              key: ValueKey('altitude'),
+              validator: (value) => AltitudeValidator.validate(value),
               decoration: InputDecoration(
                 border: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(10))),
@@ -53,12 +69,13 @@ class newField extends StatelessWidget {
             ),
           ),
           ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                  minimumSize: Size(351, 48),
-                  primary: Color.fromARGB(255, 44, 93, 75),
-                  elevation: 3),
-              onPressed: () => {},
-              child: Text("CREATE NEW FIELD"))
+            style: ElevatedButton.styleFrom(
+                minimumSize: Size(351, 48),
+                primary: Color.fromARGB(255, 44, 93, 75),
+                elevation: 3),
+            onPressed: () => {},
+            child: Text("CREATE NEW FIELD"),
+          )
         ],
       )),
     );

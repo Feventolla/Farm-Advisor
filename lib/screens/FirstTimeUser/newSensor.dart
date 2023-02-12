@@ -2,6 +2,36 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
+class SerialNumberValidator {
+  static validate(value) {
+    return value.isEmpty ? "serial number can not be empty" : null;
+  }
+}
+
+class SensorLocationValidator {
+  static validate(value) {
+    return value.isEmpty ? "sensor location can not be empty" : null;
+  }
+}
+
+class DefaultGGDValidator {
+  static validate(value) {
+    return value.isEmpty ? "default GGD can not be empty" : null;
+  }
+}
+
+class SensorInstallationDateVlidator {
+  static validate(value) {
+    return value.isEmpty ? "sensor installation date can not be empty" : null;
+  }
+}
+
+class LastCuttingDateValidator {
+  static validate(value) {
+    return value.isEmpty ? "last cutting date can not be empty" : null;
+  }
+}
+
 class newSensor extends StatelessWidget {
   const newSensor({Key? key}) : super(key: key);
 
@@ -25,7 +55,7 @@ class newSensor extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.all(20),
-            child: TextField(
+            child: TextFormField(
               decoration: InputDecoration(
                 border: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(10))),
@@ -66,7 +96,9 @@ class newSensor extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.all(20),
-            child: TextField(
+            child: TextFormField(
+              key: ValueKey('serial number'),
+              validator: (value) => SerialNumberValidator.validate(value),
               decoration: InputDecoration(
                 border: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(10))),
@@ -111,7 +143,9 @@ class newSensor extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.all(20),
-            child: TextField(
+            child: TextFormField(
+              key: ValueKey('default GGD'),
+              validator: (value) => DefaultGGDValidator.validate(value),
               decoration: InputDecoration(
                 border: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(10))),
@@ -133,7 +167,10 @@ class newSensor extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.all(20),
-            child: TextField(
+            child: TextFormField(
+              key: ValueKey('sensor initialization date'),
+              validator: (value) =>
+                  SensorInstallationDateVlidator.validate(value),
               decoration: InputDecoration(
                 border: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(10))),
@@ -156,7 +193,9 @@ class newSensor extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.all(20),
-            child: TextField(
+            child: TextFormField(
+              key: ValueKey('Last Cutting Date'),
+              validator: (value) => LastCuttingDateValidator.validate(value),
               decoration: InputDecoration(
                 border: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(10))),

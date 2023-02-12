@@ -2,6 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
+class FarmNameValidator {
+  static validate(value) {
+    return value.isEmpty ? 'farm name can not be empty' : null;
+  }
+}
+
+class LocationValidator {
+  static validate(value) {
+    return value.isEmpty ? 'location can not be empty' : null;
+  }
+}
+
 class newFarm extends StatelessWidget {
   const newFarm({Key? key}) : super(key: key);
 
@@ -24,7 +36,9 @@ class newFarm extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.all(20),
-            child: TextField(
+            child: TextFormField(
+              key: ValueKey('farm name'),
+              validator: (value) => FarmNameValidator.validate(value),
               decoration: InputDecoration(
                 border: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(10))),
@@ -41,7 +55,9 @@ class newFarm extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.all(20),
-            child: TextField(
+            child: TextFormField(
+              key: ValueKey('location'),
+              validator: (value) => LocationValidator.validate(value),
               decoration: InputDecoration(
                 border: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(10))),

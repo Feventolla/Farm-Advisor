@@ -77,19 +77,19 @@ class _TermsPageState extends State<TermsPage> {
           ),
         ),
         SizedBox(height: 20),
-         RaisedButton(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10),
-          ),
-          color:reachEnd? Color(0xFF275342): Color.fromARGB(255, 106, 196, 160),
-          child: Text(
-            "AGREE TO TERMS AND CONDITIONS",
-            style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
-          ),
-          textColor: Colors.white,
-          highlightColor: Color.fromARGB(255, 119, 72, 72),
-          padding: EdgeInsets.symmetric(vertical: 15, horizontal: 60),
-          onPressed: reachEnd? ( ) {} : null),
+        //  RaisedButton(
+        //   shape: RoundedRectangleBorder(
+        //     borderRadius: BorderRadius.circular(10),
+        //   ),
+        //   color:reachEnd? Color(0xFF275342): Color.fromARGB(255, 106, 196, 160),
+        //   child: Text(
+        //     "AGREE TO TERMS AND CONDITIONS",
+        //     style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
+        //   ),
+        //   textColor: Colors.white,
+        //   highlightColor: Color.fromARGB(255, 119, 72, 72),
+        //   padding: EdgeInsets.symmetric(vertical: 15, horizontal: 60),
+        //   onPressed: reachEnd? ( ) {} : null),
 
         SizedBox(height: 10)
       ]),
