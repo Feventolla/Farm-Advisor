@@ -90,7 +90,7 @@ class _SignInState extends State<SignIn> {
                 ),
               ),
               SizedBox(height: 10),
-              // CountrySelector(),
+              CountrySelector(),
               Container(
                 margin: EdgeInsets.only(left: 8, right: 8),
                 padding: EdgeInsets.only(left: 8, right: 8),
