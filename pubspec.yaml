@@ -43,7 +43,7 @@ dependencies:
   http: ^0.13.5
   localstorage: ^4.0.0+1
   test: ^1.21.1
-  flutter_driver: ^0.0.1
+  
   shared_preferences: ^2.0.17
 
   

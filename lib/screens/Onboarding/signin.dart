@@ -12,7 +12,7 @@ import 'package:http/http.dart' as http;
 
 class PhoneValidator {
   static validate(value) {
-    return value.isEmpty ? 'phone can not be empty' : null;
+    return value.isEmpty ? 'phone number can not be empty' : null;
   }
 }
 
@@ -95,9 +95,6 @@ class _SignInState extends State<SignIn> {
                 margin: EdgeInsets.only(left: 8, right: 8),
                 padding: EdgeInsets.only(left: 8, right: 8),
                 child: TextFormField(
-
-                 
-
                   key: ValueKey('country'),
                   controller: TextEditingController(text: user.country),
                   // autovalidateMode: AutovalidateMode.onUserInteraction,
