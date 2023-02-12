@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:go_router/go_router.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -30,9 +31,14 @@ class Home extends StatelessWidget {
                           ),
                           Container(
                             padding: EdgeInsets.only(left: 20),
-                            child: Icon(
-                              Icons.person,
-                              color: Colors.white,
+                            child: IconButton(
+                              onPressed: () {
+                                context.go('/profile');
+                              },
+                              icon: Icon(
+                                Icons.person,
+                                color: Colors.white,
+                              ),
                             ),
                           ),
                         ],
@@ -52,10 +58,12 @@ class Home extends StatelessWidget {
           SizedBox(
             height: 20,
           ),
-          Text(
-            "Wellcome to Agino",
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 50),
-          ),
+          Text("Wellcome to Agino",
+              style: TextStyle(
+                fontSize: 32,
+                fontWeight: FontWeight.bold,
+                color: Color.fromARGB(255, 9, 27, 19),
+              )),
           Container(
             padding: EdgeInsets.fromLTRB(50, 20, 50, 50),
             child: Text(
@@ -68,7 +76,7 @@ class Home extends StatelessWidget {
                   minimumSize: Size(351, 48),
                   primary: Color.fromARGB(255, 44, 93, 75),
                   elevation: 3),
-              onPressed: () => {},
+              onPressed: () => {context.go('/addfarm')},
               child: Text("CREATE MY FIRST FARM"))
         ],
       ),

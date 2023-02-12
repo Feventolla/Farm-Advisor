@@ -114,7 +114,9 @@ class LandingPage extends StatelessWidget {
                 Text("Already have an account?"),
                 SizedBox(width: 5),
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    context.go('/login');
+                  },
                   child: Text(
                     "Log In",
                     style: TextStyle(

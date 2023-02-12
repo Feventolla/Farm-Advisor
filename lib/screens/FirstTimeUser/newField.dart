@@ -1,66 +1,168 @@
+import 'dart:convert';
+
+import 'package:farmadvisor/screens/Dashboard/FarmDashboard.dart';
+import 'package:farmadvisor/screens/Onboarding/termspage.dart';
+import 'package:farmadvisor/screens/models/user.dart';
+import 'package:farmadvisor/screens/Onboarding/widgets/countryselector.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:go_router/go_router.dart';
+import 'package:http/http.dart' as http;
 
-class newField extends StatelessWidget {
-  const newField({Key? key}) : super(key: key);
+class NewField extends StatefulWidget {
+  const NewField({Key? key}) : super(key: key);
+
+  @override
+  State<NewField> createState() => _NewFieldState();
+}
+
+class _NewFieldState extends State<NewField> {
+  final formKey = GlobalKey<FormState>();
+  bool formValid = false;
 
   @override
   Widget build(BuildContext context) {
+    // User user = User(country: '', phonenumber: '');
+
+    Future save() async {
+      var res = await http.post(Uri.parse("url"),
+          headers: {'Content-Type': 'application/json'},
+          body: json.encode({
+            // 'country': user.country,
+            // 'phonenumber': user.phonenumber,
+            // 'email': user.email,
+            // 'password': user.password
+          }));
+      print(res.body);
+      if (res.body != null) {
+        context.go("/catagory");
+      }
+    }
+
     return Scaffold(
       appBar: AppBar(
-        title: Text("New Feild"),
-      ),
-      body: SafeArea(
+          title: Text(
+            "NEW FIELD",
+            style: TextStyle(
+              color: Color.fromARGB(95, 0, 0, 0),
+              fontWeight: FontWeight.bold,
+              fontSize: 14,
+            ),
+          ),
+          backgroundColor: Colors.white,
+          leading: IconButton(
+            icon: Icon(
+              Icons.arrow_back,
+              color: Color.fromARGB(255, 165, 176, 172),
+            ),
+            onPressed: () {
+              context.go('/fieldhome');
+            },
+          )),
+      body: Container(
+        child: Form(
+          key: formKey,
           child: Column(
-        children: [
-          SizedBox(height: 20),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(15, 10, 10, 0),
-            child: Container(
-              child: Text("Field Name"),
-              alignment: Alignment.topLeft,
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.all(20),
-            child: TextField(
-              decoration: InputDecoration(
-                border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(10))),
-                filled: true,
-                fillColor: Colors.white,
-                hintText: "Enter field name",
-                hintStyle: TextStyle(color: Colors.grey),
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 15),
+                  child: Text("create new field",
+                      style: TextStyle(
+                          fontSize: 23,
+                          fontWeight: FontWeight.w500,
+                          color: Color.fromARGB(255, 22, 60, 41))),
+                ),
               ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(15, 0, 0, 0),
-            child: Container(child: Text("Altitude Above Sea Level")),
-          ),
-          Padding(
-            padding: EdgeInsets.all(20),
-            child: TextField(
-              decoration: InputDecoration(
-                border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(10))),
-                filled: true,
-                fillColor: Colors.white,
-                hintText: "Enter in meters",
-                hintStyle: TextStyle(color: Colors.grey),
+              SizedBox(height: 10),
+              Container(
+                margin: EdgeInsets.only(left: 8, right: 8),
+                padding: EdgeInsets.only(left: 8, right: 8),
+                child: TextFormField(
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                  onChanged: (value) {
+                    if (value != null && value.length < 8) {
+                      setState(() {
+                        formValid = false;
+                      });
+                      // return "Enter a valid number";
+                    } else {
+                      setState(() {
+                        formValid = true;
+                      });
+                      // return null;
+                    }
+                  },
+                  textInputAction: TextInputAction.next,
+                  decoration: InputDecoration(
+                    labelText: "Field Name",
+                  ),
+                ),
               ),
-            ),
+              Container(
+                margin: EdgeInsets.only(left: 8, right: 8),
+                padding: EdgeInsets.only(left: 8, right: 8),
+                child: TextFormField(
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                  onChanged: (value) {
+                    if (value != null && value.length < 8) {
+                      setState(() {
+                        formValid = false;
+                      });
+                      // return "Enter a valid number";
+                    } else {
+                      setState(() {
+                        formValid = true;
+                      });
+                      // return null;
+                    }
+                  },
+                  textInputAction: TextInputAction.next,
+                  decoration: InputDecoration(
+                    labelText: "Altitude above sea level",
+                  ),
+                ),
+              ),
+              Expanded(
+                child: Align(
+                  alignment: Alignment.bottomCenter,
+                  child: RaisedButton(
+                    color: formValid
+                        ? Color(0xFF275342)
+                        : Color.fromARGB(255, 213, 223, 219),
+                    textColor: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    highlightColor: Color.fromARGB(255, 119, 72, 72),
+                    padding:
+                        EdgeInsets.symmetric(vertical: 15, horizontal: 140),
+                    onPressed: formValid
+                        ? () {
+                            final isValidForm =
+                                formKey.currentState!.validate();
+                            if (isValidForm) {
+                              context.go('/sensorHome');
+                            }
+                          }
+                        : null,
+                    child: const Text(
+                      'Create',
+                      style:
+                          TextStyle(fontSize: 17, fontWeight: FontWeight.w400),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 10,
+              )
+            ],
           ),
-          ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                  minimumSize: Size(351, 48),
-                  primary: Color.fromARGB(255, 44, 93, 75),
-                  elevation: 3),
-              onPressed: () => {},
-              child: Text("CREATE NEW FIELD"))
-        ],
-      )),
+        ),
+      ),
     );
   }
 }

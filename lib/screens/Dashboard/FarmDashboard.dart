@@ -39,9 +39,14 @@ class _FarmDashboardState extends State<FarmDashboard> {
                           ),
                           Container(
                             padding: EdgeInsets.only(left: 20),
-                            child: Icon(
-                              Icons.person,
-                              color: Colors.white,
+                            child: IconButton(
+                              onPressed: () {
+                                context.go('/profile');
+                              },
+                              icon: Icon(
+                                Icons.person,
+                                color: Colors.white,
+                              ),
                             ),
                           ),
                         ],
