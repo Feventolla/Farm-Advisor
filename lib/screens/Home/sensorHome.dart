@@ -146,7 +146,7 @@ class _SensorHomeState extends State<SensorHome> {
           ),
           CircleAvatar(
             radius: 70,
-            backgroundImage: AssetImage('images/mlogo.png'),
+            backgroundImage: AssetImage('assets/images/mlogo.png'),
           ),
           SizedBox(
             height: 20,
