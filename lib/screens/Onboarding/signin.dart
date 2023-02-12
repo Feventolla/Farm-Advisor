@@ -153,6 +153,7 @@ class _SignInState extends State<SignIn> {
                   decoration: InputDecoration(
                     labelText: "Enter your phone number",
                   ),
+                  validator: (value) => PhoneNumberValidator.validate(value),
                 ),
               ),
               Expanded(
@@ -180,7 +181,7 @@ class _SignInState extends State<SignIn> {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               )
             ],

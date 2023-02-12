@@ -2,6 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
+class VerificationValidator {
+  static validate(value) {
+    return value.isEmpty ? 'verification number can not be empty' : null;
+  }
+}
+
 class Verify extends StatefulWidget {
   const Verify({Key? key}) : super(key: key);
 
@@ -10,50 +16,53 @@ class Verify extends StatefulWidget {
 }
 
 class _VerifyState extends State<Verify> {
-    final formKey = GlobalKey<FormState>();
-    bool formValid = false;
+  final formKey = GlobalKey<FormState>();
+  bool formValid = false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          "SIGN UP",
-          style: TextStyle(
-            color: Color.fromARGB(95, 0, 0, 0),
-            fontWeight: FontWeight.bold,
-            fontSize: 14,
+          title: Text(
+            "SIGN UP",
+            style: TextStyle(
+              color: Color.fromARGB(95, 0, 0, 0),
+              fontWeight: FontWeight.bold,
+              fontSize: 14,
+            ),
           ),
-        ),
-        backgroundColor: Colors.white,
-        leading: IconButton(
-      icon: Icon(
-        Icons.arrow_back,
-        color: Color.fromARGB(255, 165, 176, 172),
-      ),
-      onPressed: () {
-        // do something
-      },)
-      ),
+          backgroundColor: Colors.white,
+          leading: IconButton(
+            icon: Icon(
+              Icons.arrow_back,
+              color: Color.fromARGB(255, 165, 176, 172),
+            ),
+            onPressed: () {
+              // do something
+            },
+          )),
       body: Container(
         child: Form(
           key: formKey,
           child: Column(
-           crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-                  Padding(
-                  padding:  EdgeInsets.symmetric(vertical:16.0, horizontal: 15),
-                  child: Text("Verification Code",textAlign: TextAlign.left,
-                      style: TextStyle(
-                          fontSize: 23,
-                          fontWeight: FontWeight.w500,
-                          color: Color.fromARGB(255, 22, 60, 41))),
-                ),
-              
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 15),
+                child: Text("Verification Code",
+                    textAlign: TextAlign.left,
+                    style: TextStyle(
+                        fontSize: 23,
+                        fontWeight: FontWeight.w500,
+                        color: Color.fromARGB(255, 22, 60, 41))),
+              ),
+
               Container(
+                key: ValueKey('phonenumber'),
                 margin: EdgeInsets.only(left: 8, right: 8),
                 padding: EdgeInsets.only(left: 8, right: 8),
                 child: TextFormField(
+                  validator: (value) => VerificationValidator.validate(value),
                   autovalidateMode: AutovalidateMode.onUserInteraction,
                   onChanged: (value) {
                     if (value != null && value.length < 6) {

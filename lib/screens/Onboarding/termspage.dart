@@ -17,6 +17,9 @@ class _TermsPageState extends State<TermsPage> {
   final list = List.generate((40), (val) => "val $val");
   final ScrollController _controller = new ScrollController();
   var reachEnd = false;
+  final list = List.generate((40), (val) => "val $val");
+  final ScrollController _controller = new ScrollController();
+  var reachEnd = false;
 
   _listener() {
     final maxScroll = _controller.position.maxScrollExtent;
@@ -25,6 +28,21 @@ class _TermsPageState extends State<TermsPage> {
       setState(() {
         reachEnd = true;
       });
+    }
+    _listener() {
+      final maxScroll = _controller.position.maxScrollExtent;
+      final minScroll = _controller.position.minScrollExtent;
+      if (_controller.offset >= maxScroll) {
+        setState(() {
+          reachEnd = true;
+        });
+      }
+
+      if (_controller.offset <= minScroll) {
+        setState(() {
+          reachEnd = false;
+        });
+      }
     }
 
     if (_controller.offset <= minScroll) {
