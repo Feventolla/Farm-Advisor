@@ -92,10 +92,13 @@ class LandingPage extends StatelessWidget {
           ElevatedButton(
               key: Key('sign up'),
               style: ButtonStyle(
+                  backgroundColor: MaterialStateColor.resolveWith(
+                    (states) => Color.fromARGB(255, 2, 74, 16),
+                  ),
                   textStyle:
                       MaterialStateProperty.all(TextStyle(color: Colors.white)),
                   overlayColor: MaterialStateColor.resolveWith(
-                    (states) => Color.fromARGB(255, 119, 72, 72),
+                    (states) => Color.fromARGB(255, 90, 33, 9),
                   ),
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
@@ -128,7 +131,9 @@ class LandingPage extends StatelessWidget {
                 Text("Already have an account?"),
                 SizedBox(width: 5),
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    context.go('/login');
+                  },
                   child: Text(
                     "Log In",
                     style: TextStyle(

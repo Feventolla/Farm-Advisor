@@ -2,10 +2,14 @@ import 'package:farmadvisor/screens/Dashboard/FarmDashboard.dart';
 import 'package:farmadvisor/screens/Dashboard/field.dart';
 import 'package:farmadvisor/screens/Dashboard/profile.dart';
 import 'package:farmadvisor/screens/Dashboard/Bar_chart/widget.dart';
+import 'package:farmadvisor/screens/FirstTimeUser/newFarm.dart';
+import 'package:farmadvisor/screens/FirstTimeUser/newField.dart';
+import 'package:farmadvisor/screens/FirstTimeUser/newSensor.dart';
 import 'package:farmadvisor/screens/Home/home.dart';
 import 'package:farmadvisor/screens/Dashboard/field.dart';
 import 'package:farmadvisor/screens/Dashboard/reset.dart';
 import 'package:farmadvisor/screens/Dashboard/profile.dart';
+import 'package:farmadvisor/screens/Home/sensorHome.dart';
 import 'package:farmadvisor/screens/Onboarding/landingpage.dart';
 import 'package:farmadvisor/screens/Onboarding/login.dart';
 import 'package:farmadvisor/screens/Onboarding/signin.dart';
@@ -19,6 +23,7 @@ import 'package:farmadvisor/screens/Dashboard/help.dart';
 import 'package:farmadvisor/screens/Dashboard/FarmDashboard.dart';
 import 'package:farmadvisor/screens/Dashboard/field.dart';
 import 'package:farmadvisor/screens/Home/home.dart';
+import 'package:farmadvisor/screens/Home/FieldHome.dart';
 import 'package:farmadvisor/screens/Dashboard/field.dart';
 
 import 'package:farmadvisor/screens/Dashboard/profile.dart';
@@ -35,6 +40,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    final Field field;
     final _router = GoRouter(
       routes: [
         GoRoute(
@@ -56,6 +62,38 @@ class MyApp extends StatelessWidget {
             path: '/terms',
             pageBuilder: (context, state) =>
                 MaterialPage(key: state.pageKey, child: TermsPage())),
+        GoRoute(
+            path: '/home',
+            pageBuilder: (context, state) =>
+                MaterialPage(key: state.pageKey, child: Home())),
+        GoRoute(
+            path: '/addfarm',
+            pageBuilder: (context, state) =>
+                MaterialPage(key: state.pageKey, child: NewFarm())),
+        GoRoute(
+            path: '/fieldHome',
+            pageBuilder: (context, state) =>
+                MaterialPage(key: state.pageKey, child: FieldHome())),
+        GoRoute(
+            path: '/addfield',
+            pageBuilder: (context, state) =>
+                MaterialPage(key: state.pageKey, child: NewField())),
+        GoRoute(
+            path: '/sensorHome',
+            pageBuilder: (context, state) =>
+                MaterialPage(key: state.pageKey, child: SensorHome())),
+        // GoRoute(
+        //     path: '/addsensor',
+        //     pageBuilder: (context, state) =>
+        //         MaterialPage(key: state.pageKey, child: NewSensor())),
+        GoRoute(
+            path: '/dashboard',
+            pageBuilder: (context, state) =>
+                MaterialPage(key: state.pageKey, child: FarmDashboard())),
+        GoRoute(
+            path: '/profile',
+            pageBuilder: (context, state) =>
+                MaterialPage(key: state.pageKey, child: Profile())),
         // GoRoute(
         //     path: '/updatecourse',
         //     pageBuilder: (context, state) => MaterialPage(
@@ -64,17 +102,36 @@ class MyApp extends StatelessWidget {
         //           args: CourseArgument(edit: false),
         //         ))),
         GoRoute(
-            path: '/farmdashboard',
-            pageBuilder: (context, state) =>
-                MaterialPage(key: state.pageKey, child: FarmDashboard()),
-            routes: [
-              GoRoute(
-                  path: ':id',
-                  pageBuilder: (context, state) {
-                    return MaterialPage(
-                        key: state.pageKey, child: Field(title: ""));
-                  })
-            ]),
+          path: '/fields/:id',
+          name: 'fields',
+          builder: ((context, state) => Field(
+                id: state.params['id']!,
+              )),
+        ),
+        GoRoute(
+          path: '/field/:id',
+          name: 'field',
+          builder: ((context, state) => NewSensor(
+                id: state.params['id']!,
+              )),
+          // pageBuilder: (context, state) {
+          //   return MaterialPage(key: state.pageKey, child: Field(title: ""));
+          // },
+        ),
+
+        GoRoute(
+          path: '/farmdashboard',
+          pageBuilder: (context, state) =>
+              MaterialPage(key: state.pageKey, child: FarmDashboard()),
+          // routes: [
+          //   GoRoute(
+          //       path: ':id',
+          //       pageBuilder: (context, state) {
+          //         return MaterialPage(
+          //             key: state.pageKey, child: Field(title: ""));
+          //       })
+          // ],
+        ),
         // GoRoute(
         //     path: '/dashboard',
         //     pageBuilder: (context, state) =>

@@ -4,16 +4,110 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:fl_chart/fl_chart.dart';
+import 'package:go_router/go_router.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Field extends StatefulWidget {
-  const Field({super.key, required this.title});
-  final title;
+  final String? id;
+  const Field({Key? key, this.id}) : super(key: key);
 
   @override
-  State<Field> createState() => _FieldState();
+  _FieldState createState() => _FieldState();
 }
 
 class _FieldState extends State<Field> {
+  @override
+  void initState() {
+    super.initState();
+    _fetchField();
+  }
+
+  String _name = '';
+  List _sensor = [];
+  _fetchField() async {
+    final prefs = await SharedPreferences.getInstance();
+    final token = prefs.getString('token');
+
+    var res = await http.get(
+      Uri.parse("https://quaint-kerchief-crab.cyclic.app/field/${widget.id}"),
+      headers: {
+        'Authorization': 'Bearer $token',
+        "content-type": "application/json",
+      },
+    );
+
+    if (res.statusCode == 200) {
+      setState(() {
+        _name = json.decode(res.body)['name'];
+        _sensor = json.decode(res.body)['sensors'];
+      });
+      print(_sensor);
+    } else {
+      throw Exception(
+        "Could not get the farm",
+      );
+    }
+  }
+
+  Future delete(id) async {
+    final prefs = await SharedPreferences.getInstance();
+    final token = prefs.getString('token');
+
+    var res = await http.delete(
+      Uri.parse("https://quaint-kerchief-crab.cyclic.app/sensor/${id}"),
+      headers: {
+        'Authorization': 'Bearer $token',
+        "content-type": "application/json",
+      },
+    );
+
+    if (res.statusCode == 200) {
+      print("deleted");
+      _fetchField();
+
+      //   setState(() {
+      //     _name = json.decode(res.body)['name'];
+      //     _sensor = json.decode(res.body)['sensors'];
+      //   });
+      //   print(_sensor);
+    } else {
+      throw Exception(
+        "Could not get the farm",
+      );
+    }
+  }
+
+  Future deleteField(id) async {
+    final prefs = await SharedPreferences.getInstance();
+    final token = prefs.getString('token');
+
+    var res = await http.delete(
+      Uri.parse("https://quaint-kerchief-crab.cyclic.app/field/${widget.id}"),
+      headers: {
+        'Authorization': 'Bearer $token',
+        "content-type": "application/json",
+      },
+    );
+
+    if (res.statusCode == 200) {
+      print("deleted");
+      // _fetchField();
+      context.go('/dashboard');
+
+      //   setState(() {
+      //     _name = json.decode(res.body)['name'];
+      //     _sensor = json.decode(res.body)['sensors'];
+      //   });
+      //   print(_sensor);
+    } else {
+      throw Exception(
+        "Could not get the farm",
+      );
+    }
+  }
+
   bool show_sensor = true;
   List<String> GDD = ["375", "455", "not until now", "375"];
 
@@ -110,7 +204,7 @@ class _FieldState extends State<Field> {
                                     width: 300,
                                     height: 200,
                                     child: ListView(
-                                      children: const <Widget>[
+                                      children: <Widget>[
                                         ListTile(
                                           title:
                                               Text('Reset GDD on all sensors'),
@@ -118,12 +212,17 @@ class _FieldState extends State<Field> {
                                               255, 251, 248, 248),
                                         ),
                                         ListTile(
-                                          title: Text('Edit sensor'),
+                                          title: Text('Edit field'),
                                           tileColor: Color.fromARGB(
                                               255, 240, 239, 239),
                                         ),
                                         ListTile(
-                                          title: Text('Delete sensor'),
+                                          title: GestureDetector(
+                                            onTap: () {
+                                              deleteField(widget.id);
+                                            },
+                                            child: Text('Delete field'),
+                                          ),
                                           tileColor: Color.fromARGB(
                                               255, 252, 250, 250),
                                         ),
@@ -286,12 +385,14 @@ class _FieldState extends State<Field> {
                         child: Row(
                           children: [
                             IconButton(
-                              icon: Icon(
-                                Icons.add,
-                                color: Color(0xFF5F676C),
-                              ),
-                              onPressed: () {},
-                            ),
+                                icon: Icon(
+                                  Icons.add,
+                                  color: Color(0xFF5F676C),
+                                ),
+                                onPressed: () {
+                                  context.goNamed("field",
+                                      params: {"id": widget.id.toString()});
+                                }),
                             IconButton(
                               icon: (show_sensor
                                   ? Icon(
@@ -322,7 +423,7 @@ class _FieldState extends State<Field> {
                         // padding: EdgeInsets.all(12.0),
                         child: GridView.builder(
                           physics: NeverScrollableScrollPhysics(),
-                          itemCount: GDD.length,
+                          itemCount: _sensor.length,
                           gridDelegate:
                               SliverGridDelegateWithFixedCrossAxisCount(
                                   crossAxisCount: 2,
@@ -372,8 +473,7 @@ class _FieldState extends State<Field> {
                                                         width: 300,
                                                         height: 200,
                                                         child: ListView(
-                                                          children: const <
-                                                              Widget>[
+                                                          children: <Widget>[
                                                             ListTile(
                                                               title: Text(
                                                                   'Reset GDD'),
@@ -395,8 +495,16 @@ class _FieldState extends State<Field> {
                                                                       239),
                                                             ),
                                                             ListTile(
-                                                              title: Text(
-                                                                  'Delete sensor'),
+                                                              title:
+                                                                  GestureDetector(
+                                                                onTap: () {
+                                                                  delete(_sensor[
+                                                                          index]
+                                                                      ["_id"]);
+                                                                },
+                                                                child: Text(
+                                                                    'Delete sensor'),
+                                                              ),
                                                               tileColor: Color
                                                                   .fromARGB(
                                                                       255,
@@ -419,13 +527,13 @@ class _FieldState extends State<Field> {
                                     SizedBox(
                                       height: 20,
                                     ),
-                                    Text("4567982900",
+                                    Text(_sensor[index]["name"],
                                         style: TextStyle(
                                             fontFamily: 'Roboto',
                                             fontWeight: FontWeight.w400,
                                             fontSize: 17,
                                             fontStyle: FontStyle.normal)),
-                                    Text("GDD 375",
+                                    Text("GGD: " + _sensor[index]["GGD"],
                                         style: TextStyle(
                                             fontFamily: 'Roboto',
                                             fontSize: 10,
