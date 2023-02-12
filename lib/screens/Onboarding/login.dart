@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
-
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
 
@@ -17,24 +16,24 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          "BACK",
-          style: TextStyle(
-            color: Color.fromARGB(95, 0, 0, 0),
-            fontWeight: FontWeight.bold,
-            fontSize: 14,
+          title: Text(
+            "BACK",
+            style: TextStyle(
+              color: Color.fromARGB(95, 0, 0, 0),
+              fontWeight: FontWeight.bold,
+              fontSize: 14,
+            ),
           ),
-        ),
-        backgroundColor: Colors.white,
-        leading: IconButton(
-      icon: Icon(
-        Icons.arrow_back,
-        color: Color.fromARGB(255, 165, 176, 172),
-      ),
-      onPressed: () {
-        // do something
-      },)
-      ),
+          backgroundColor: Colors.white,
+          leading: IconButton(
+            icon: Icon(
+              Icons.arrow_back,
+              color: Color.fromARGB(255, 165, 176, 172),
+            ),
+            onPressed: () {
+              // do something
+            },
+          )),
       body: Container(
         child: Form(
           key: formKey,
@@ -43,7 +42,7 @@ class _LoginState extends State<Login> {
             children: [
               Container(
                 child: Padding(
-                  padding:  EdgeInsets.symmetric(vertical:16.0, horizontal: 15),
+                  padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 15),
                   child: Text("Login with your phone number",
                       style: TextStyle(
                           fontSize: 23,
@@ -56,6 +55,7 @@ class _LoginState extends State<Login> {
                 margin: EdgeInsets.only(left: 8, right: 8),
                 padding: EdgeInsets.only(left: 8, right: 8),
                 child: TextFormField(
+                  key: ValueKey('phoneNo'),
                   autovalidateMode: AutovalidateMode.onUserInteraction,
                   onChanged: (value) {
                     if (value != null && value.length < 6) {
@@ -98,7 +98,7 @@ class _LoginState extends State<Login> {
               //     ),
               //   ),
               // ),
-             
+
               SizedBox(
                 height: 10,
               )

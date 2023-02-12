@@ -66,6 +66,7 @@ class _SignInState extends State<SignIn> {
                 margin: EdgeInsets.only(left: 8, right: 8),
                 padding: EdgeInsets.only(left: 8, right: 8),
                 child: TextFormField(
+                  key: ValueKey('sign in'),
                   autovalidateMode: AutovalidateMode.onUserInteraction,
                   onChanged: (value) {
                     if (value != null && value.length < 8) {

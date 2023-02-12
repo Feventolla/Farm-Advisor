@@ -90,6 +90,7 @@ class LandingPage extends StatelessWidget {
           ),
           SizedBox(height: 80),
           ElevatedButton(
+              key: Key('sign up'),
               style: ButtonStyle(
                   textStyle:
                       MaterialStateProperty.all(TextStyle(color: Colors.white)),
