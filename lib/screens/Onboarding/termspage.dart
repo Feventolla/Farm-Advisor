@@ -17,9 +17,9 @@ class _TermsPageState extends State<TermsPage> {
   final list = List.generate((40), (val) => "val $val");
   final ScrollController _controller = new ScrollController();
   var reachEnd = false;
-  final list = List.generate((40), (val) => "val $val");
-  final ScrollController _controller = new ScrollController();
-  var reachEnd = false;
+  // final list = List.generate((40), (val) => "val $val");
+  // final ScrollController _controller = new ScrollController();
+  // var reachEnd = false;
 
   _listener() {
     final maxScroll = _controller.position.maxScrollExtent;

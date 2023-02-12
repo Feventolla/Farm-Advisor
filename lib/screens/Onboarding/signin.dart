@@ -153,7 +153,7 @@ class _SignInState extends State<SignIn> {
                   decoration: InputDecoration(
                     labelText: "Enter your phone number",
                   ),
-                  validator: (value) => PhoneNumberValidator.validate(value),
+                  // validator: (value) => PhoneValidator.validate(value),
                 ),
               ),
               Expanded(

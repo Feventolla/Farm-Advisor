@@ -91,10 +91,13 @@ class LandingPage extends StatelessWidget {
           SizedBox(height: 80),
           ElevatedButton(
               style: ButtonStyle(
+                  backgroundColor: MaterialStateColor.resolveWith(
+                    (states) => Color.fromARGB(255, 2, 74, 16),
+                  ),
                   textStyle:
                       MaterialStateProperty.all(TextStyle(color: Colors.white)),
                   overlayColor: MaterialStateColor.resolveWith(
-                    (states) => Color.fromARGB(255, 119, 72, 72),
+                    (states) => Color.fromARGB(255, 90, 33, 9),
                   ),
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
