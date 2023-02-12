@@ -48,7 +48,6 @@ class MyApp extends StatelessWidget {
             pageBuilder: (context, state) => MaterialPage(
                 key: state.pageKey,
                 child: LandingPage(
-                    // title: 'home',
                     ))),
         GoRoute(
             path: '/login',

@@ -81,30 +81,31 @@ class _VerifyState extends State<Verify> {
                   ),
                 ),
               ),
-              // Expanded(
-              //   child: Align(
-              //     alignment: Alignment.bottomCenter,
-              //     child: RaisedButton(
-              //       color: formValid ? Color(0xFF275342): Color.fromARGB(255, 213, 223, 219),
-              //       textColor: Colors.white,
-              //       shape: RoundedRectangleBorder(
-              //         borderRadius: BorderRadius.circular(10),
-              //       ),
-              //       highlightColor: Color.fromARGB(255, 119, 72, 72),
-              //       padding:
-              //           EdgeInsets.symmetric(vertical: 15, horizontal: 140),
-              //       onPressed: formValid ?() {
-              //         final isValidForm = formKey.currentState!.validate();
-              //         if (isValidForm){}
-              //       }: null,
-              //       child: const Text(
-              //         'Continue',
-              //         style:
-              //             TextStyle(fontSize: 17, fontWeight: FontWeight.w400),
-              //       ),
-              //     ),
-              //   ),
-              // ),
+
+              Expanded(
+                child: Align(
+                  alignment: Alignment.bottomCenter,
+                  child: ElevatedButton(
+                    style: ButtonStyle(
+                      backgroundColor:MaterialStateProperty.all(formValid ? Color(0xFF275342): Color.fromARGB(255, 213, 223, 219)),
+                      foregroundColor: MaterialStateProperty.all(Colors.white),
+                      shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    )),
+                    padding: MaterialStateProperty.all(EdgeInsets.symmetric(vertical: 15, horizontal: 140))
+                    ),  
+                    onPressed:formValid? () {
+                      final isValidForm = formKey.currentState!.validate();
+                      if (isValidForm){}
+                    }: null,
+                    child: const Text(
+                      'Continue',
+                      style:
+                          TextStyle(fontSize: 17, fontWeight: FontWeight.w400),
+                    ),
+                  ),
+                ),
+              ),
               SizedBox(
                 height: 10,
               )

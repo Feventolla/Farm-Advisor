@@ -189,15 +189,15 @@ class _SignInState extends State<SignIn> {
               Expanded(
                 child: Align(
                   alignment: Alignment.bottomCenter,
-                  child: RaisedButton(
-                    color: Color(0xFF275342),
-                    textColor: Colors.white,
-                    shape: RoundedRectangleBorder(
+                  child: ElevatedButton(
+                    style: ButtonStyle(
+                      backgroundColor:MaterialStateProperty.all(formValid ? Color(0xFF275342): Color.fromARGB(255, 213, 223, 219)),
+                      foregroundColor: MaterialStateProperty.all(Colors.white),
+                      shape: MaterialStateProperty.all(RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
-                    ),
-                    highlightColor: Color.fromARGB(255, 3, 73, 2),
-                    padding:
-                        EdgeInsets.symmetric(vertical: 15, horizontal: 140),
+                    )),
+                    padding: MaterialStateProperty.all(EdgeInsets.symmetric(vertical: 15, horizontal: 140))
+                    ),  
                     onPressed: () {
                       if (formKey.currentState!.validate()) {
                         save();
