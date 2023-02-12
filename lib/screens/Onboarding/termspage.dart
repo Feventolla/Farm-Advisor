@@ -101,17 +101,17 @@ class _TermsPageState extends State<TermsPage> {
         ElevatedButton(
           style: ButtonStyle(
                     backgroundColor:MaterialStateProperty.all(reachEnd ? Color(0xFF275342): Color.fromARGB(255, 213, 223, 219)),
-                    foregroundColor: MaterialStateProperty.all(Color(0xFF275342)),
+                    foregroundColor: MaterialStateProperty.all(Color.fromARGB(255, 255, 255, 255)),
                     shape: MaterialStateProperty.all(RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                       
                     )),
-                    padding: MaterialStateProperty.all(EdgeInsets.symmetric(vertical: 15, horizontal: 140))
+                    padding: MaterialStateProperty.all(EdgeInsets.symmetric(vertical: 15, horizontal: 120))
                     ),
                     
           child: Text(
             "AGREE TO TERMS AND CONDITIONS",
-            style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
+            style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600),
           ),
           
           onPressed: reachEnd
