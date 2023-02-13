@@ -1,4 +1,7 @@
-
+import 'package:flutter/material.dart';
+import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:go_router/go_router.dart';
 
 class Profile extends StatefulWidget {
   const Profile({
