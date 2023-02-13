@@ -254,4 +254,4 @@ class _ResetState extends State<Reset> {
       ),
     );
   }
-}.
+}
