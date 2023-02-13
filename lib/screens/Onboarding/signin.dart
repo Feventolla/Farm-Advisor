@@ -83,7 +83,7 @@ class _SignInState extends State<SignIn> {
                       color: Color.fromARGB(255, 22, 60, 41))),
             ),
             const SizedBox(height: 10),
-            const CountrySelector(),
+            // const CountrySelector(),
             Container(
               margin: const EdgeInsets.only(left: 8, right: 8),
               padding: const EdgeInsets.only(left: 8, right: 8),
@@ -122,6 +122,7 @@ class _SignInState extends State<SignIn> {
               ),
             ),
             Expanded(
+              key: Key('signin'),
               child: Align(
                 alignment: Alignment.bottomCenter,
                 child: ElevatedButton(

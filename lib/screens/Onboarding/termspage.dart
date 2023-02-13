@@ -94,6 +94,7 @@ class _TermsPageState extends State<TermsPage> {
         ),
         const SizedBox(height: 20),
         ElevatedButton(
+          key: Key('terms'),
             style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all(reachEnd
                     ? const Color(0xFF275342)

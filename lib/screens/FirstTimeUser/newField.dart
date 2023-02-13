@@ -32,11 +32,9 @@ class NewField extends StatefulWidget {
   State<NewField> createState() => _NewFieldState();
 }
 
-
 class _NewFieldState extends State<NewField> {
   final formKey = GlobalKey<FormState>();
   bool formValid = false;
-
 
   @override
   Widget build(BuildContext context) {
@@ -83,7 +81,6 @@ class _NewFieldState extends State<NewField> {
               fontSize: 14,
             ),
           ),
-
           backgroundColor: Colors.white,
           leading: IconButton(
             icon: Icon(
@@ -109,7 +106,6 @@ class _NewFieldState extends State<NewField> {
                           fontWeight: FontWeight.w500,
                           color: Color.fromARGB(255, 22, 60, 41))),
                 ),
-
               ),
               SizedBox(height: 10),
               Container(
@@ -147,6 +143,7 @@ class _NewFieldState extends State<NewField> {
                 ),
               ),
               Expanded(
+                key: ValueKey('addfield'),
                 child: Align(
                   alignment: Alignment.bottomCenter,
                   child: ElevatedButton(
@@ -196,10 +193,8 @@ class _NewFieldState extends State<NewField> {
               )
             ],
           ),
-
         ),
       ),
-
     );
   }
 }

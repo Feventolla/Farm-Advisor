@@ -160,6 +160,7 @@ class _SensorHomeState extends State<SensorHome> {
             ),
           ),
           ElevatedButton(
+              key: Key('sensor'),
               style: ElevatedButton.styleFrom(
                   minimumSize: const Size(351, 48),
                   primary: const Color.fromARGB(255, 44, 93, 75),

@@ -123,6 +123,7 @@ class _HomeState extends State<Home> {
               ),
             ),
             ElevatedButton(
+                key: Key('addfarm'),
                 style: ElevatedButton.styleFrom(
                     minimumSize: const Size(351, 48),
                     primary: const Color.fromARGB(255, 44, 93, 75),

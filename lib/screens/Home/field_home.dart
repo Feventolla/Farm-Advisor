@@ -168,6 +168,7 @@ class _FieldHomeState extends State<FieldHome> {
             ),
           ),
           ElevatedButton(
+              key: Key('field'),
               style: ElevatedButton.styleFrom(
                   minimumSize: const Size(351, 48),
                   primary: const Color.fromARGB(255, 44, 93, 75),

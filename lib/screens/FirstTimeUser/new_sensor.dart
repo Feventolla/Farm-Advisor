@@ -131,7 +131,7 @@ class _NewSensorState extends State<NewSensor> {
               margin: const EdgeInsets.only(left: 8, right: 8),
               padding: const EdgeInsets.only(left: 8, right: 8),
               child: TextFormField(
-                key: const ValueKey('name'),
+                key: const ValueKey('sensor name'),
                 controller: TextEditingController(text: sensor.name),
                 onChanged: (value) {
                   sensor.name = value;
@@ -181,7 +181,7 @@ class _NewSensorState extends State<NewSensor> {
               margin: const EdgeInsets.only(left: 8, right: 8),
               padding: const EdgeInsets.only(left: 8, right: 8),
               child: TextFormField(
-                key: const ValueKey('location'),
+                key: const ValueKey('sensor   location'),
                 controller: TextEditingController(text: sensor.location),
                 onChanged: (value) {
                   sensor.location = value;
@@ -249,15 +249,18 @@ class _NewSensorState extends State<NewSensor> {
               child: Align(
                 alignment: Alignment.bottomCenter,
                 child: ElevatedButton(
+                  key: const ValueKey('addsensor'),
                   style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(
-                          formValid ? const Color(0xFF275342) : const Color(0xFF275342)),
+                      backgroundColor: MaterialStateProperty.all(formValid
+                          ? const Color(0xFF275342)
+                          : const Color(0xFF275342)),
                       foregroundColor: MaterialStateProperty.all(Colors.white),
                       shape: MaterialStateProperty.all(RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
                       )),
                       padding: MaterialStateProperty.all(
-                          const EdgeInsets.symmetric(vertical: 15, horizontal: 140))),
+                          const EdgeInsets.symmetric(
+                              vertical: 15, horizontal: 140))),
                   onPressed: () {
                     if (formKey.currentState!.validate()) {
                       save();
