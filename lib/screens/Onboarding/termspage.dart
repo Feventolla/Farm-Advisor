@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:go_router/go_router.dart';
 
 class TermsPage extends StatefulWidget {
   const TermsPage({Key? key}) : super(key: key);
@@ -16,6 +17,9 @@ class _TermsPageState extends State<TermsPage> {
   final list = List.generate((40), (val) => "val $val");
   final ScrollController _controller = new ScrollController();
   var reachEnd = false;
+  // final list = List.generate((40), (val) => "val $val");
+  // final ScrollController _controller = new ScrollController();
+  // var reachEnd = false;
 
   _listener() {
     final maxScroll = _controller.position.maxScrollExtent;
@@ -24,6 +28,21 @@ class _TermsPageState extends State<TermsPage> {
       setState(() {
         reachEnd = true;
       });
+    }
+    _listener() {
+      final maxScroll = _controller.position.maxScrollExtent;
+      final minScroll = _controller.position.minScrollExtent;
+      if (_controller.offset >= maxScroll) {
+        setState(() {
+          reachEnd = true;
+        });
+      }
+
+      if (_controller.offset <= minScroll) {
+        setState(() {
+          reachEnd = false;
+        });
+      }
     }
 
     if (_controller.offset <= minScroll) {
@@ -64,7 +83,7 @@ class _TermsPageState extends State<TermsPage> {
             color: Color.fromARGB(255, 165, 176, 172),
           ),
           onPressed: () {
-            // do something
+            context.go('/');
           },
         ),
       ),
@@ -77,19 +96,29 @@ class _TermsPageState extends State<TermsPage> {
           ),
         ),
         SizedBox(height: 20),
-         RaisedButton(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10),
-          ),
-          color:reachEnd? Color(0xFF275342): Color.fromARGB(255, 106, 196, 160),
+
+
+        ElevatedButton(
+          style: ButtonStyle(
+                    backgroundColor:MaterialStateProperty.all(reachEnd ? Color(0xFF275342): Color.fromARGB(255, 213, 223, 219)),
+                    foregroundColor: MaterialStateProperty.all(Color.fromARGB(255, 255, 255, 255)),
+                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                      
+                    )),
+                    padding: MaterialStateProperty.all(EdgeInsets.symmetric(vertical: 15, horizontal: 120))
+                    ),
+                    
           child: Text(
             "AGREE TO TERMS AND CONDITIONS",
-            style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
+            style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600),
           ),
-          textColor: Colors.white,
-          highlightColor: Color.fromARGB(255, 119, 72, 72),
-          padding: EdgeInsets.symmetric(vertical: 15, horizontal: 60),
-          onPressed: reachEnd? ( ) {} : null),
+          
+          onPressed: reachEnd
+                ? () {
+                    context.go('/signin');
+                  }
+                : null),
 
         SizedBox(height: 10)
       ]),

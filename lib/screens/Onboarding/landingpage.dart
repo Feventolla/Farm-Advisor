@@ -1,4 +1,4 @@
-import 'dart:js';
+// import 'dart:js';
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
@@ -53,7 +53,7 @@ class LandingPage extends StatelessWidget {
         leading: Container(
           padding: EdgeInsets.all(10),
           child: Image.asset(
-            'images/clogo.png',
+            'assets/images/clogo.png',
             width: 100,
             height: 100,
           ),
@@ -61,10 +61,10 @@ class LandingPage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          SizedBox(height: 65),
+          SizedBox(height: 205),
           Center(
               child: Image.asset(
-            'images/mlogo.png',
+            'assets/images/mlogo.png',
             width: 203,
             height: 203,
           )),
@@ -88,13 +88,17 @@ class LandingPage extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 80),
+          SizedBox(height: 60),
           ElevatedButton(
+              key: Key('sign up'),
               style: ButtonStyle(
+                  backgroundColor: MaterialStateColor.resolveWith(
+                    (states) => Color.fromARGB(255, 2, 74, 16),
+                  ),
                   textStyle:
                       MaterialStateProperty.all(TextStyle(color: Colors.white)),
                   overlayColor: MaterialStateColor.resolveWith(
-                    (states) => Color.fromARGB(255, 119, 72, 72),
+                    (states) => Color.fromARGB(255, 90, 33, 9),
                   ),
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
@@ -118,7 +122,7 @@ class LandingPage extends StatelessWidget {
                 context.go('/terms');
                 // save();
               }),
-          SizedBox(height: 2),
+          SizedBox(height: 20),
           Container(
             margin: EdgeInsets.only(top: 10),
             child: Row(
@@ -127,7 +131,9 @@ class LandingPage extends StatelessWidget {
                 Text("Already have an account?"),
                 SizedBox(width: 5),
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    context.go('/login');
+                  },
                   child: Text(
                     "Log In",
                     style: TextStyle(

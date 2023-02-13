@@ -11,9 +11,15 @@ class Help extends StatefulWidget {
 }
 
 class _HelpState extends State<Help> {
-  bool isVisible = false;
+  bool isVisible1 = false;
+  bool isVisible2 = false;
+  bool isVisible3 = false;
+  bool isVisible4 = false;
+  bool isVisible5 = false;
+  bool isVisible6 = false;
+  bool isVisible7 = false;
   bool click = true;
-
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -92,9 +98,8 @@ class _HelpState extends State<Help> {
             onTap: () {
               setState(() {
                 click = !click;
-                isVisible = !isVisible;
-              }
-              );
+                isVisible1 = !isVisible1;
+              });
             },
             child: Padding(
                 padding:
@@ -127,7 +132,7 @@ class _HelpState extends State<Help> {
                 )),
           ),
           Visibility(
-            visible: isVisible,
+            visible: isVisible1,
             child: Expanded(
               flex: 1,
               child: Padding(
@@ -151,156 +156,373 @@ class _HelpState extends State<Help> {
                   ))),
             ),
           ),
-          Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-              child: Card(
-                  child: Container(
-                height: 40,
-                width: double.infinity,
-                color: Color(0xFFF5F6F9),
-                child: Align(
-                    alignment: Alignment.centerLeft,
-                    child: Padding(
-                      padding: EdgeInsets.only(
-                          left: 10,
-                          right: 10), //apply padding to all four sides
-                      child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              "Question 2",
-                            ),
-                            Icon(
-                              Icons.keyboard_arrow_down_outlined,
-                            ),
-                          ]),
-                    )),
-              ))),
-          Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-              child: Card(
-                  child: Container(
-                height: 40,
-                width: double.infinity,
-                color: Color(0xFFF5F6F9),
-                child: Align(
-                    alignment: Alignment.centerLeft,
-                    child: Padding(
-                      padding: EdgeInsets.only(
-                          left: 10,
-                          right: 10), //apply padding to all four sides
-                      child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              "Question 3",
-                            ),
-                            Icon(
-                              Icons.keyboard_arrow_down_outlined,
-                            ),
-                          ]),
-                    )),
-              ))),
-          Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-              child: Card(
-                  child: Container(
-                height: 40,
-                width: double.infinity,
-                color: Color(0xFFF5F6F9),
-                child: Align(
-                    alignment: Alignment.centerLeft,
-                    child: Padding(
-                      padding: EdgeInsets.only(
-                          left: 10,
-                          right: 10), //apply padding to all four sides
-                      child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              "Question 4",
-                            ),
-                            Icon(
-                              Icons.keyboard_arrow_down_outlined,
-                            ),
-                          ]),
-                    )),
-              ))),
-          Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-              child: Card(
-                  child: Container(
-                height: 40,
-                width: double.infinity,
-                color: Color(0xFFF5F6F9),
-                child: Align(
-                    alignment: Alignment.centerLeft,
-                    child: Padding(
-                      padding: EdgeInsets.only(
-                          left: 10,
-                          right: 10), //apply padding to all four sides
-                      child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              "Question 5",
-                            ),
-                            Icon(
-                              Icons.keyboard_arrow_down_outlined,
-                            ),
-                          ]),
-                    )),
-              ))),
-          Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-              child: Card(
-                  child: Container(
-                height: 40,
-                width: double.infinity,
-                color: Color(0xFFF5F6F9),
-                child: Align(
-                    alignment: Alignment.centerLeft,
-                    child: Padding(
-                      padding: EdgeInsets.only(
-                          left: 10,
-                          right: 10), //apply padding to all four sides
-                      child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              "Question 6",
-                            ),
-                            Icon(
-                              Icons.keyboard_arrow_down_outlined,
-                            ),
-                          ]),
-                    )),
-              ))),
-          Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-              child: Card(
-                  child: Container(
-                height: 40,
-                width: double.infinity,
-                color: Color(0xFFF5F6F9),
-                child: Align(
-                    alignment: Alignment.centerLeft,
-                    child: Padding(
-                      padding: EdgeInsets.only(
-                          left: 10,
-                          right: 10), //apply padding to all four sides
-                      child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              "Question 7",
-                            ),
-                            Icon(
-                              Icons.keyboard_arrow_down_outlined,
-                            ),
-                          ]),
-                    )),
-              ))),
+          GestureDetector(
+            onTap: () {
+              setState(() {
+                click = !click;
+                isVisible2 = !isVisible2;
+              });
+            },
+            child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                child: Card(
+                    child: Container(
+                  height: 40,
+                  width: double.infinity,
+                  color: Color(0xFFF5F6F9),
+                  child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Padding(
+                        padding: EdgeInsets.only(
+                            left: 10,
+                            right: 10), //apply padding to all four sides
+                        child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "Question 2",
+                              ),
+                              Icon(
+                                (click = false)
+                                    ? Icons.keyboard_arrow_up_outlined
+                                    : Icons.keyboard_arrow_down_outlined,
+                              ),
+                            ]),
+                      )),
+                ))),
+          ),
+          Visibility(
+            visible: isVisible2,
+            child: Expanded(
+              flex: 1,
+              child: Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 0),
+                  child: Card(
+                      child: Container(
+                    height: 100,
+                    width: double.infinity,
+                    color: Color(0xFFF5F6F9),
+                    child: Align(
+                        alignment: Alignment.centerLeft,
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                              left: 10,
+                              right: 10), //apply padding to all four sides
+                          child: Text(
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel fermentum mauris. Proin id erat feugiat, fermentum mi at, aliquet neque. Cras dapibus quam rhoncus, volutpat elit non, sodales leo. Vivamus id bibendum sapien, ac egestas neque. Nunc varius sapien arcu, sit amet imperdiet lorem convallis non.",
+                          ),
+                        )),
+                  ))),
+            ),
+          ),
+          GestureDetector(
+            onTap: () {
+              setState(() {
+                click = !click;
+                isVisible3 = !isVisible3;
+              });
+            },
+            child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                child: Card(
+                    child: Container(
+                  height: 40,
+                  width: double.infinity,
+                  color: Color(0xFFF5F6F9),
+                  child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Padding(
+                        padding: EdgeInsets.only(
+                            left: 10,
+                            right: 10), //apply padding to all four sides
+                        child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "Question 3",
+                              ),
+                              Icon(
+                                (click = false)
+                                    ? Icons.keyboard_arrow_up_outlined
+                                    : Icons.keyboard_arrow_down_outlined,
+                              ),
+                            ]),
+                      )),
+                ))),
+          ),
+          Visibility(
+            visible: isVisible3,
+            child: Expanded(
+              flex: 1,
+              child: Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 0),
+                  child: Card(
+                      child: Container(
+                    height: 100,
+                    width: double.infinity,
+                    color: Color(0xFFF5F6F9),
+                    child: Align(
+                        alignment: Alignment.centerLeft,
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                              left: 10,
+                              right: 10), //apply padding to all four sides
+                          child: Text(
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel fermentum mauris. Proin id erat feugiat, fermentum mi at, aliquet neque. Cras dapibus quam rhoncus, volutpat elit non, sodales leo. Vivamus id bibendum sapien, ac egestas neque. Nunc varius sapien arcu, sit amet imperdiet lorem convallis non.",
+                          ),
+                        )),
+                  ))),
+            ),
+          ),
+          GestureDetector(
+            onTap: () {
+              setState(() {
+                click = !click;
+                isVisible4 = !isVisible4;
+              });
+            },
+            child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                child: Card(
+                    child: Container(
+                  height: 40,
+                  width: double.infinity,
+                  color: Color(0xFFF5F6F9),
+                  child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Padding(
+                        padding: EdgeInsets.only(
+                            left: 10,
+                            right: 10), //apply padding to all four sides
+                        child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "Question 4",
+                              ),
+                              Icon(
+                                (click = false)
+                                    ? Icons.keyboard_arrow_up_outlined
+                                    : Icons.keyboard_arrow_down_outlined,
+                              ),
+                            ]),
+                      )),
+                ))),
+          ),
+          Visibility(
+            visible: isVisible4,
+            child: Expanded(
+              flex: 1,
+              child: Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 0),
+                  child: Card(
+                      child: Container(
+                    height: 100,
+                    width: double.infinity,
+                    color: Color(0xFFF5F6F9),
+                    child: Align(
+                        alignment: Alignment.centerLeft,
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                              left: 10,
+                              right: 10), //apply padding to all four sides
+                          child: Text(
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel fermentum mauris. Proin id erat feugiat, fermentum mi at, aliquet neque. Cras dapibus quam rhoncus, volutpat elit non, sodales leo. Vivamus id bibendum sapien, ac egestas neque. Nunc varius sapien arcu, sit amet imperdiet lorem convallis non.",
+                          ),
+                        )),
+                  ))),
+            ),
+          ),
+          GestureDetector(
+            onTap: () {
+              setState(() {
+                click = !click;
+                isVisible5 = !isVisible5;
+              });
+            },
+            child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                child: Card(
+                    child: Container(
+                  height: 40,
+                  width: double.infinity,
+                  color: Color(0xFFF5F6F9),
+                  child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Padding(
+                        padding: EdgeInsets.only(
+                            left: 10,
+                            right: 10), //apply padding to all four sides
+                        child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "Question 5",
+                              ),
+                              Icon(
+                                (click = false)
+                                    ? Icons.keyboard_arrow_up_outlined
+                                    : Icons.keyboard_arrow_down_outlined,
+                              ),
+                            ]),
+                      )),
+                ))),
+          ),
+          Visibility(
+            visible: isVisible5,
+            child: Expanded(
+              flex: 1,
+              child: Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 0),
+                  child: Card(
+                      child: Container(
+                    height: 100,
+                    width: double.infinity,
+                    color: Color(0xFFF5F6F9),
+                    child: Align(
+                        alignment: Alignment.centerLeft,
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                              left: 10,
+                              right: 10), //apply padding to all four sides
+                          child: Text(
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel fermentum mauris. Proin id erat feugiat, fermentum mi at, aliquet neque. Cras dapibus quam rhoncus, volutpat elit non, sodales leo. Vivamus id bibendum sapien, ac egestas neque. Nunc varius sapien arcu, sit amet imperdiet lorem convallis non.",
+                          ),
+                        )),
+                  ))),
+            ),
+          ),
+          GestureDetector(
+            onTap: () {
+              setState(() {
+                click = !click;
+                isVisible6 = !isVisible6;
+              });
+            },
+            child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                child: Card(
+                    child: Container(
+                  height: 40,
+                  width: double.infinity,
+                  color: Color(0xFFF5F6F9),
+                  child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Padding(
+                        padding: EdgeInsets.only(
+                            left: 10,
+                            right: 10), //apply padding to all four sides
+                        child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "Question 6",
+                              ),
+                              Icon(
+                                (click = false)
+                                    ? Icons.keyboard_arrow_up_outlined
+                                    : Icons.keyboard_arrow_down_outlined,
+                              ),
+                            ]),
+                      )),
+                ))),
+          ),
+          Visibility(
+            visible: isVisible6,
+            child: Expanded(
+              flex: 1,
+              child: Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 0),
+                  child: Card(
+                      child: Container(
+                    height: 100,
+                    width: double.infinity,
+                    color: Color(0xFFF5F6F9),
+                    child: Align(
+                        alignment: Alignment.centerLeft,
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                              left: 10,
+                              right: 10), //apply padding to all four sides
+                          child: Text(
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel fermentum mauris. Proin id erat feugiat, fermentum mi at, aliquet neque. Cras dapibus quam rhoncus, volutpat elit non, sodales leo. Vivamus id bibendum sapien, ac egestas neque. Nunc varius sapien arcu, sit amet imperdiet lorem convallis non.",
+                          ),
+                        )),
+                  ))),
+            ),
+          ),
+          GestureDetector(
+            onTap: () {
+              setState(() {
+                click = !click;
+                isVisible7 = !isVisible7;
+              });
+            },
+            child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                child: Card(
+                    child: Container(
+                  height: 40,
+                  width: double.infinity,
+                  color: Color(0xFFF5F6F9),
+                  child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Padding(
+                        padding: EdgeInsets.only(
+                            left: 10,
+                            right: 10), //apply padding to all four sides
+                        child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "Question 7",
+                              ),
+                              Icon(
+                                (click = false)
+                                    ? Icons.keyboard_arrow_up_outlined
+                                    : Icons.keyboard_arrow_down_outlined,
+                              ),
+                            ]),
+                      )),
+                ))),
+          ),
+          Visibility(
+            visible: isVisible7,
+            child: Expanded(
+              flex: 1,
+              child: Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 0),
+                  child: Card(
+                      child: Container(
+                    height: 100,
+                    width: double.infinity,
+                    color: Color(0xFFF5F6F9),
+                    child: Align(
+                        alignment: Alignment.centerLeft,
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                              left: 10,
+                              right: 10), //apply padding to all four sides
+                          child: Text(
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel fermentum mauris. Proin id erat feugiat, fermentum mi at, aliquet neque. Cras dapibus quam rhoncus, volutpat elit non, sodales leo. Vivamus id bibendum sapien, ac egestas neque. Nunc varius sapien arcu, sit amet imperdiet lorem convallis non.",
+                          ),
+                        )),
+                  ))),
+            ),
+          ),
+          
         ],
       ),
     );

@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:go_router/go_router.dart';
 
 class Profile extends StatefulWidget {
-  const Profile({super.key, required this.title});
-  final title;
-
+  const Profile({
+    super.key,
+  });
+  // final title;
 
   @override
   State<Profile> createState() => _ProfileState();
@@ -19,7 +21,7 @@ class _ProfileState extends State<Profile> {
         children: [
           Container(
             height: 40,
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
               color: Color.fromARGB(247, 250, 250, 246),
               boxShadow: [
                 BoxShadow(
@@ -33,14 +35,19 @@ class _ProfileState extends State<Profile> {
             child: Row(children: <Widget>[
               Align(
                   child: Row(
-                children: const <Widget>[
+                children: <Widget>[
                   SizedBox(
                     width: 20,
                   ),
-                  Icon(
-                    Icons.close,
-                    color: Color.fromARGB(255, 41, 41, 41),
-                    size: 15,
+                  IconButton(
+                    onPressed: () {
+                      context.go('/');
+                    },
+                    icon: Icon(
+                      Icons.close,
+                      color: Color.fromARGB(255, 41, 41, 41),
+                      size: 15,
+                    ),
                   ),
                   SizedBox(
                     width: 10,

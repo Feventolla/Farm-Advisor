@@ -6,7 +6,7 @@ void main() {
   test('', () {});
 
   test('empty phone number returns error', () {
-    var result = PhoneNumberValidator.validate('');
+    var result = PhoneValidator.validate('');
     expect(result, 'phone number can not be empty');
   });
 }

@@ -81,19 +81,20 @@ class _VerifyState extends State<Verify> {
                   ),
                 ),
               ),
+
               Expanded(
                 child: Align(
                   alignment: Alignment.bottomCenter,
-                  child: RaisedButton(
-                    color: formValid ? Color(0xFF275342): Color.fromARGB(255, 213, 223, 219),
-                    textColor: Colors.white,
-                    shape: RoundedRectangleBorder(
+                  child: ElevatedButton(
+                    style: ButtonStyle(
+                      backgroundColor:MaterialStateProperty.all(formValid ? Color(0xFF275342): Color.fromARGB(255, 213, 223, 219)),
+                      foregroundColor: MaterialStateProperty.all(Colors.white),
+                      shape: MaterialStateProperty.all(RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
-                    ),
-                    highlightColor: Color.fromARGB(255, 119, 72, 72),
-                    padding:
-                        EdgeInsets.symmetric(vertical: 15, horizontal: 140),
-                    onPressed: formValid ?() {
+                    )),
+                    padding: MaterialStateProperty.all(EdgeInsets.symmetric(vertical: 15, horizontal: 140))
+                    ),  
+                    onPressed:formValid? () {
                       final isValidForm = formKey.currentState!.validate();
                       if (isValidForm){}
                     }: null,
