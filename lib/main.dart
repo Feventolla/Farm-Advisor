@@ -1,35 +1,18 @@
 import 'package:farmadvisor/screens/Dashboard/FarmDashboard.dart';
 import 'package:farmadvisor/screens/Dashboard/field.dart';
 import 'package:farmadvisor/screens/Dashboard/profile.dart';
-import 'package:farmadvisor/screens/Dashboard/Bar_chart/widget.dart';
 import 'package:farmadvisor/screens/FirstTimeUser/new_farm.dart';
 import 'package:farmadvisor/screens/FirstTimeUser/new_field.dart';
 import 'package:farmadvisor/screens/FirstTimeUser/new_sensor.dart';
 import 'package:farmadvisor/screens/Home/home.dart';
-import 'package:farmadvisor/screens/Dashboard/field.dart';
-import 'package:farmadvisor/screens/Dashboard/reset.dart';
-import 'package:farmadvisor/screens/Dashboard/profile.dart';
 import 'package:farmadvisor/screens/Home/sensorHome.dart';
 import 'package:farmadvisor/screens/Onboarding/landingpage.dart';
 import 'package:farmadvisor/screens/Onboarding/login.dart';
 import 'package:farmadvisor/screens/Onboarding/signin.dart';
 import 'package:farmadvisor/screens/Onboarding/termspage.dart';
-import 'package:farmadvisor/screens/Onboarding/verification.dart';
-import 'package:farmadvisor/screens/Onboarding/widgets/countryselector.dart';
-import 'package:farmadvisor/screens/Onboarding/widgets/termtext.dart';
-import 'package:flutter/material.dart';
-import 'package:farmadvisor/screens/Dashboard/help.dart';
-import 'package:farmadvisor/screens/Dashboard/FarmDashboard.dart';
-import 'package:farmadvisor/screens/Dashboard/field.dart';
-import 'package:farmadvisor/screens/Home/home.dart';
 import 'package:farmadvisor/screens/Home/field_home.dart';
-import 'package:farmadvisor/screens/Dashboard/field.dart';
-import 'package:farmadvisor/screens/Dashboard/profile.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter/material.dart';
-
-
-
 
 void main() {
   runApp(const MyApp());
@@ -41,47 +24,44 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    final Field field;
     final _router = GoRouter(
       routes: [
         GoRoute(
             path: '/',
-            pageBuilder: (context, state) => MaterialPage(
-                key: state.pageKey,
-                child: LandingPage(
-                    ))),
+            pageBuilder: (context, state) =>
+                MaterialPage(key: state.pageKey, child: const LandingPage())),
         GoRoute(
             path: '/login',
             pageBuilder: (context, state) =>
-                MaterialPage(key: state.pageKey, child: Login())),
+                MaterialPage(key: state.pageKey, child: const Login())),
         GoRoute(
             path: '/signin',
             pageBuilder: (context, state) =>
-                MaterialPage(key: state.pageKey, child: SignIn())),
+                MaterialPage(key: state.pageKey, child: const SignIn())),
         GoRoute(
             path: '/terms',
             pageBuilder: (context, state) =>
-                MaterialPage(key: state.pageKey, child: TermsPage())),
+                MaterialPage(key: state.pageKey, child: const TermsPage())),
         GoRoute(
             path: '/home',
             pageBuilder: (context, state) =>
-                MaterialPage(key: state.pageKey, child: Home())),
+                MaterialPage(key: state.pageKey, child: const Home())),
         GoRoute(
             path: '/addfarm',
             pageBuilder: (context, state) =>
-                MaterialPage(key: state.pageKey, child: NewFarm())),
+                MaterialPage(key: state.pageKey, child: const NewFarm())),
         GoRoute(
             path: '/fieldHome',
             pageBuilder: (context, state) =>
-                MaterialPage(key: state.pageKey, child: FieldHome())),
+                MaterialPage(key: state.pageKey, child: const FieldHome())),
         GoRoute(
             path: '/addfield',
             pageBuilder: (context, state) =>
-                MaterialPage(key: state.pageKey, child: NewField())),
+                MaterialPage(key: state.pageKey, child: const NewField())),
         GoRoute(
             path: '/sensorHome',
             pageBuilder: (context, state) =>
-                MaterialPage(key: state.pageKey, child: SensorHome())),
+                MaterialPage(key: state.pageKey, child: const SensorHome())),
         // GoRoute(
         //     path: '/addsensor',
         //     pageBuilder: (context, state) =>
@@ -89,18 +69,12 @@ class MyApp extends StatelessWidget {
         GoRoute(
             path: '/dashboard',
             pageBuilder: (context, state) =>
-                MaterialPage(key: state.pageKey, child: FarmDashboard())),
+                MaterialPage(key: state.pageKey, child: const FarmDashboard())),
         GoRoute(
             path: '/profile',
             pageBuilder: (context, state) =>
-                MaterialPage(key: state.pageKey, child: Profile())),
-        // GoRoute(
-        //     path: '/updatecourse',
-        //     pageBuilder: (context, state) => MaterialPage(
-        //         key: state.pageKey,
-        //         child: Updatecourse(
-        //           args: CourseArgument(edit: false),
-        //         ))),
+                MaterialPage(key: state.pageKey, child: const Profile())),
+
         GoRoute(
           path: '/fields/:id',
           name: 'fields',
@@ -122,36 +96,8 @@ class MyApp extends StatelessWidget {
         GoRoute(
           path: '/farmdashboard',
           pageBuilder: (context, state) =>
-              MaterialPage(key: state.pageKey, child: FarmDashboard()),
-          // routes: [
-          //   GoRoute(
-          //       path: ':id',
-          //       pageBuilder: (context, state) {
-          //         return MaterialPage(
-          //             key: state.pageKey, child: Field(title: ""));
-          //       })
-          // ],
+              MaterialPage(key: state.pageKey, child: const FarmDashboard()),
         ),
-        // GoRoute(
-        //     path: '/dashboard',
-        //     pageBuilder: (context, state) =>
-        //         MaterialPage(key: state.pageKey, child: Dashboard())),
-        // GoRoute(
-        //     path: '/watch_video',
-        //     pageBuilder: (context, state) =>
-        //         MaterialPage(key: state.pageKey, child: VideoDemo())),
-        // GoRoute(
-        //     path: '/error',
-        //     pageBuilder: (context, state) =>
-        //         MaterialPage(key: state.pageKey, child: Error())),
-        // GoRoute(
-        //     path: '/addcourse',
-        //     pageBuilder: (context, state) =>
-        //         MaterialPage(key: state.pageKey, child: FormApp())),
-        // GoRoute(
-        //     path: '/addquiz',
-        //     pageBuilder: (context, state) =>
-        //         MaterialPage(key: state.pageKey, child: QuizFormApp())),
       ],
     );
 

@@ -54,13 +54,14 @@ class _NewFarmState extends State<NewFarm> {
           res.statusCode != 404 &&
           res.statusCode != 401 &&
           res.statusCode != 500) {
+        // ignore: use_build_context_synchronously
         context.go("/fieldHome");
       }
     }
 
     return Scaffold(
       appBar: AppBar(
-          title: Text(
+          title: const Text(
             "NEW FARM",
             style: TextStyle(
               color: Color.fromARGB(95, 0, 0, 0),
@@ -70,7 +71,7 @@ class _NewFarmState extends State<NewFarm> {
           ),
           backgroundColor: Colors.white,
           leading: IconButton(
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_back,
               color: Color.fromARGB(255, 165, 176, 172),
             ),
@@ -78,82 +79,78 @@ class _NewFarmState extends State<NewFarm> {
               context.go('/home');
             },
           )),
-      body: Container(
-        child: Form(
-          key: formKey,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                child: Padding(
-                  padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 15),
-                  child: Text("create new farm",
-                      style: TextStyle(
-                          fontSize: 23,
-                          fontWeight: FontWeight.w500,
-                          color: Color.fromARGB(255, 22, 60, 41))),
+      body: Form(
+        key: formKey,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Padding(
+              padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 15),
+              child: Text("create new farm",
+                  style: TextStyle(
+                      fontSize: 23,
+                      fontWeight: FontWeight.w500,
+                      color: Color.fromARGB(255, 22, 60, 41))),
+            ),
+            const SizedBox(height: 10),
+            Container(
+              margin: const EdgeInsets.only(left: 8, right: 8),
+              padding: const EdgeInsets.only(left: 8, right: 8),
+              child: TextFormField(
+                key: const ValueKey('name'),
+                controller: TextEditingController(text: farm.name),
+                // autovalidateMode: AutovalidateMode.onUserInteraction,
+                onChanged: (value) {
+                  farm.name = value;
+                },
+                validator: (value) => FarmNameValidator.validate(value),
+                textInputAction: TextInputAction.next,
+                decoration: const InputDecoration(
+                  labelText: "Farm name",
                 ),
               ),
-              SizedBox(height: 10),
-              Container(
-                margin: EdgeInsets.only(left: 8, right: 8),
-                padding: EdgeInsets.only(left: 8, right: 8),
-                child: TextFormField(
-                  key: ValueKey('name'),
-                  controller: TextEditingController(text: farm.name),
-                  // autovalidateMode: AutovalidateMode.onUserInteraction,
-                  onChanged: (value) {
-                    farm.name = value;
+            ),
+            Container(
+              margin: const EdgeInsets.only(left: 8, right: 8),
+              padding: const EdgeInsets.only(left: 8, right: 8),
+              child: TextFormField(
+                key: const ValueKey('location'),
+                controller: TextEditingController(text: farm.location),
+                onChanged: (value) {
+                  farm.location = value;
+                },
+                validator: (value) => LocationValidator.validate(value),
+                textInputAction: TextInputAction.next,
+                decoration: const InputDecoration(
+                  labelText: "location",
+                ),
+              ),
+            ),
+            Expanded(
+              child: Align(
+                alignment: Alignment.bottomCenter,
+                child: ElevatedButton(
+                  onPressed: () {
+                    if (formKey.currentState!.validate()) {
+                      save();
+                    }
                   },
-                  validator: (value) => FarmNameValidator.validate(value),
-                  textInputAction: TextInputAction.next,
-                  decoration: InputDecoration(
-                    labelText: "Farm name",
-                  ),
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.only(left: 8, right: 8),
-                padding: EdgeInsets.only(left: 8, right: 8),
-                child: TextFormField(
-                  key: ValueKey('location'),
-                  controller: TextEditingController(text: farm.location),
-                  onChanged: (value) {
-                    farm.location = value;
-                  },
-                  validator: (value) => LocationValidator.validate(value),
-                  textInputAction: TextInputAction.next,
-                  decoration: InputDecoration(
-                    labelText: "location",
-                  ),
-                ),
-              ),
-              Expanded(
-                child: Align(
-                  alignment: Alignment.bottomCenter,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      if (formKey.currentState!.validate()) {
-                        save();
-                      }
-                    },
-                    child: Text('Create'),
-                    style: ElevatedButton.styleFrom(
-                      primary: Color.fromARGB(255, 22, 60, 41),
-                      onPrimary: Colors.white,
-                      minimumSize: Size(140, 50),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
+                  style: ElevatedButton.styleFrom(
+                    primary: const Color.fromARGB(255, 22, 60, 41),
+                    onPrimary: Colors.white,
+                    minimumSize: const Size(140, 50),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
                     ),
                   ),
+                  child: const Text('Create'),
                 ),
               ),
-              SizedBox(
-                height: 10,
-              )
-            ],
-          ),
+            ),
+            const SizedBox(
+              height: 10,
+            )
+          ],
         ),
       ),
     );
