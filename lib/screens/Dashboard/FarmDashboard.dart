@@ -1,10 +1,8 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:go_router/go_router.dart';
 
 class FarmDashboard extends StatefulWidget {
-  FarmDashboard({Key? key}) : super(key: key);
+  const FarmDashboard({Key? key}) : super(key: key);
 
   @override
   State<FarmDashboard> createState() => _FarmDashboardState();
@@ -16,36 +14,34 @@ class _FarmDashboardState extends State<FarmDashboard> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          backgroundColor: Color(0xFF20382F),
+          backgroundColor: const Color(0xFF20382F),
           title: Container(
               width: double.infinity,
               height: 100,
-              color: Color(0xFF20382F),
+              color: const Color(0xFF20382F),
               child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Container(
-                      padding: EdgeInsets.only(bottom: 20, left: 20, top: 20),
+                      padding: const EdgeInsets.only(bottom: 20, left: 20, top: 20),
                       child: Image.asset(
                         "Agino_logo_green_RGB_300dpi.png",
                       ),
                     ),
-                    Container(
-                      child: Row(
-                        children: [
-                          Icon(
-                            Icons.add,
+                    Row(
+                      children: [
+                        const Icon(
+                          Icons.add,
+                          color: Colors.white,
+                        ),
+                        Container(
+                          padding: const EdgeInsets.only(left: 20),
+                          child: const Icon(
+                            Icons.person,
                             color: Colors.white,
                           ),
-                          Container(
-                            padding: EdgeInsets.only(left: 20),
-                            child: Icon(
-                              Icons.person,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                     // Container(
                     // padding: EdgeInsets.only(bottom: 20, top: 20),
@@ -60,22 +56,22 @@ class _FarmDashboardState extends State<FarmDashboard> {
             Column(
               children: [
                 Container(
-                  padding: EdgeInsets.all(40),
+                  padding: const EdgeInsets.all(40),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      CircleAvatar(
+                      const CircleAvatar(
                         backgroundImage: AssetImage("pingu.jpg"),
                         radius: 30,
                       ),
                       Container(
-                        color: Color(0xffEFEFEF),
+                        color: const Color(0xffEFEFEF),
                         // width: 200,
                         height: 50,
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Text(
+                          children: const [
+                             Text(
                               "Farm Name",
                               style:
                                   TextStyle(fontFamily: 'Roboto', fontSize: 20),
@@ -87,22 +83,20 @@ class _FarmDashboardState extends State<FarmDashboard> {
                           ],
                         ),
                       ),
-                      Container(
-                        child: Row(
-                          children: [
-                            SizedBox(
-                              // child: Container(
-                              //   color: Colors.black,
-                              // ),
-                              width: 30,
-                              // height: 50,
-                            ),
-                            Icon(
-                              Icons.more_vert,
-                              color: Colors.black54,
-                            ),
-                          ],
-                        ),
+                      Row(
+                        children: const [
+                          SizedBox(
+                            // child: Container(
+                            //   color: Colors.black,
+                            // ),
+                            width: 30,
+                            // height: 50,
+                          ),
+                          Icon(
+                            Icons.more_vert,
+                            color: Colors.black54,
+                          ),
+                        ],
                       )
                     ],
                   ),

@@ -7,6 +7,8 @@ import 'bar_titles.dart';
 class SnowWidget extends StatelessWidget {
   final double barWidth = 40;
 
+  const SnowWidget({super.key});
+
   @override
   Widget build(BuildContext context) => BarChart(
         BarChartData(
@@ -28,18 +30,18 @@ class SnowWidget extends StatelessWidget {
               getDrawingHorizontalLine: (value) {
                 if (value == 0) {
                   return FlLine(
-                    color: Color.fromARGB(187, 193, 194, 218),
+                    color: const Color.fromARGB(187, 193, 194, 218),
                     strokeWidth: 0,
                   );
                 } else {
                   return FlLine(
-                    color: Color.fromARGB(187, 202, 202, 212),
+                    color: const Color.fromARGB(187, 202, 202, 212),
                     strokeWidth: 0.8,
                   );
                 }
               },
               getDrawingVerticalLine: (value) {
-                return FlLine(color: Color.fromARGB(0, 255, 255, 255));
+                return FlLine(color: const Color.fromARGB(0, 255, 255, 255));
               }),
           barGroups: SnowData.snowData
               .map(
@@ -51,11 +53,11 @@ class SnowWidget extends StatelessWidget {
                       width: barWidth,
                       colors: [data.color],
                       borderRadius: data.y > 0
-                          ? BorderRadius.only(
+                          ? const BorderRadius.only(
                               topLeft: Radius.circular(6),
                               topRight: Radius.circular(6),
                             )
-                          : BorderRadius.only(
+                          : const BorderRadius.only(
                               bottomLeft: Radius.circular(6),
                               bottomRight: Radius.circular(6),
                             ),
