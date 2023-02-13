@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter/cupertino.dart';
 
 class Reset extends StatefulWidget {
@@ -13,13 +11,7 @@ class Reset extends StatefulWidget {
 
 class _ResetState extends State<Reset> {
   bool click = false;
-  void showdate() {
-    showDatePicker(
-        context: context,
-        initialDate: DateTime(2022),
-        firstDate: DateTime.now(),
-        lastDate: DateTime(2025));
-  }
+  
 
   @override
   Widget build(BuildContext context) {
@@ -126,7 +118,7 @@ class _ResetState extends State<Reset> {
                                 onTap: () {
                                   setState(() {
                                     click = !click;
-                                    showdate();
+                                    
                                   });
                                 },
                                 child: Icon(
