@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 class Help extends StatefulWidget {
   const Help({super.key, required this.title});
+  // ignore: prefer_typing_uninitialized_variables
   final title;
 
   @override
@@ -19,26 +18,10 @@ class _HelpState extends State<Help> {
   bool isVisible6 = false;
   bool isVisible7 = false;
   bool click = true;
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //     backgroundColor: Color(0xFF20382F),
-      //     title: Container(
-      //         width: double.infinity,
-      //         height: 100,
-      //         color: Color(0xFF20382F),
-      //         child: Row(children: [
-
-      //           Container(
-      //             padding: EdgeInsets.only(bottom: 20, top: 20),
-      //             child: Icon(
-      //               Icons.person,
-      //               color: Colors.white,
-      //             ),
-      //           ),
-      //         ]))),
       body: Column(
         children: [
           Container(
@@ -112,13 +95,13 @@ class _HelpState extends State<Help> {
                   child: Align(
                       alignment: Alignment.centerLeft,
                       child: Padding(
-                        padding: EdgeInsets.only(
+                        padding: const EdgeInsets.only(
                             left: 10,
                             right: 10), //apply padding to all four sides
                         child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text(
+                             const Text(
                                 "Question 1",
                               ),
                               Icon(
@@ -128,8 +111,7 @@ class _HelpState extends State<Help> {
                               ),
                             ]),
                       )),
-                )
-                )),
+                ))),
           ),
           Visibility(
             visible: isVisible1,
@@ -142,8 +124,8 @@ class _HelpState extends State<Help> {
                       child: Container(
                     height: 100,
                     width: double.infinity,
-                    color: Color(0xFFF5F6F9),
-                    child: Align(
+                    color: const Color(0xFFF5F6F9),
+                    child: const Align(
                         alignment: Alignment.centerLeft,
                         child: Padding(
                           padding: EdgeInsets.only(
@@ -174,13 +156,13 @@ class _HelpState extends State<Help> {
                   child: Align(
                       alignment: Alignment.centerLeft,
                       child: Padding(
-                        padding: EdgeInsets.only(
+                        padding: const EdgeInsets.only(
                             left: 10,
                             right: 10), //apply padding to all four sides
                         child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text(
+                              const Text(
                                 "Question 2",
                               ),
                               Icon(
@@ -203,8 +185,8 @@ class _HelpState extends State<Help> {
                       child: Container(
                     height: 100,
                     width: double.infinity,
-                    color: Color(0xFFF5F6F9),
-                    child: Align(
+                    color: const Color(0xFFF5F6F9),
+                    child: const Align(
                         alignment: Alignment.centerLeft,
                         child: Padding(
                           padding: EdgeInsets.only(
@@ -231,17 +213,17 @@ class _HelpState extends State<Help> {
                     child: Container(
                   height: 40,
                   width: double.infinity,
-                  color: Color(0xFFF5F6F9),
+                  color: const Color(0xFFF5F6F9),
                   child: Align(
                       alignment: Alignment.centerLeft,
                       child: Padding(
-                        padding: EdgeInsets.only(
+                        padding: const EdgeInsets.only(
                             left: 10,
                             right: 10), //apply padding to all four sides
                         child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text(
+                              const Text(
                                 "Question 3",
                               ),
                               Icon(
@@ -264,8 +246,8 @@ class _HelpState extends State<Help> {
                       child: Container(
                     height: 100,
                     width: double.infinity,
-                    color: Color(0xFFF5F6F9),
-                    child: Align(
+                    color: const Color(0xFFF5F6F9),
+                    child: const Align(
                         alignment: Alignment.centerLeft,
                         child: Padding(
                           padding: EdgeInsets.only(
@@ -292,17 +274,17 @@ class _HelpState extends State<Help> {
                     child: Container(
                   height: 40,
                   width: double.infinity,
-                  color: Color(0xFFF5F6F9),
+                  color: const Color(0xFFF5F6F9),
                   child: Align(
                       alignment: Alignment.centerLeft,
                       child: Padding(
-                        padding: EdgeInsets.only(
+                        padding: const EdgeInsets.only(
                             left: 10,
                             right: 10), //apply padding to all four sides
                         child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text(
+                              const Text(
                                 "Question 4",
                               ),
                               Icon(
@@ -325,8 +307,8 @@ class _HelpState extends State<Help> {
                       child: Container(
                     height: 100,
                     width: double.infinity,
-                    color: Color(0xFFF5F6F9),
-                    child: Align(
+                    color: const Color(0xFFF5F6F9),
+                    child: const Align(
                         alignment: Alignment.centerLeft,
                         child: Padding(
                           padding: EdgeInsets.only(
@@ -353,17 +335,17 @@ class _HelpState extends State<Help> {
                     child: Container(
                   height: 40,
                   width: double.infinity,
-                  color: Color(0xFFF5F6F9),
+                  color: const Color(0xFFF5F6F9),
                   child: Align(
                       alignment: Alignment.centerLeft,
                       child: Padding(
-                        padding: EdgeInsets.only(
+                        padding: const EdgeInsets.only(
                             left: 10,
                             right: 10), //apply padding to all four sides
                         child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text(
+                              const Text(
                                 "Question 5",
                               ),
                               Icon(
@@ -387,7 +369,7 @@ class _HelpState extends State<Help> {
                     height: 100,
                     width: double.infinity,
                     color: Color(0xFFF5F6F9),
-                    child: Align(
+                    child: const Align(
                         alignment: Alignment.centerLeft,
                         child: Padding(
                           padding: EdgeInsets.only(
@@ -414,17 +396,17 @@ class _HelpState extends State<Help> {
                     child: Container(
                   height: 40,
                   width: double.infinity,
-                  color: Color(0xFFF5F6F9),
+                  color: const Color(0xFFF5F6F9),
                   child: Align(
                       alignment: Alignment.centerLeft,
                       child: Padding(
-                        padding: EdgeInsets.only(
+                        padding: const EdgeInsets.only(
                             left: 10,
                             right: 10), //apply padding to all four sides
                         child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text(
+                              const Text(
                                 "Question 6",
                               ),
                               Icon(
@@ -447,8 +429,8 @@ class _HelpState extends State<Help> {
                       child: Container(
                     height: 100,
                     width: double.infinity,
-                    color: Color(0xFFF5F6F9),
-                    child: Align(
+                    color: const Color(0xFFF5F6F9),
+                    child: const Align(
                         alignment: Alignment.centerLeft,
                         child: Padding(
                           padding: EdgeInsets.only(
@@ -475,17 +457,17 @@ class _HelpState extends State<Help> {
                     child: Container(
                   height: 40,
                   width: double.infinity,
-                  color: Color(0xFFF5F6F9),
+                  color: const Color(0xFFF5F6F9),
                   child: Align(
                       alignment: Alignment.centerLeft,
                       child: Padding(
-                        padding: EdgeInsets.only(
+                        padding: const EdgeInsets.only(
                             left: 10,
                             right: 10), //apply padding to all four sides
                         child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text(
+                              const Text(
                                 "Question 7",
                               ),
                               Icon(
@@ -508,8 +490,8 @@ class _HelpState extends State<Help> {
                       child: Container(
                     height: 100,
                     width: double.infinity,
-                    color: Color(0xFFF5F6F9),
-                    child: Align(
+                    color: const Color(0xFFF5F6F9),
+                    child: const Align(
                         alignment: Alignment.centerLeft,
                         child: Padding(
                           padding: EdgeInsets.only(
@@ -522,7 +504,6 @@ class _HelpState extends State<Help> {
                   ))),
             ),
           ),
-          
         ],
       ),
     );
