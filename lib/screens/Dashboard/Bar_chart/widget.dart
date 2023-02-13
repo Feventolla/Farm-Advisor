@@ -1,8 +1,6 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:farmadvisor/screens/Dashboard/Bar_chart/data.dart';
-import 'package:farmadvisor/screens/Dashboard/Bar_chart/bar_chart_model.dart';
-
 import 'bar_titles.dart';
 
 class BarChartWidget extends StatelessWidget {

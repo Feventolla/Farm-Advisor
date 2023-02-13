@@ -13,13 +13,13 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import '../models/field.dart';
 
-class NameValidator {
+class FieldNameValidator {
   static validate(value) {
     return value.isEmpty ? 'phone can not be empty' : null;
   }
 }
 
-class LocationValidator {
+class AltitudeValidator {
   static validate(value) {
     return value.isEmpty ? 'country can not be empty' : null;
   }
@@ -122,7 +122,7 @@ class _NewFieldState extends State<NewField> {
                   onChanged: (value) {
                     field.fieldName = value;
                   },
-                  validator: (value) => NameValidator.validate(value),
+                  validator: (value) => FieldNameValidator.validate(value),
                   textInputAction: TextInputAction.next,
                   decoration: InputDecoration(
                     labelText: "Field name",
@@ -139,7 +139,7 @@ class _NewFieldState extends State<NewField> {
                   onChanged: (value) {
                     field.altitude = value;
                   },
-                  validator: (value) => NameValidator.validate(value),
+                  validator: (value) => AltitudeValidator.validate(value),
                   textInputAction: TextInputAction.next,
                   decoration: InputDecoration(
                     labelText: "Field altitude",

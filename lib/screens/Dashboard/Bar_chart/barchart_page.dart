@@ -10,9 +10,9 @@ class BarChartPage extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(0),
         ),
-        color: Color.fromARGB(255, 255, 255, 255),
-        child: Padding(
-          padding: const EdgeInsets.only(top: 16),
+        color: const Color.fromARGB(255, 255, 255, 255),
+        child: const Padding(
+          padding: EdgeInsets.only(top: 16),
           child: BarChartWidget(),
         ),
       );

@@ -1,8 +1,6 @@
 import 'package:farmadvisor/screens/Dashboard/Bar_chart/barchart_page.dart';
 import 'package:farmadvisor/screens/Dashboard/Bar_chart/snow_page.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:go_router/go_router.dart';
 import 'package:http/http.dart' as http;
@@ -24,6 +22,7 @@ class _FieldState extends State<Field> {
     _fetchField();
   }
 
+  // ignore: unused_field
   String _name = '';
   List _sensor = [];
   _fetchField() async {
@@ -43,7 +42,6 @@ class _FieldState extends State<Field> {
         _name = json.decode(res.body)['name'];
         _sensor = json.decode(res.body)['sensors'];
       });
-      print(_sensor);
     } else {
       throw Exception(
         "Could not get the farm",
@@ -92,15 +90,8 @@ class _FieldState extends State<Field> {
     );
 
     if (res.statusCode == 200) {
-      print("deleted");
-      // _fetchField();
+      // ignore: use_build_context_synchronously
       context.go('/dashboard');
-
-      //   setState(() {
-      //     _name = json.decode(res.body)['name'];
-      //     _sensor = json.decode(res.body)['sensors'];
-      //   });
-      //   print(_sensor);
     } else {
       throw Exception(
         "Could not get the farm",
@@ -108,6 +99,7 @@ class _FieldState extends State<Field> {
     }
   }
 
+  // ignore: non_constant_identifier_names
   bool show_sensor = true;
   List<String> GDD = ["375", "455", "not until now", "375"];
 
@@ -119,16 +111,17 @@ class _FieldState extends State<Field> {
     final end = dateRange.end;
     return Scaffold(
       appBar: AppBar(
-          backgroundColor: Color(0xFF20382F),
+          backgroundColor: const Color(0xFF20382F),
           title: Container(
               width: double.infinity,
               height: 100,
-              color: Color(0xFF20382F),
+              color: const Color(0xFF20382F),
               child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Container(
-                      padding: EdgeInsets.only(bottom: 20, left: 20, top: 20),
+                      padding:
+                          const EdgeInsets.only(bottom: 20, left: 20, top: 20),
                       child: Image.asset(
                         "Agino_logo_green_RGB_300dpi.png",
                       ),
@@ -136,13 +129,13 @@ class _FieldState extends State<Field> {
                     Container(
                       child: Row(
                         children: [
-                          Icon(
+                          const Icon(
                             Icons.add,
                             color: Colors.white,
                           ),
                           Container(
-                            padding: EdgeInsets.only(left: 20),
-                            child: Icon(
+                            padding: const EdgeInsets.only(left: 20),
+                            child: const Icon(
                               Icons.person,
                               color: Colors.white,
                             ),
@@ -150,9 +143,6 @@ class _FieldState extends State<Field> {
                         ],
                       ),
                     ),
-                    // Container(
-                    // padding: EdgeInsets.only(bottom: 20, top: 20),
-                    // ),
                   ]))),
       body: ListView(children: [
         Column(
@@ -173,17 +163,17 @@ class _FieldState extends State<Field> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: <Widget>[
                     Container(
-                        padding: EdgeInsets.only(right: 100),
+                        padding: const EdgeInsets.only(right: 100),
                         child: Row(
                           children: <Widget>[
                             IconButton(
-                              icon: Icon(
+                              icon: const Icon(
                                 Icons.arrow_back_ios,
                                 color: Color(0xFF5F676C),
                               ),
                               onPressed: () {},
                             ),
-                            Text(
+                            const Text(
                               "Farm name two",
                               style:
                                   TextStyle(fontSize: 14, fontFamily: 'Robot'),
@@ -191,9 +181,9 @@ class _FieldState extends State<Field> {
                           ],
                         )),
                     Padding(
-                      padding: EdgeInsets.only(left: 50),
+                      padding: const EdgeInsets.only(left: 50),
                       child: IconButton(
-                        icon: Icon(Icons.more_vert),
+                        icon: const Icon(Icons.more_vert),
                         onPressed: () {
                           showDialog(
                             context: context,
@@ -205,13 +195,13 @@ class _FieldState extends State<Field> {
                                     height: 200,
                                     child: ListView(
                                       children: <Widget>[
-                                        ListTile(
+                                        const ListTile(
                                           title:
                                               Text('Reset GDD on all sensors'),
                                           tileColor: Color.fromARGB(
                                               255, 251, 248, 248),
                                         ),
-                                        ListTile(
+                                        const ListTile(
                                           title: Text('Edit field'),
                                           tileColor: Color.fromARGB(
                                               255, 240, 239, 239),
@@ -221,9 +211,9 @@ class _FieldState extends State<Field> {
                                             onTap: () {
                                               deleteField(widget.id);
                                             },
-                                            child: Text('Delete field'),
+                                            child: const Text('Delete field'),
                                           ),
-                                          tileColor: Color.fromARGB(
+                                          tileColor: const Color.fromARGB(
                                               255, 252, 250, 250),
                                         ),
                                       ],
@@ -263,18 +253,18 @@ class _FieldState extends State<Field> {
                 width: 330,
                 alignment: Alignment.bottomCenter,
                 decoration: BoxDecoration(
-                  color: Color(0xFFFFFFFF),
+                  color: const Color(0xFFFFFFFF),
                   border: Border.all(
                       color: const Color(0xFFEFEFEF),
                       width: 1.0,
                       style: BorderStyle.solid),
-                  borderRadius: BorderRadius.all(
+                  borderRadius: const BorderRadius.all(
                     Radius.circular(10),
                   ),
                 ),
                 // padding: EdgeInsets.only(left: 50, right: 50),
                 child: Container(
-                  padding: EdgeInsets.only(top: 15),
+                  padding: const EdgeInsets.only(top: 15),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     mainAxisSize: MainAxisSize.max,
@@ -349,8 +339,8 @@ class _FieldState extends State<Field> {
                   ),
                 )),
             Container(
-              padding: EdgeInsets.only(right: 70, top: 7, bottom: 7),
-              child: Text(
+              padding: const EdgeInsets.only(right: 70, top: 7, bottom: 7),
+              child: const Text(
                 'Last sensor reset: 04/03/22 (auto reset)',
                 style: TextStyle(
                   fontFamily: 'Roboto',
@@ -362,7 +352,7 @@ class _FieldState extends State<Field> {
             ),
             Container(
               width: 320,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   border: Border(
                 top: BorderSide(
                     width: 1, color: Color.fromARGB(255, 224, 227, 229)),
@@ -373,7 +363,7 @@ class _FieldState extends State<Field> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
-                      Text(
+                      const Text(
                         'Sensors',
                         style: TextStyle(
                             fontFamily: 'Roboto',
@@ -381,51 +371,49 @@ class _FieldState extends State<Field> {
                             fontSize: 17,
                             fontStyle: FontStyle.normal),
                       ),
-                      Container(
-                        child: Row(
-                          children: [
-                            IconButton(
-                                icon: Icon(
-                                  Icons.add,
-                                  color: Color(0xFF5F676C),
-                                ),
-                                onPressed: () {
-                                  context.goNamed("field",
-                                      params: {"id": widget.id.toString()});
-                                }),
-                            IconButton(
-                              icon: (show_sensor
-                                  ? Icon(
-                                      Icons.keyboard_arrow_up,
-                                      color: Color(0xFF5F676C),
-                                    )
-                                  : Icon(
-                                      Icons.keyboard_arrow_down_sharp,
-                                      color: Color(0xFF5F676C),
-                                    )),
+                      Row(
+                        children: [
+                          IconButton(
+                              icon: const Icon(
+                                Icons.add,
+                                color: Color(0xFF5F676C),
+                              ),
                               onPressed: () {
-                                setState(() {
-                                  show_sensor = !show_sensor;
-                                });
-                              },
-                            ),
-                          ],
-                        ),
+                                context.goNamed("field",
+                                    params: {"id": widget.id.toString()});
+                              }),
+                          IconButton(
+                            icon: (show_sensor
+                                ? const Icon(
+                                    Icons.keyboard_arrow_up,
+                                    color: const Color(0xFF5F676C),
+                                  )
+                                : const Icon(
+                                    Icons.keyboard_arrow_down_sharp,
+                                    color: Color(0xFF5F676C),
+                                  )),
+                            onPressed: () {
+                              setState(() {
+                                show_sensor = !show_sensor;
+                              });
+                            },
+                          ),
+                        ],
                       )
                     ],
                   ),
                   // for (var item in GDD)
                   Visibility(
                     visible: show_sensor,
-                    child: Container(
+                    child: SizedBox(
                         width: 430,
                         height: 370,
                         // padding: EdgeInsets.all(12.0),
                         child: GridView.builder(
-                          physics: NeverScrollableScrollPhysics(),
+                          physics: const NeverScrollableScrollPhysics(),
                           itemCount: _sensor.length,
                           gridDelegate:
-                              SliverGridDelegateWithFixedCrossAxisCount(
+                              const SliverGridDelegateWithFixedCrossAxisCount(
                                   crossAxisCount: 2,
                                   crossAxisSpacing: 20.0,
                                   mainAxisSpacing: 20.0),
@@ -434,107 +422,106 @@ class _FieldState extends State<Field> {
                               decoration: BoxDecoration(
                                   color: Colors.white,
                                   border: Border.all(
-                                      color: Color.fromARGB(255, 220, 218, 218),
+                                      color: const Color.fromARGB(
+                                          255, 220, 218, 218),
                                       width: 0.5,
                                       style: BorderStyle.solid),
                                   borderRadius: BorderRadius.circular(15)),
                               child: Container(
-                                padding: EdgeInsets.only(left: 10),
+                                padding: const EdgeInsets.only(left: 10),
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    SizedBox(
+                                    const SizedBox(
                                       height: 15,
                                     ),
-                                    // for (var item in GDD)
-                                    Container(
-                                      child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: <Widget>[
-                                          Image.asset(
-                                            "images/mlogo.png",
-                                            width: 30,
-                                            height: 30,
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: <Widget>[
+                                        Image.asset(
+                                          "images/mlogo.png",
+                                          width: 30,
+                                          height: 30,
+                                        ),
+                                        IconButton(
+                                          icon: const Icon(
+                                            Icons.more_vert,
+                                            color: Color(0xFF5F676C),
                                           ),
-                                          IconButton(
-                                            icon: Icon(
-                                              Icons.more_vert,
-                                              color: Color(0xFF5F676C),
-                                            ),
-                                            onPressed: () {
-                                              showDialog(
-                                                context: context,
-                                                builder: (context) {
-                                                  return AlertDialog(
-                                                    content:
-                                                        SingleChildScrollView(
-                                                      child: Container(
-                                                        width: 300,
-                                                        height: 200,
-                                                        child: ListView(
-                                                          children: <Widget>[
-                                                            ListTile(
-                                                              title: Text(
-                                                                  'Reset GDD'),
-                                                              tileColor: Color
-                                                                  .fromARGB(
-                                                                      255,
-                                                                      251,
-                                                                      248,
-                                                                      248),
+                                          onPressed: () {
+                                            showDialog(
+                                              context: context,
+                                              builder: (context) {
+                                                return AlertDialog(
+                                                  content:
+                                                      SingleChildScrollView(
+                                                    child: SizedBox(
+                                                      width: 300,
+                                                      height: 200,
+                                                      child: ListView(
+                                                        children: <Widget>[
+                                                          const ListTile(
+                                                            title: Text(
+                                                                'Reset GDD'),
+                                                            tileColor:
+                                                                Color.fromARGB(
+                                                                    255,
+                                                                    251,
+                                                                    248,
+                                                                    248),
+                                                          ),
+                                                          const ListTile(
+                                                            title: Text(
+                                                                'Edit sensor'),
+                                                            tileColor:
+                                                                Color.fromARGB(
+                                                                    255,
+                                                                    240,
+                                                                    239,
+                                                                    239),
+                                                          ),
+                                                          ListTile(
+                                                            title:
+                                                                GestureDetector(
+                                                              onTap: () {
+                                                                delete(_sensor[
+                                                                        index]
+                                                                    ["_id"]);
+                                                              },
+                                                              child: const Text(
+                                                                  'Delete sensor'),
                                                             ),
-                                                            ListTile(
-                                                              title: Text(
-                                                                  'Edit sensor'),
-                                                              tileColor: Color
-                                                                  .fromARGB(
-                                                                      255,
-                                                                      240,
-                                                                      239,
-                                                                      239),
-                                                            ),
-                                                            ListTile(
-                                                              title:
-                                                                  GestureDetector(
-                                                                onTap: () {
-                                                                  delete(_sensor[
-                                                                          index]
-                                                                      ["_id"]);
-                                                                },
-                                                                child: Text(
-                                                                    'Delete sensor'),
-                                                              ),
-                                                              tileColor: Color
-                                                                  .fromARGB(
-                                                                      255,
-                                                                      252,
-                                                                      250,
-                                                                      250),
-                                                            ),
-                                                          ],
-                                                        ),
+                                                            tileColor: const Color
+                                                                    .fromARGB(
+                                                                255,
+                                                                252,
+                                                                250,
+                                                                250),
+                                                          ),
+                                                        ],
                                                       ),
                                                     ),
-                                                  );
-                                                },
-                                              );
-                                            },
-                                          ),
-                                        ],
-                                      ),
+                                                  ),
+                                                );
+                                              },
+                                            );
+                                          },
+                                        ),
+                                      ],
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       height: 20,
                                     ),
                                     Text(_sensor[index]["name"],
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                             fontFamily: 'Roboto',
                                             fontWeight: FontWeight.w400,
                                             fontSize: 17,
                                             fontStyle: FontStyle.normal)),
+                                    // ignore: prefer_interpolation_to_compose_strings
                                     Text("GGD: " + _sensor[index]["GGD"],
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                             fontFamily: 'Roboto',
                                             fontSize: 10,
                                             fontStyle: FontStyle.normal,
@@ -552,20 +539,18 @@ class _FieldState extends State<Field> {
             ),
             Container(
                 width: 320,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                     border: Border(
                   top: BorderSide(
                       width: 1, color: Color.fromARGB(255, 224, 227, 229)),
                   // bottom: BorderSide(width: 1, color: Color(0xFF5F676C)),
                 ))),
-            Container(
-                // padding: EdgeInsets.all(20),
-                child: Column(
+            Column(
               children: [
                 Container(
                   padding: EdgeInsets.only(left: 20, top: 20),
                   child: Row(
-                    children: [
+                    children: const [
                       Text(
                         "Weather forcast   ",
                         style: TextStyle(
@@ -584,7 +569,7 @@ class _FieldState extends State<Field> {
                 Container(
                   padding: EdgeInsets.only(left: 20, top: 20),
                   child: Row(
-                    children: [
+                    children: const [
                       Text("Period",
                           style: TextStyle(
                               fontFamily: 'Roboto',
@@ -604,7 +589,7 @@ class _FieldState extends State<Field> {
                       Text(
                           '${start.year}/${start.month}/${start.day} - ${end.year}/${end.month}/${end.day}'),
                       IconButton(
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.calendar_today,
                           color: Color(0xFF5F676C),
                         ),
@@ -614,11 +599,12 @@ class _FieldState extends State<Field> {
                   ),
                 )
               ],
-            )),
+            ),
             Row(
               children: [
                 Container(
-                    padding: EdgeInsets.only(left: 20, top: 20, bottom: 20),
+                    padding:
+                        const EdgeInsets.only(left: 20, top: 20, bottom: 20),
                     child: const Text(
                       'Temperature',
                       style: TextStyle(
@@ -635,125 +621,113 @@ class _FieldState extends State<Field> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Container(
-                      child: Column(
-                        children: [
-                          Text(
-                            "Mon",
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 10,
-                            ),
+                    Column(
+                      children: const [
+                        Text(
+                          "Mon",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 10,
                           ),
-                          Text(
-                            "Today",
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 105, 107, 109),
-                              fontSize: 10,
-                            ),
-                          )
-                        ],
-                      ),
+                        ),
+                        Text(
+                          "Today",
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 105, 107, 109),
+                            fontSize: 10,
+                          ),
+                        )
+                      ],
                     ),
-                    Container(
-                      child: Column(
-                        children: [
-                          Text(
-                            "Tue",
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 50, 51, 52),
-                              fontSize: 10,
-                            ),
+                    Column(
+                      children: const [
+                        Text(
+                          "Tue",
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 50, 51, 52),
+                            fontSize: 10,
                           ),
-                          Text(
-                            "May 11",
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 105, 107, 109),
-                              fontSize: 10,
-                            ),
-                          )
-                        ],
-                      ),
+                        ),
+                        Text(
+                          "May 11",
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 105, 107, 109),
+                            fontSize: 10,
+                          ),
+                        )
+                      ],
                     ),
-                    Container(
-                      child: Column(
-                        children: [
-                          Text(
-                            "Wens",
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 50, 51, 52),
-                              fontSize: 10,
-                            ),
+                    Column(
+                      children: const [
+                        Text(
+                          "Wens",
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 50, 51, 52),
+                            fontSize: 10,
                           ),
-                          Text(
-                            "May 13",
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 105, 107, 109),
-                              fontSize: 10,
-                            ),
-                          )
-                        ],
-                      ),
+                        ),
+                        Text(
+                          "May 13",
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 105, 107, 109),
+                            fontSize: 10,
+                          ),
+                        )
+                      ],
                     ),
-                    Container(
-                      child: Column(
-                        children: [
-                          Text(
-                            "Thur",
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 50, 51, 52),
-                              fontSize: 10,
-                            ),
+                    Column(
+                      children: const [
+                        Text(
+                          "Thur",
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 50, 51, 52),
+                            fontSize: 10,
                           ),
-                          Text(
-                            "May 15",
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 105, 107, 109),
-                              fontSize: 10,
-                            ),
-                          )
-                        ],
-                      ),
+                        ),
+                        Text(
+                          "May 15",
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 105, 107, 109),
+                            fontSize: 10,
+                          ),
+                        )
+                      ],
                     ),
-                    Container(
-                      child: Column(
-                        children: [
-                          Text(
-                            "Fri",
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 50, 51, 52),
-                              fontSize: 10,
-                            ),
+                    Column(
+                      children: const [
+                        Text(
+                          "Fri",
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 50, 51, 52),
+                            fontSize: 10,
                           ),
-                          Text(
-                            "May 17",
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 105, 107, 109),
-                              fontSize: 10,
-                            ),
-                          )
-                        ],
-                      ),
+                        ),
+                        Text(
+                          "May 17",
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 105, 107, 109),
+                            fontSize: 10,
+                          ),
+                        )
+                      ],
                     ),
-                    Container(
-                      child: Column(
-                        children: [
-                          Text(
-                            "Sat",
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 50, 51, 52),
-                              fontSize: 10,
-                            ),
+                    Column(
+                      children: const [
+                        Text(
+                          "Sat",
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 50, 51, 52),
+                            fontSize: 10,
                           ),
-                          Text(
-                            "May 19 ",
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 105, 107, 109),
-                              fontSize: 10,
-                            ),
-                          )
-                        ],
-                      ),
+                        ),
+                        Text(
+                          "May 19 ",
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 105, 107, 109),
+                            fontSize: 10,
+                          ),
+                        )
+                      ],
                     ),
                   ],
                 )),
@@ -761,7 +735,7 @@ class _FieldState extends State<Field> {
               decoration: BoxDecoration(
                 color: Colors.white,
                 border: Border.all(
-                    color: Color.fromARGB(255, 220, 218, 218),
+                    color: const Color.fromARGB(255, 220, 218, 218),
                     width: 0.5,
                     style: BorderStyle.solid),
               ),
@@ -773,17 +747,18 @@ class _FieldState extends State<Field> {
                     gridData: FlGridData(getDrawingHorizontalLine: (value) {
                       if (value == 0) {
                         return FlLine(
-                          color: Color.fromARGB(255, 216, 216, 221),
+                          color: const Color.fromARGB(255, 216, 216, 221),
                           strokeWidth: 0,
                         );
                       } else {
                         return FlLine(
-                          color: Color.fromARGB(255, 208, 208, 212),
+                          color: const Color.fromARGB(255, 208, 208, 212),
                           strokeWidth: 0.8,
                         );
                       }
                     }, getDrawingVerticalLine: (value) {
-                      return FlLine(color: Color.fromARGB(0, 255, 255, 255));
+                      return FlLine(
+                          color: const Color.fromARGB(0, 255, 255, 255));
                     }),
                     lineTouchData: LineTouchData(enabled: false),
                     borderData: FlBorderData(show: false),
@@ -876,8 +851,9 @@ class _FieldState extends State<Field> {
             ),
             Container(
               alignment: Alignment.center,
-              padding: EdgeInsets.only(left: 100),
-              child: Row(children: <Widget>[
+              padding: const EdgeInsets.only(left: 100),
+              color: Colors.white,
+              child: Row(children: const <Widget>[
                 Icon(
                   Icons.circle,
                   size: 10,
@@ -893,10 +869,9 @@ class _FieldState extends State<Field> {
                   ),
                 )
               ]),
-              color: Colors.white,
             ),
             Container(
-                padding: EdgeInsets.only(right: 250, top: 20),
+                padding: const EdgeInsets.only(right: 250, top: 20),
                 child: const Text(
                   'Percipitation',
                   style: TextStyle(
@@ -906,7 +881,7 @@ class _FieldState extends State<Field> {
                   ),
                   textAlign: TextAlign.left,
                 )),
-            Container(
+            const SizedBox(
                 width: double.infinity,
                 height: 300,
                 // padding: const EdgeInsets.only(top: 8, left: 8, right: 8),
@@ -915,8 +890,9 @@ class _FieldState extends State<Field> {
                 ),
             Container(
               alignment: Alignment.center,
-              padding: EdgeInsets.only(left: 100),
-              child: Row(children: <Widget>[
+              padding: const EdgeInsets.only(left: 100),
+              color: Colors.white,
+              child: Row(children: const <Widget>[
                 Icon(
                   Icons.circle,
                   size: 10,
@@ -932,10 +908,9 @@ class _FieldState extends State<Field> {
                   ),
                 )
               ]),
-              color: Colors.white,
             ),
             Container(
-                padding: EdgeInsets.only(right: 250, top: 20),
+                padding: const EdgeInsets.only(right: 250, top: 20),
                 child: const Text(
                   'Snow Depth',
                   style: TextStyle(
@@ -949,13 +924,14 @@ class _FieldState extends State<Field> {
                 width: 500,
                 height: 300,
                 padding: const EdgeInsets.only(top: 8, left: 8, right: 8),
-                child: SnowPage()
+                child: const SnowPage()
                 // color: Colors.black,
                 ),
             Container(
               alignment: Alignment.center,
-              padding: EdgeInsets.only(left: 100),
-              child: Row(children: <Widget>[
+              padding: const EdgeInsets.only(left: 100),
+              color: Colors.white,
+              child: Row(children: const <Widget>[
                 Icon(
                   Icons.circle,
                   size: 10,
@@ -982,12 +958,12 @@ class _FieldState extends State<Field> {
                         fontWeight: FontWeight.w400,
                         color: Color(0xff979797)))
               ]),
-              color: Colors.white,
             ),
             Row(
               children: [
                 Container(
-                    padding: EdgeInsets.only(left: 20, top: 20, bottom: 20),
+                    padding:
+                        const EdgeInsets.only(left: 20, top: 20, bottom: 20),
                     child: const Text(
                       'Wind',
                       style: TextStyle(
@@ -1004,125 +980,113 @@ class _FieldState extends State<Field> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Container(
-                      child: Column(
-                        children: [
-                          Text(
-                            "Mon",
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 10,
-                            ),
+                    Column(
+                      children: const [
+                        Text(
+                          "Mon",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 10,
                           ),
-                          Text(
-                            "Today",
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 105, 107, 109),
-                              fontSize: 10,
-                            ),
-                          )
-                        ],
-                      ),
+                        ),
+                        Text(
+                          "Today",
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 105, 107, 109),
+                            fontSize: 10,
+                          ),
+                        )
+                      ],
                     ),
-                    Container(
-                      child: Column(
-                        children: [
-                          Text(
-                            "Tue",
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 50, 51, 52),
-                              fontSize: 10,
-                            ),
+                    Column(
+                      children: const [
+                        Text(
+                          "Tue",
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 50, 51, 52),
+                            fontSize: 10,
                           ),
-                          Text(
-                            "May 11",
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 105, 107, 109),
-                              fontSize: 10,
-                            ),
-                          )
-                        ],
-                      ),
+                        ),
+                        Text(
+                          "May 11",
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 105, 107, 109),
+                            fontSize: 10,
+                          ),
+                        )
+                      ],
                     ),
-                    Container(
-                      child: Column(
-                        children: [
-                          Text(
-                            "Wens",
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 50, 51, 52),
-                              fontSize: 10,
-                            ),
+                    Column(
+                      children: const [
+                        Text(
+                          "Wens",
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 50, 51, 52),
+                            fontSize: 10,
                           ),
-                          Text(
-                            "May 13",
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 105, 107, 109),
-                              fontSize: 10,
-                            ),
-                          )
-                        ],
-                      ),
+                        ),
+                        Text(
+                          "May 13",
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 105, 107, 109),
+                            fontSize: 10,
+                          ),
+                        )
+                      ],
                     ),
-                    Container(
-                      child: Column(
-                        children: [
-                          Text(
-                            "Thur",
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 50, 51, 52),
-                              fontSize: 10,
-                            ),
+                    Column(
+                      children: const [
+                        Text(
+                          "Thur",
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 50, 51, 52),
+                            fontSize: 10,
                           ),
-                          Text(
-                            "May 15",
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 105, 107, 109),
-                              fontSize: 10,
-                            ),
-                          )
-                        ],
-                      ),
+                        ),
+                        Text(
+                          "May 15",
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 105, 107, 109),
+                            fontSize: 10,
+                          ),
+                        )
+                      ],
                     ),
-                    Container(
-                      child: Column(
-                        children: [
-                          Text(
-                            "Fri",
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 50, 51, 52),
-                              fontSize: 10,
-                            ),
+                    Column(
+                      children: const [
+                        Text(
+                          "Fri",
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 50, 51, 52),
+                            fontSize: 10,
                           ),
-                          Text(
-                            "May 17",
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 105, 107, 109),
-                              fontSize: 10,
-                            ),
-                          )
-                        ],
-                      ),
+                        ),
+                        Text(
+                          "May 17",
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 105, 107, 109),
+                            fontSize: 10,
+                          ),
+                        )
+                      ],
                     ),
-                    Container(
-                      child: Column(
-                        children: [
-                          Text(
-                            "Sat",
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 50, 51, 52),
-                              fontSize: 10,
-                            ),
+                    Column(
+                      children: const [
+                        Text(
+                          "Sat",
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 50, 51, 52),
+                            fontSize: 10,
                           ),
-                          Text(
-                            "May 19 ",
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 105, 107, 109),
-                              fontSize: 10,
-                            ),
-                          )
-                        ],
-                      ),
+                        ),
+                        Text(
+                          "May 19 ",
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 105, 107, 109),
+                            fontSize: 10,
+                          ),
+                        )
+                      ],
                     ),
                   ],
                 )),
@@ -1130,7 +1094,7 @@ class _FieldState extends State<Field> {
               decoration: BoxDecoration(
                 color: Colors.white,
                 border: Border.all(
-                    color: Color.fromARGB(255, 220, 218, 218),
+                    color: const Color.fromARGB(255, 220, 218, 218),
                     width: 0.5,
                     style: BorderStyle.solid),
               ),
@@ -1142,17 +1106,18 @@ class _FieldState extends State<Field> {
                     gridData: FlGridData(getDrawingHorizontalLine: (value) {
                       if (value == 0) {
                         return FlLine(
-                          color: Color.fromARGB(255, 216, 216, 221),
+                          color: const Color.fromARGB(255, 216, 216, 221),
                           strokeWidth: 0,
                         );
                       } else {
                         return FlLine(
-                          color: Color.fromARGB(255, 208, 208, 212),
+                          color: const Color.fromARGB(255, 208, 208, 212),
                           strokeWidth: 0.8,
                         );
                       }
                     }, getDrawingVerticalLine: (value) {
-                      return FlLine(color: Color.fromARGB(0, 255, 255, 255));
+                      return FlLine(
+                          color: const Color.fromARGB(0, 255, 255, 255));
                     }),
                     lineTouchData: LineTouchData(enabled: false),
                     borderData: FlBorderData(show: false),
@@ -1217,8 +1182,9 @@ class _FieldState extends State<Field> {
             ),
             Container(
               alignment: Alignment.center,
-              padding: EdgeInsets.only(left: 100),
-              child: Row(children: <Widget>[
+              padding: const EdgeInsets.only(left: 100),
+              color: Colors.white,
+              child: Row(children: const <Widget>[
                 Icon(
                   Icons.circle,
                   size: 10,
@@ -1234,12 +1200,10 @@ class _FieldState extends State<Field> {
                   ),
                 )
               ]),
-              color: Colors.white,
             ),
-            Container(
-                child: SizedBox(
+            const SizedBox(
               height: 200,
-            ))
+            )
           ],
         ),
       ]),

@@ -11,8 +11,8 @@ class SnowPage extends StatelessWidget {
           borderRadius: BorderRadius.circular(0),
         ),
         color: const Color.fromARGB(255, 255, 255, 255),
-        child: Padding(
-          padding: const EdgeInsets.only(top: 16),
+        child: const Padding(
+          padding: EdgeInsets.only(top: 16),
           child: SnowWidget(),
         ),
       );
