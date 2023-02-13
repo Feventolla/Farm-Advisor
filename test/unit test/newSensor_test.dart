@@ -1,5 +1,5 @@
-import 'package:farmadvisor/screens/FirstTimeUser/newFarm.dart';
-import 'package:farmadvisor/screens/FirstTimeUser/newSensor.dart';
+import 'package:farmadvisor/screens/FirstTimeUser/new_farm.dart';
+import 'package:farmadvisor/screens/FirstTimeUser/new_sensor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
