@@ -14,7 +14,7 @@ import 'package:flutter_test/flutter_test.dart';
 void main() {
   testWidgets('scrollability test', (tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(FarmDashboard(
+    await tester.pumpWidget(const FarmDashboard(
         // items: List<String>.generate(10000, (i) => 'Item $i'),
         ));
     await tester.drag(find.byType(ListView), const Offset(0, -300));
