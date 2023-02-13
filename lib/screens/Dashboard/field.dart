@@ -1,12 +1,12 @@
 import 'package:farmadvisor/screens/Dashboard/Bar_chart/barchart_page.dart';
 import 'package:farmadvisor/screens/Dashboard/Bar_chart/snow_page.dart';
 import 'package:flutter/material.dart';
-
+import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:fl_chart/fl_chart.dart';
 
 class Field extends StatefulWidget {
   const Field({super.key, required this.title});
-  // ignore: prefer_typing_uninitialized_variables
   final title;
 
   @override
@@ -14,7 +14,6 @@ class Field extends StatefulWidget {
 }
 
 class _FieldState extends State<Field> {
-  // ignore: non_constant_identifier_names
   bool show_sensor = true;
   List<String> GDD = ["375", "455", "not until now", "375"];
 
