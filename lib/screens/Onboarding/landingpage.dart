@@ -1,10 +1,12 @@
 // import 'dart:js';
-import 'dart:convert';
+// import 'dart:convert';
+
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:http/http.dart' as http;
-import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
+// import 'package:flutter_svg/flutter_svg.dart';
+// import 'package:http/http.dart' as http;
+// import 'package:flutter/material.dart';
+// import 'package:flutter/src/foundation/key.dart';
+// import 'package:flutter/src/widgets/framework.dart';
 import 'package:go_router/go_router.dart';
 
 class LandingPage extends StatelessWidget {
@@ -12,20 +14,20 @@ class LandingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Future save() async {
-      // var res = await http.post(Uri.parse(url),
-      //     headers: {'Content-Type': 'application/json'},
-      //     body: json.encode({
-      //       'firstname': user.firstname,
-      //       'lastname': user.lastname,
-      //       'email': user.email,
-      //       'password': user.password
-      //     }));
-      // print(res.body);
-      // if (res.body != null) {
-      context.go('/signin');
-      // }
-    }
+    // Future save() async {
+    //   // var res = await http.post(Uri.parse(url),
+    //   //     headers: {'Content-Type': 'application/json'},
+    //   //     body: json.encode({
+    //   //       'firstname': user.firstname,
+    //   //       'lastname': user.lastname,
+    //   //       'email': user.email,
+    //   //       'password': user.password
+    //   //     }));
+    //   // print(res.body);
+    //   // if (res.body != null) {
+    //   context.go('/signin');
+    //   // }
+    // }
 
     return Scaffold(
       // appBar: AppBar(
@@ -47,9 +49,9 @@ class LandingPage extends StatelessWidget {
 
       appBar: AppBar(
         toolbarHeight: 60,
-        backgroundColor: Color(0xFF20382F),
+        backgroundColor: const Color(0xFF20382F),
         leading: Container(
-          padding: EdgeInsets.all(10),
+          padding: const EdgeInsets.all(10),
           child: Image.asset(
             'assets/images/clogo.png',
             width: 100,
@@ -59,15 +61,15 @@ class LandingPage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          SizedBox(height: 205),
+          const SizedBox(height: 205),
           Center(
               child: Image.asset(
             'assets/images/mlogo.png',
             width: 203,
             height: 203,
           )),
-          SizedBox(height: 25),
-          Text(
+          const SizedBox(height: 25),
+          const Text(
             "Smart Farming",
             style: TextStyle(
               fontSize: 32,
@@ -75,8 +77,8 @@ class LandingPage extends StatelessWidget {
               color: Color.fromARGB(255, 9, 27, 19),
             ),
           ),
-          SizedBox(height: 15),
-          Container(
+          const SizedBox(height: 15),
+          const SizedBox(
             width: 320,
             child: Text(
               "Lorem Ipsum is what we Stand for Lorem Ipsum is what we Stand for Lorem Ipsum is what we Stand for",
@@ -86,30 +88,30 @@ class LandingPage extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 60),
+          const SizedBox(height: 60),
           ElevatedButton(
-              key: Key('sign up'),
+              key: const Key('sign up'),
               style: ButtonStyle(
                   backgroundColor: MaterialStateColor.resolveWith(
-                    (states) => Color.fromARGB(255, 2, 74, 16),
+                    (states) => const Color.fromARGB(255, 2, 74, 16),
                   ),
-                  textStyle:
-                      MaterialStateProperty.all(TextStyle(color: Colors.white)),
+                  textStyle: MaterialStateProperty.all(
+                      const TextStyle(color: Colors.white)),
                   overlayColor: MaterialStateColor.resolveWith(
-                    (states) => Color.fromARGB(255, 90, 33, 9),
+                    (states) => const Color.fromARGB(255, 90, 33, 9),
                   ),
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
+                      const RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(10)),
                   )),
-                  padding: MaterialStateProperty.all(
-                      EdgeInsets.symmetric(vertical: 15, horizontal: 100))),
+                  padding: MaterialStateProperty.all(const EdgeInsets.symmetric(
+                      vertical: 15, horizontal: 100))),
 
               // shape: RoundedRectangleBorder(
               //   borderRadius: BorderRadius.circular(10),
               // ),
               // color: Color(0xFF275342),
-              child: Text(
+              child: const Text(
                 "SIGN UP WITH AGINO",
                 style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
               ),
@@ -120,19 +122,19 @@ class LandingPage extends StatelessWidget {
                 context.go('/terms');
                 // save();
               }),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           Container(
             margin: EdgeInsets.only(top: 10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("Already have an account?"),
-                SizedBox(width: 5),
+                const Text("Already have an account?"),
+                const SizedBox(width: 5),
                 GestureDetector(
                   onTap: () {
                     context.go('/login');
                   },
-                  child: Text(
+                  child: const Text(
                     "Log In",
                     style: TextStyle(
                       color: Color.fromARGB(255, 45, 81, 111),

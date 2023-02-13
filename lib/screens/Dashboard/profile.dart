@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:go_router/go_router.dart';
 
 class Profile extends StatefulWidget {
@@ -21,7 +19,7 @@ class _ProfileState extends State<Profile> {
         children: [
           Container(
             height: 40,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: Color.fromARGB(247, 250, 250, 246),
               boxShadow: [
                 BoxShadow(
@@ -36,29 +34,29 @@ class _ProfileState extends State<Profile> {
               Align(
                   child: Row(
                 children: <Widget>[
-                  SizedBox(
+                  const SizedBox(
                     width: 20,
                   ),
                   IconButton(
                     onPressed: () {
                       context.go('/');
                     },
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.close,
                       color: Color.fromARGB(255, 41, 41, 41),
                       size: 15,
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 10,
                   ),
-                  Text(
+                  const Text(
                     "PROFILE",
                     style: TextStyle(fontSize: 11, fontFamily: 'Robot'),
                   ),
                 ],
               )),
-              Padding(
+              const Padding(
                 padding: EdgeInsets.only(left: 0),
               )
             ]),
@@ -66,7 +64,7 @@ class _ProfileState extends State<Profile> {
           Padding(
             padding: const EdgeInsets.only(top: 10),
             child: Row(
-              children: <Widget>[
+              children: const <Widget>[
                 Icon(
                   Icons.landscape,
                   color: Colors.white,
@@ -81,8 +79,8 @@ class _ProfileState extends State<Profile> {
                 child: Container(
                     height: 40,
                     width: double.infinity,
-                    color: Color(0xFFF5F6F9),
-                    child: Align(
+                    color: const Color(0xFFF5F6F9),
+                    child: const Align(
                       alignment: Alignment.centerLeft,
                       child: Padding(
                         padding: EdgeInsets.only(
@@ -93,11 +91,11 @@ class _ProfileState extends State<Profile> {
                       ),
                     )),
               )),
-          Padding(
-            padding: const EdgeInsets.symmetric(
+          const Padding(
+            padding: EdgeInsets.symmetric(
               horizontal: 10,
             ),
-            child: Container(
+            child: SizedBox(
                 height: 40,
                 width: double.infinity,
                 child: Align(
@@ -125,16 +123,16 @@ class _ProfileState extends State<Profile> {
                   child: Container(
                 height: 40,
                 width: double.infinity,
-                color: Color(0xFFF5F6F9),
+                color: const Color(0xFFF5F6F9),
                 child: Align(
                     alignment: Alignment.centerLeft,
                     child: Padding(
-                      padding: EdgeInsets.only(
+                      padding: const EdgeInsets.only(
                           left: 10,
                           right: 10), //apply padding to all four sides
                       child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
+                          children: const [
                             Text(
                               "Terms and Condtions",
                             ),
@@ -144,8 +142,8 @@ class _ProfileState extends State<Profile> {
                           ]),
                     )),
               ))),
-          Spacer(),
-          Container(
+          const Spacer(),
+          const SizedBox(
               height: 140,
               child: Center(
                 child: Align(

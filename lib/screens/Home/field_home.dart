@@ -23,9 +23,9 @@ class _FieldHomeState extends State<FieldHome> {
   );
 
   String? _name;
-  String? _location;
-  String? _id;
-  String? _token;
+  // String? _location;
+  // String? _id;
+  // String? _token;
   // late Farm farm;
   @override
   void initState() {
@@ -49,8 +49,8 @@ class _FieldHomeState extends State<FieldHome> {
     if (res.statusCode == 200) {
       setState(() {
         _name = json.decode(res.body)['name'];
-        _location = json.decode(res.body)['location'];
-        _id = json.decode(res.body)['id'];
+        // _location = json.decode(res.body)['location'];
+        // _id = json.decode(res.body)['id'];
       });
     } else {
       throw Exception(

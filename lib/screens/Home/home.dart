@@ -23,7 +23,7 @@ class _HomeState extends State<Home> {
     final token = prefs.getString('token');
     final id = prefs.getString('farmId');
 
-    print(token);
+    // print(token);
 
     var res = await http.get(
       Uri.parse("https://quaint-kerchief-crab.cyclic.app/farm"),
@@ -35,7 +35,7 @@ class _HomeState extends State<Home> {
 
     if (res.statusCode == 200) {
       var name = json.decode(res.body)['name'] ?? 0;
-      print(name);
+      // print(name);
       if (name != 0) {
         prefs.setString('farmId', json.decode(res.body)['id']);
         // ignore: use_build_context_synchronously

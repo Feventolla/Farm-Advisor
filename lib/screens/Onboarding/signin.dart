@@ -43,6 +43,7 @@ class _SignInState extends State<SignIn> {
             // 'password': user.password
           }));
 
+      // ignore: unnecessary_null_comparison
       if (res.body != null) {
         // ignore: use_build_context_synchronously
         context.go("/login");

@@ -58,7 +58,7 @@ class _HelpState extends State<Help> {
                   ),
                 ],
               )),
-              Padding(
+              const Padding(
                 padding: EdgeInsets.only(left: 0),
               )
             ]),
@@ -66,7 +66,7 @@ class _HelpState extends State<Help> {
           Padding(
             padding: const EdgeInsets.only(top: 10),
             child: Row(
-              children: <Widget>[
+              children: const <Widget>[
                 Icon(
                   Icons.landscape,
                   color: Colors.white,
@@ -91,7 +91,7 @@ class _HelpState extends State<Help> {
                     child: Container(
                   height: 40,
                   width: double.infinity,
-                  color: Color(0xFFF5F6F9),
+                  color: const Color(0xFFF5F6F9),
                   child: Align(
                       alignment: Alignment.centerLeft,
                       child: Padding(
@@ -101,7 +101,7 @@ class _HelpState extends State<Help> {
                         child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                             const Text(
+                              const Text(
                                 "Question 1",
                               ),
                               Icon(
@@ -152,7 +152,7 @@ class _HelpState extends State<Help> {
                     child: Container(
                   height: 40,
                   width: double.infinity,
-                  color: Color(0xFFF5F6F9),
+                  color: const Color(0xFFF5F6F9),
                   child: Align(
                       alignment: Alignment.centerLeft,
                       child: Padding(
@@ -368,7 +368,7 @@ class _HelpState extends State<Help> {
                       child: Container(
                     height: 100,
                     width: double.infinity,
-                    color: Color(0xFFF5F6F9),
+                    color: const Color(0xFFF5F6F9),
                     child: const Align(
                         alignment: Alignment.centerLeft,
                         child: Padding(

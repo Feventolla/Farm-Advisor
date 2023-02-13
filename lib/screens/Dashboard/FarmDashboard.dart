@@ -1,3 +1,4 @@
+// ignore: file_names
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -113,7 +114,8 @@ class _FarmDashboardState extends State<FarmDashboard> {
                       children: [
                         Text(
                           _name,
-                          style: const TextStyle(fontFamily: 'Roboto', fontSize: 20),
+                          style: const TextStyle(
+                              fontFamily: 'Roboto', fontSize: 20),
                         ),
                         const Icon(
                           Icons.keyboard_arrow_down,
@@ -137,8 +139,7 @@ class _FarmDashboardState extends State<FarmDashboard> {
                 ],
               ),
             ),
-            Container(
-                child: Row(
+            Row(
               children: const [
                 SizedBox(
                   width: 50,
@@ -146,15 +147,15 @@ class _FarmDashboardState extends State<FarmDashboard> {
                 Text("Alert",
                     style: TextStyle(fontFamily: 'Roboto', fontSize: 17)),
               ],
-            )),
-            Container(
+            ),
+            SizedBox(
               height: 170,
               width: 420,
               child: ListView.builder(
                   scrollDirection: Axis.vertical,
                   itemCount: 2,
                   itemBuilder: (BuildContext context, int index) {
-                    return Container(
+                    return SizedBox(
                         height: 70,
                         child: Card(
                             shape: RoundedRectangleBorder(
@@ -180,15 +181,12 @@ class _FarmDashboardState extends State<FarmDashboard> {
                             )));
                   }),
             ),
-            Container(
-                child: Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 const Text("Fields",
                     style: TextStyle(fontFamily: 'Roboto', fontSize: 17)),
-                Container(
-                    // padding: EdgeInsets.only(left: 300),
-                    child: IconButton(
+                IconButton(
                   onPressed: () {
                     context.go('/addfield');
                   },
@@ -196,9 +194,9 @@ class _FarmDashboardState extends State<FarmDashboard> {
                     Icons.add,
                     color: Color.fromARGB(255, 75, 74, 74),
                   ),
-                )),
+                ),
               ],
-            )),
+            ),
             Column(
               children: [
                 for (var item in _fields)
@@ -207,53 +205,50 @@ class _FarmDashboardState extends State<FarmDashboard> {
                       // GoRouter(routes: )
                     },
                     child: Container(
-                      child: Container(
-                          decoration: BoxDecoration(
-                              color: Colors.white,
-                              border: Border.all(
-                                  color:
-                                      const Color.fromARGB(255, 220, 218, 218),
-                                  width: 0.5,
-                                  style: BorderStyle.solid),
-                              borderRadius: BorderRadius.circular(15)),
-                          width: 420,
-                          padding: const EdgeInsets.all(10),
-                          margin: const EdgeInsets.all(5),
-                          // color: Colors.white,
-                          child: Column(
-                            // mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              ListTile(
-                                leading: const CircleAvatar(
-                                  backgroundImage: AssetImage("pingu.jpg"),
-                                  radius: 20,
-                                ),
-                                title: Text(item["name"],
-                                    style: const TextStyle(
-                                        fontSize: 13.0,
-                                        color: Color.fromARGB(255, 0, 0, 0))),
-                                subtitle: Text(item["attitude"],
-                                    style: const TextStyle(
-                                        fontSize: 12.0,
-                                        color: Color.fromARGB(
-                                            255, 119, 117, 117))),
-                                trailing: IconButton(
-                                  onPressed: () {
-                                    context.goNamed("fields",
-                                        params: {"id": item["_id"]});
-                                  },
-                                  icon: const Icon(
-                                    Icons.keyboard_arrow_right,
-                                    color: Color.fromARGB(255, 75, 74, 74),
-                                  ),
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            border: Border.all(
+                                color: const Color.fromARGB(255, 220, 218, 218),
+                                width: 0.5,
+                                style: BorderStyle.solid),
+                            borderRadius: BorderRadius.circular(15)),
+                        width: 420,
+                        padding: const EdgeInsets.all(10),
+                        margin: const EdgeInsets.all(5),
+                        // color: Colors.white,
+                        child: Column(
+                          // mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            ListTile(
+                              leading: const CircleAvatar(
+                                backgroundImage: AssetImage("pingu.jpg"),
+                                radius: 20,
+                              ),
+                              title: Text(item["name"],
+                                  style: const TextStyle(
+                                      fontSize: 13.0,
+                                      color: Color.fromARGB(255, 0, 0, 0))),
+                              subtitle: Text(item["attitude"],
+                                  style: const TextStyle(
+                                      fontSize: 12.0,
+                                      color:
+                                          Color.fromARGB(255, 119, 117, 117))),
+                              trailing: IconButton(
+                                onPressed: () {
+                                  context.goNamed("fields",
+                                      params: {"id": item["_id"]});
+                                },
+                                icon: const Icon(
+                                  Icons.keyboard_arrow_right,
+                                  color: Color.fromARGB(255, 75, 74, 74),
                                 ),
                               ),
+                            ),
 
-                              // Text("Relax its all good")
-                            ],
-                          )),
-                    ),
+                            // Text("Relax its all good")
+                          ],
+                        )),
                   )
               ],
             ),

@@ -12,6 +12,7 @@ class Field extends StatefulWidget {
   const Field({Key? key, this.id}) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _FieldState createState() => _FieldState();
 }
 
@@ -54,7 +55,7 @@ class _FieldState extends State<Field> {
     final token = prefs.getString('token');
 
     var res = await http.delete(
-      Uri.parse("https://quaint-kerchief-crab.cyclic.app/sensor/${id}"),
+      Uri.parse("https://quaint-kerchief-crab.cyclic.app/sensor/$id"),
       headers: {
         'Authorization': 'Bearer $token',
         "content-type": "application/json",
@@ -62,7 +63,7 @@ class _FieldState extends State<Field> {
     );
 
     if (res.statusCode == 200) {
-      print("deleted");
+      // print("deleted");
       _fetchField();
 
       //   setState(() {
@@ -101,7 +102,8 @@ class _FieldState extends State<Field> {
 
   // ignore: non_constant_identifier_names
   bool show_sensor = true;
-  List<String> GDD = ["375", "455", "not until now", "375"];
+
+  // List<String> GDD = ["375", "455", "not until now", "375"];
 
   DateTimeRange dateRange =
       DateTimeRange(start: DateTime(2022, 11, 04), end: DateTime(2022, 11, 10));
@@ -126,22 +128,20 @@ class _FieldState extends State<Field> {
                         "Agino_logo_green_RGB_300dpi.png",
                       ),
                     ),
-                    Container(
-                      child: Row(
-                        children: [
-                          const Icon(
-                            Icons.add,
+                    Row(
+                      children: [
+                        const Icon(
+                          Icons.add,
+                          color: Colors.white,
+                        ),
+                        Container(
+                          padding: const EdgeInsets.only(left: 20),
+                          child: const Icon(
+                            Icons.person,
                             color: Colors.white,
                           ),
-                          Container(
-                            padding: const EdgeInsets.only(left: 20),
-                            child: const Icon(
-                              Icons.person,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ]))),
       body: ListView(children: [
@@ -190,7 +190,7 @@ class _FieldState extends State<Field> {
                             builder: (context) {
                               return AlertDialog(
                                 content: SingleChildScrollView(
-                                  child: Container(
+                                  child: SizedBox(
                                     width: 300,
                                     height: 200,
                                     child: ListView(
@@ -386,7 +386,7 @@ class _FieldState extends State<Field> {
                             icon: (show_sensor
                                 ? const Icon(
                                     Icons.keyboard_arrow_up,
-                                    color: const Color(0xFF5F676C),
+                                    color: Color(0xFF5F676C),
                                   )
                                 : const Icon(
                                     Icons.keyboard_arrow_down_sharp,
@@ -548,7 +548,7 @@ class _FieldState extends State<Field> {
             Column(
               children: [
                 Container(
-                  padding: EdgeInsets.only(left: 20, top: 20),
+                  padding: const EdgeInsets.only(left: 20, top: 20),
                   child: Row(
                     children: const [
                       Text(
@@ -567,7 +567,7 @@ class _FieldState extends State<Field> {
                   ),
                 ),
                 Container(
-                  padding: EdgeInsets.only(left: 20, top: 20),
+                  padding: const EdgeInsets.only(left: 20, top: 20),
                   child: Row(
                     children: const [
                       Text("Period",
