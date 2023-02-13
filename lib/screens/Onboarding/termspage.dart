@@ -1,8 +1,5 @@
 import 'package:farmadvisor/screens/Onboarding/widgets/termtext.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:go_router/go_router.dart';
 
 class TermsPage extends StatefulWidget {
@@ -13,9 +10,8 @@ class TermsPage extends StatefulWidget {
 }
 
 class _TermsPageState extends State<TermsPage> {
-  @override
   final list = List.generate((40), (val) => "val $val");
-  final ScrollController _controller = new ScrollController();
+  final ScrollController _controller = ScrollController();
   var reachEnd = false;
   // final list = List.generate((40), (val) => "val $val");
   // final ScrollController _controller = new ScrollController();
@@ -65,10 +61,11 @@ class _TermsPageState extends State<TermsPage> {
     super.dispose();
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           "TERMS & CONDITIONS",
           style: TextStyle(
             color: Color.fromARGB(95, 0, 0, 0),
@@ -78,7 +75,7 @@ class _TermsPageState extends State<TermsPage> {
         ),
         backgroundColor: Colors.white,
         leading: IconButton(
-          icon: Icon(
+          icon: const Icon(
             Icons.close,
             color: Color.fromARGB(255, 165, 176, 172),
           ),
@@ -92,35 +89,32 @@ class _TermsPageState extends State<TermsPage> {
           child: SingleChildScrollView(
             controller: _controller,
             scrollDirection: Axis.vertical,
-            child: TermsText(),
+            child: const TermsText(),
           ),
         ),
-        SizedBox(height: 20),
-
-
+        const SizedBox(height: 20),
         ElevatedButton(
-          style: ButtonStyle(
-                    backgroundColor:MaterialStateProperty.all(reachEnd ? Color(0xFF275342): Color.fromARGB(255, 213, 223, 219)),
-                    foregroundColor: MaterialStateProperty.all(Color.fromARGB(255, 255, 255, 255)),
-                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                      
-                    )),
-                    padding: MaterialStateProperty.all(EdgeInsets.symmetric(vertical: 15, horizontal: 120))
-                    ),
-                    
-          child: Text(
-            "AGREE TO TERMS AND CONDITIONS",
-            style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600),
-          ),
-          
-          onPressed: reachEnd
+            style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(reachEnd
+                    ? const Color(0xFF275342)
+                    : const Color.fromARGB(255, 213, 223, 219)),
+                foregroundColor: MaterialStateProperty.all(
+                    const Color.fromARGB(255, 255, 255, 255)),
+                shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                )),
+                padding: MaterialStateProperty.all(
+                    const EdgeInsets.symmetric(vertical: 15, horizontal: 120))),
+            onPressed: reachEnd
                 ? () {
                     context.go('/signin');
                   }
-                : null),
-
-        SizedBox(height: 10)
+                : null,
+            child: const Text(
+              "AGREE TO TERMS AND CONDITIONS",
+              style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600),
+            )),
+        const SizedBox(height: 10)
       ]),
     );
   }
