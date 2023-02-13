@@ -1,9 +1,8 @@
-import 'dart:convert';
-
 class Sensor {
   String name;
   String serialNumber;
   String location;
+  // ignore: non_constant_identifier_names
   String GGD;
   String installationDate;
   String lastCutting;
@@ -12,6 +11,7 @@ class Sensor {
     required this.name,
     required this.serialNumber,
     required this.location,
+    // ignore: non_constant_identifier_names
     required this.GGD,
     required this.installationDate,
     required this.lastCutting,
