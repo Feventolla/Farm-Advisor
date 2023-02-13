@@ -1,7 +1,7 @@
-import 'package:farmadvisor/screens/FirstTimeUser/newFarm.dart';
+import 'package:farmadvisor/screens/FirstTimeUser/new_farm.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:farmadvisor/screens/FirstTimeUser/newField.dart';
+import 'package:farmadvisor/screens/FirstTimeUser/new_field.dart';
 
 void main() {
   test('', () {});

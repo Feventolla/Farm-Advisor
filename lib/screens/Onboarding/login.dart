@@ -10,13 +10,11 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import '../models/user.dart';
 
-
 class PhoneValidator {
   static validate(value) {
     return value.isEmpty ? 'phone can not be empty' : null;
   }
 }
-
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -96,9 +94,7 @@ class _LoginState extends State<Login> {
               color: Color.fromARGB(255, 165, 176, 172),
             ),
             onPressed: () {
-
               context.go('/');
-
             },
           )),
       body: Container(
@@ -122,7 +118,6 @@ class _LoginState extends State<Login> {
                 margin: EdgeInsets.only(left: 8, right: 8),
                 padding: EdgeInsets.only(left: 8, right: 8),
                 child: TextFormField(
-
                   //key: ValueKey('phoneNo'),
                   //autovalidateMode: AutovalidateMode.onUserInteraction,
                   key: ValueKey('phone'),
@@ -217,7 +212,6 @@ class _LoginState extends State<Login> {
                   ),
                 ),
               ),
-
 
               SizedBox(
                 height: 10,
