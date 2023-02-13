@@ -160,7 +160,7 @@ class MyApp extends StatelessWidget {
       routeInformationParser: _router.routeInformationParser,
       routerDelegate: _router.routerDelegate,
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Farm Advisor',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
