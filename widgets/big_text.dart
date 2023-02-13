@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 // import 'package:flutter/src/foundation/key.dart';
 // import 'package:flutter/src/widgets/framework.dart';
 
+// ignore: must_be_immutable
 class BigText extends StatelessWidget {
   Color? color;
   final String text;

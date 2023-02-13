@@ -47,7 +47,7 @@ class _NewFarmState extends State<NewFarm> {
           }));
       final id = Farm.fromJson(json.decode(res.body)).id;
       prefs.setString('farmId', id);
-      print(res.statusCode);
+      // print(res.statusCode);
 
       // print(Farm.fromJson(json.decode(res.body)).id);
       if (res.statusCode != 400 &&

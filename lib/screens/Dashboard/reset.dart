@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
+// import 'package:flutter/src/widgets/framework.dart';
+// import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter/cupertino.dart';
 
 class Reset extends StatefulWidget {
   const Reset({super.key, required this.title});
+  // ignore: prefer_typing_uninitialized_variables
   final title;
 
   @override
@@ -25,29 +26,29 @@ class _ResetState extends State<Reset> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          backgroundColor: Color(0xFF20382F),
+          backgroundColor: const Color(0xFF20382F),
           title: Container(
               width: double.infinity,
               height: 100,
-              color: Color(0xFF20382F),
+              color: const Color(0xFF20382F),
               child: Row(children: [
                 Container(
-                  padding: EdgeInsets.only(bottom: 20, left: 20, top: 20),
+                  padding: const EdgeInsets.only(bottom: 20, left: 20, top: 20),
                   child: Image.asset(
                     "Agino_logo_green_RGB_300dpi.png",
                   ),
                 ),
                 Container(
-                  padding: EdgeInsets.only(
+                  padding: const EdgeInsets.only(
                       bottom: 20, left: 260, right: 30, top: 20),
-                  child: Icon(
+                  child: const Icon(
                     Icons.add,
                     color: Colors.white,
                   ),
                 ),
                 Container(
-                  padding: EdgeInsets.only(bottom: 20, top: 20),
-                  child: Icon(
+                  padding: const EdgeInsets.only(bottom: 20, top: 20),
+                  child: const Icon(
                     Icons.person,
                     color: Colors.white,
                   ),
@@ -85,7 +86,7 @@ class _ResetState extends State<Reset> {
                       ),
                     ],
                   )),
-                  Padding(
+                  const Padding(
                     padding: EdgeInsets.only(left: 40),
                     child: Icon(
                       Icons.more_vert,
@@ -96,7 +97,7 @@ class _ResetState extends State<Reset> {
           Padding(
             padding: const EdgeInsets.only(left: 20.0, top: 10.0),
             child: Row(
-              children: <Widget>[
+              children: const <Widget>[
                 Text(
                   "Reset from",
                   style: TextStyle(fontSize: 10),
@@ -110,16 +111,16 @@ class _ResetState extends State<Reset> {
                 child: Container(
                     height: 40,
                     width: double.infinity,
-                    color: Color(0xFFF5F6F9),
+                    color: const Color(0xFFF5F6F9),
                     child: Align(
                       alignment: Alignment.centerLeft,
                       child: Padding(
-                          padding: EdgeInsets.only(
+                          padding: const EdgeInsets.only(
                               left: 10), //apply padding to all four sides
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text(
+                              const Text(
                                 "11 May 2022",
                               ),
                               GestureDetector(
@@ -129,7 +130,7 @@ class _ResetState extends State<Reset> {
                                     showdate();
                                   });
                                 },
-                                child: Icon(
+                                child: const Icon(
                                   Icons.calendar_today,
                                 ),
                               )
@@ -148,25 +149,25 @@ class _ResetState extends State<Reset> {
                       child: Container(
                     height: 100,
                     width: double.infinity,
-                    color: Color(0xFFF5F6F9),
+                    color: const Color(0xFFF5F6F9),
                     child: SizedBox(
-              height: 200,
-              child: CupertinoDatePicker(
-                mode: CupertinoDatePickerMode.date,
-                initialDateTime: DateTime(2022, 1, 1),
-                onDateTimeChanged: (DateTime newDateTime) {
-                  // Do something
-                },
-              ),
-            ),
+                      height: 200,
+                      child: CupertinoDatePicker(
+                        mode: CupertinoDatePickerMode.date,
+                        initialDateTime: DateTime(2022, 1, 1),
+                        onDateTimeChanged: (DateTime newDateTime) {
+                          // Do something
+                        },
+                      ),
+                    ),
                   ))),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(
+          const Padding(
+            padding: EdgeInsets.symmetric(
               horizontal: 10,
             ),
-            child: Container(
+            child: SizedBox(
                 height: 40,
                 width: double.infinity,
                 child: Align(
@@ -188,7 +189,7 @@ class _ResetState extends State<Reset> {
             indent: 15,
             endIndent: 15,
           ),
-          Padding(
+          const Padding(
             padding:
                 EdgeInsets.only(left: 15), //apply padding to all four sides
             child: Text(
@@ -196,10 +197,10 @@ class _ResetState extends State<Reset> {
               "Previous reset days",
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
-          Padding(
+          const Padding(
             padding:
                 EdgeInsets.only(left: 15), //apply padding to all four sides
             child: Text(
@@ -207,10 +208,10 @@ class _ResetState extends State<Reset> {
               "22 November 2021",
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
-          Padding(
+          const Padding(
             padding:
                 EdgeInsets.only(left: 15), //apply padding to all four sides
             child: Text(
@@ -218,10 +219,10 @@ class _ResetState extends State<Reset> {
               "10 July 2021",
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
-          Padding(
+          const Padding(
             padding:
                 EdgeInsets.only(left: 15), //apply padding to all four sides
             child: Text(
@@ -229,11 +230,11 @@ class _ResetState extends State<Reset> {
               "22 May 2021",
             ),
           ),
-          Spacer(),
-          SizedBox(
+          const Spacer(),
+          const SizedBox(
             height: 330,
           ),
-          Container(
+          SizedBox(
             height: 60,
             width: double.infinity,
             child: Card(
@@ -241,11 +242,11 @@ class _ResetState extends State<Reset> {
                 padding: const EdgeInsets.only(
                     right: 25, left: 25, top: 10, bottom: 10),
                 child: ElevatedButton(
-                  child: Text('RESET GDD'),
                   style: ElevatedButton.styleFrom(
-                    primary: Color.fromARGB(255, 41, 76, 63),
+                    primary: const Color.fromARGB(255, 41, 76, 63),
                   ),
                   onPressed: () {},
+                  child: const Text('RESET GDD'),
                 ),
               ),
             ),
