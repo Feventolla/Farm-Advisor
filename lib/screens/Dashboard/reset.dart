@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
-
+import 'package:flutter/cupertino.dart';
 
 class Reset extends StatefulWidget {
   const Reset({super.key, required this.title});
@@ -12,6 +12,15 @@ class Reset extends StatefulWidget {
 }
 
 class _ResetState extends State<Reset> {
+  bool click = false;
+  void showdate() {
+    showDatePicker(
+        context: context,
+        initialDate: DateTime(2022),
+        firstDate: DateTime.now(),
+        lastDate: DateTime(2025));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,7 +53,7 @@ class _ResetState extends State<Reset> {
                   ),
                 ),
               ]))),
-      body: Column(
+      body: ListView(
         children: [
           Container(
             height: 40,
@@ -85,11 +94,11 @@ class _ResetState extends State<Reset> {
                 ]),
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 20.0, top: 15.0),
+            padding: const EdgeInsets.only(left: 20.0, top: 10.0),
             child: Row(
               children: <Widget>[
                 Text(
-                  "Reset form",
+                  "Reset from",
                   style: TextStyle(fontSize: 10),
                 ),
               ],
@@ -105,14 +114,54 @@ class _ResetState extends State<Reset> {
                     child: Align(
                       alignment: Alignment.centerLeft,
                       child: Padding(
-                        padding: EdgeInsets.only(
-                            left: 10), //apply padding to all four sides
-                        child: Text(
-                          "11 May 2022",
-                        ),
-                      ),
+                          padding: EdgeInsets.only(
+                              left: 10), //apply padding to all four sides
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "11 May 2022",
+                              ),
+                              GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    click = !click;
+                                    showdate();
+                                  });
+                                },
+                                child: Icon(
+                                  Icons.calendar_today,
+                                ),
+                              )
+                            ],
+                          )),
                     )),
               )),
+          Visibility(
+            visible: click,
+            child: Expanded(
+              flex: 1,
+              child: Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 0),
+                  child: Card(
+                      child: Container(
+                    height: 100,
+                    width: double.infinity,
+                    color: Color(0xFFF5F6F9),
+                    child: SizedBox(
+              height: 200,
+              child: CupertinoDatePicker(
+                mode: CupertinoDatePickerMode.date,
+                initialDateTime: DateTime(2022, 1, 1),
+                onDateTimeChanged: (DateTime newDateTime) {
+                  // Do something
+                },
+              ),
+            ),
+                  ))),
+            ),
+          ),
           Padding(
             padding: const EdgeInsets.symmetric(
               horizontal: 10,
@@ -139,6 +188,68 @@ class _ResetState extends State<Reset> {
             indent: 15,
             endIndent: 15,
           ),
+          Padding(
+            padding:
+                EdgeInsets.only(left: 15), //apply padding to all four sides
+            child: Text(
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
+              "Previous reset days",
+            ),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Padding(
+            padding:
+                EdgeInsets.only(left: 15), //apply padding to all four sides
+            child: Text(
+              style: TextStyle(fontSize: 10),
+              "22 November 2021",
+            ),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Padding(
+            padding:
+                EdgeInsets.only(left: 15), //apply padding to all four sides
+            child: Text(
+              style: TextStyle(fontSize: 10),
+              "10 July 2021",
+            ),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Padding(
+            padding:
+                EdgeInsets.only(left: 15), //apply padding to all four sides
+            child: Text(
+              style: TextStyle(fontSize: 10),
+              "22 May 2021",
+            ),
+          ),
+          Spacer(),
+          SizedBox(
+            height: 330,
+          ),
+          Container(
+            height: 60,
+            width: double.infinity,
+            child: Card(
+              child: Padding(
+                padding: const EdgeInsets.only(
+                    right: 25, left: 25, top: 10, bottom: 10),
+                child: ElevatedButton(
+                  child: Text('RESET GDD'),
+                  style: ElevatedButton.styleFrom(
+                    primary: Color.fromARGB(255, 41, 76, 63),
+                  ),
+                  onPressed: () {},
+                ),
+              ),
+            ),
+          )
         ],
       ),
     );
