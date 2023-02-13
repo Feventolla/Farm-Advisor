@@ -1344,7 +1344,7 @@ DA:371,0
 DA:372,0
 DA:373,0
 DA:384,0
-LF:131
+LF:0
 LH:0
 end_of_record
 SF:lib\screens\Home\home.dart
@@ -1514,7 +1514,7 @@ DA:244,0
 DA:245,0
 DA:246,0
 DA:248,0
-LF:103
+LF:0
 LH:0
 end_of_record
 SF:lib\screens\Home\sensorHome.dart
@@ -1723,7 +1723,7 @@ DA:193,0
 DA:194,0
 DA:195,0
 DA:222,0
-LF:70
+LF:0
 LH:0
 end_of_record
 SF:lib\screens\Dashboard\help.dart
@@ -1942,7 +1942,7 @@ DA:512,0
 DA:514,0
 DA:515,0
 DA:518,0
-LF:215
+LF:0
 LH:0
 end_of_record
 SF:lib\screens\Home\FieldHome.dart
